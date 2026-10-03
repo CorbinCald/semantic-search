@@ -2,6 +2,8 @@
 
 Semantic search over a fictional AI SaaS company's Slack workspace. A natural-language question is embedded, searched in MongoDB, and returned as an ordered JSON array of up to **20 conversations with scores**. This assignment implements retrieval only; there is no chat model or agent.
 
+**Demo recording:** [Watch the 98-second walkthrough on Google Drive](https://drive.google.com/file/d/1888JheB8Vj5GMrzxfmpcGba8Q-QM7Zq7/view?usp=sharing). Public viewing access was verified without a Google sign-in.
+
 The workspace contains **25 employees, 20 channels, 288 messages, and 72 threads** across **Engineering, Sales, Support, CSM, and Operations**, covering June 1–26, 2026. Conversations include incidents and postmortems, sales approvals, support diagnostics, onboarding, renewals, security, billing, policy changes, and ordinary office chatter. Customers, people, policies, and events are invented. Addresses and source links use reserved `.example` domains.
 
 ## Embedding model
@@ -142,4 +144,4 @@ Machine-readable evidence is committed in `docs/validation/database.json`, `post
 
 For a quick review, run the Postman collection, open its incident result, and confirm the thread includes both the retry-storm cause and the 14:58 resolution. Then search for the trial extension policy and check the dated distinction between new and existing trials.
 
-References: [NVIDIA model and retrieval prefixes](https://huggingface.co/nvidia/Nemotron-3-Embed-1B-BF16), [OpenRouter embeddings API](https://openrouter.ai/docs/api/api-reference/embeddings/submit-an-embedding-request), [MongoDB local Docker deployment](https://www.mongodb.com/docs/atlas/cli/current/atlas-cli-deploy-docker/), [MongoDB vector search stage](https://www.mongodb.com/docs/atlas/atlas-vector-search/vector-search-stage/), and [Postman Newman](https://learning.postman.com/docs/collections/using-newman-cli/command-line-integration-with-newman/).
+References: [NVIDIA model and retrieval prefixes](https://huggingface.co/nvidia/Nemotron-3-Embed-1B-BF16), [OpenRouter embeddings API](https://openrouter.ai/docs/api/api-reference/embeddings/submit-an-embedding-request), [MongoDB local Docker deployment](https://www.mongodb.com/docs/atlas/cli/current/atlas-cli-deploy-docker/), [MongoDB vector search stage](https://www.mongodb.com/docs/vector-search/query/aggregation-stages/vector-search-stage/), and [Postman Newman](https://learning.postman.com/docs/collections/using-newman-cli/command-line-integration-with-newman/).

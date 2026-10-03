@@ -1,0 +1,577 @@
+{
+  "evaluatedAt": "2026-10-03T00:36:30.650Z",
+  "model": "nvidia/nemotron-3-embed-1b:free",
+  "cases": 16,
+  "hitAt5": 16,
+  "hitRateAt5": 1,
+  "meanReciprocalRank": 0.9375,
+  "results": [
+    {
+      "query": "Why did requests pile up during the early June slowdown, and what stopped it?",
+      "expected": [
+        "eng-007",
+        "eng-008"
+      ],
+      "relevantRank": 2,
+      "hitAt5": true,
+      "top5": [
+        {
+          "id": "cross-001",
+          "title": "June priorities across the company",
+          "score": 0.6742948293685913
+        },
+        {
+          "id": "eng-007",
+          "title": "INC-2641 elevated 429 errors and a stuck queue",
+          "score": 0.6678196787834167
+        },
+        {
+          "id": "csm-007",
+          "title": "Northstar asks for the incident prevention plan",
+          "score": 0.6664128303527832
+        },
+        {
+          "id": "eng-011",
+          "title": "June canary expands after a clean first hour",
+          "score": 0.6583739519119263
+        },
+        {
+          "id": "sales-007",
+          "title": "How to explain yesterday’s slowdown in a prospect call",
+          "score": 0.6565605998039246
+        }
+      ]
+    },
+    {
+      "query": "What should I tell an invited employee whose company login rejects them?",
+      "expected": [
+        "support-001"
+      ],
+      "relevantRank": 1,
+      "hitAt5": true,
+      "top5": [
+        {
+          "id": "support-001",
+          "title": "Northstar SAML login fails for an invited user",
+          "score": 0.670778751373291
+        },
+        {
+          "id": "sales-007",
+          "title": "How to explain yesterday’s slowdown in a prospect call",
+          "score": 0.6073029637336731
+        },
+        {
+          "id": "ops-012",
+          "title": "New hire onboarding and least-privilege access",
+          "score": 0.607110857963562
+        },
+        {
+          "id": "support-005",
+          "title": "CSV import rejects a spreadsheet with a byte-order mark",
+          "score": 0.606308102607727
+        },
+        {
+          "id": "csm-011",
+          "title": "Northstar production rollout gets admin sign-off",
+          "score": 0.6034146547317505
+        }
+      ]
+    },
+    {
+      "query": "Can we promise that all Atlas data stays in Germany?",
+      "expected": [
+        "sales-004"
+      ],
+      "relevantRank": 1,
+      "hitAt5": true,
+      "top5": [
+        {
+          "id": "sales-004",
+          "title": "Atlas Retail needs European data residency",
+          "score": 0.6987627148628235
+        },
+        {
+          "id": "cross-006",
+          "title": "Roadmap requests need evidence",
+          "score": 0.5965264439582825
+        },
+        {
+          "id": "cross-003",
+          "title": "Northstar security questionnaire handoff",
+          "score": 0.5537476539611816
+        },
+        {
+          "id": "eng-003",
+          "title": "Webhook delivery contract and retries",
+          "score": 0.5479751825332642
+        },
+        {
+          "id": "ops-005",
+          "title": "Source deletion and backup retention are different",
+          "score": 0.5474533438682556
+        }
+      ]
+    },
+    {
+      "query": "How much can an account executive discount a deal without escalating?",
+      "expected": [
+        "sales-002"
+      ],
+      "relevantRank": 1,
+      "hitAt5": true,
+      "top5": [
+        {
+          "id": "sales-002",
+          "title": "Discount approval bands for enterprise deals",
+          "score": 0.7414007782936096
+        },
+        {
+          "id": "sales-011",
+          "title": "Solstice exception decision is final",
+          "score": 0.6357726454734802
+        },
+        {
+          "id": "support-009",
+          "title": "Export and deletion requests need identity checks",
+          "score": 0.5950214862823486
+        },
+        {
+          "id": "support-004",
+          "title": "Escalation targets for urgent tickets",
+          "score": 0.5856690406799316
+        },
+        {
+          "id": "sales-008",
+          "title": "Private deployment request from BluePeak Finance",
+          "score": 0.5846004486083984
+        }
+      ]
+    },
+    {
+      "query": "When do audit records expire on the paid plans?",
+      "expected": [
+        "ops-009"
+      ],
+      "relevantRank": 1,
+      "hitAt5": true,
+      "top5": [
+        {
+          "id": "ops-009",
+          "title": "Audit event retention policy effective June 15",
+          "score": 0.68193119764328
+        },
+        {
+          "id": "cross-007",
+          "title": "Northstar audit retention answer is updated",
+          "score": 0.6621137857437134
+        },
+        {
+          "id": "cross-003",
+          "title": "Northstar security questionnaire handoff",
+          "score": 0.6276031136512756
+        },
+        {
+          "id": "ops-005",
+          "title": "Source deletion and backup retention are different",
+          "score": 0.6095532774925232
+        },
+        {
+          "id": "ops-010",
+          "title": "Twenty-one-day self-serve trials are now active",
+          "score": 0.5932047367095947
+        }
+      ]
+    },
+    {
+      "query": "Does the longer free evaluation period extend accounts that already started?",
+      "expected": [
+        "csm-009",
+        "ops-010"
+      ],
+      "relevantRank": 1,
+      "hitAt5": true,
+      "top5": [
+        {
+          "id": "csm-009",
+          "title": "New trial policy does not reset old trials",
+          "score": 0.6548237800598145
+        },
+        {
+          "id": "sales-009",
+          "title": "Trial length is changing, update the deck",
+          "score": 0.6452415585517883
+        },
+        {
+          "id": "ops-010",
+          "title": "Twenty-one-day self-serve trials are now active",
+          "score": 0.6338089108467102
+        },
+        {
+          "id": "csm-006",
+          "title": "CedarDesk trial extension needs a reason",
+          "score": 0.6317065954208374
+        },
+        {
+          "id": "cross-007",
+          "title": "Northstar audit retention answer is updated",
+          "score": 0.5861380100250244
+        }
+      ]
+    },
+    {
+      "query": "Did MapleCloud receive money back for being charged twice?",
+      "expected": [
+        "support-011",
+        "eng-012",
+        "ops-011"
+      ],
+      "relevantRank": 2,
+      "hitAt5": true,
+      "top5": [
+        {
+          "id": "support-003",
+          "title": "Repeated webhook charge report from MapleCloud",
+          "score": 0.7488939166069031
+        },
+        {
+          "id": "support-011",
+          "title": "MapleCloud billing ticket closes with a credit",
+          "score": 0.7088505029678345
+        },
+        {
+          "id": "eng-012",
+          "title": "Duplicate billing events are deduplicated",
+          "score": 0.6530558466911316
+        },
+        {
+          "id": "ops-011",
+          "title": "Credit memo controls for duplicate usage",
+          "score": 0.6414108276367188
+        },
+        {
+          "id": "eng-003",
+          "title": "Webhook delivery contract and retries",
+          "score": 0.630036473274231
+        }
+      ]
+    },
+    {
+      "query": "Can clinicians upload real patient files into the Helio evaluation?",
+      "expected": [
+        "csm-003",
+        "cross-010"
+      ],
+      "relevantRank": 1,
+      "hitAt5": true,
+      "top5": [
+        {
+          "id": "csm-003",
+          "title": "Helio pilot boundary and training",
+          "score": 0.7059634923934937
+        },
+        {
+          "id": "cross-010",
+          "title": "Helio approves the sandbox, not patient data",
+          "score": 0.7024682760238647
+        },
+        {
+          "id": "cross-004",
+          "title": "Helio subprocessor review remains open",
+          "score": 0.6707817912101746
+        },
+        {
+          "id": "sales-003",
+          "title": "Demo tenants must use synthetic customer data",
+          "score": 0.653192400932312
+        },
+        {
+          "id": "sales-006",
+          "title": "Helio pilot has a named security blocker",
+          "score": 0.6477280259132385
+        }
+      ]
+    },
+    {
+      "query": "Who must sign off before buying a $450 per month vendor contract?",
+      "expected": [
+        "ops-001"
+      ],
+      "relevantRank": 1,
+      "hitAt5": true,
+      "top5": [
+        {
+          "id": "ops-001",
+          "title": "Vendor spend approval requires a purchase record",
+          "score": 0.7033873796463013
+        },
+        {
+          "id": "ops-004",
+          "title": "Unpaid invoices and suspension timing",
+          "score": 0.6040235161781311
+        },
+        {
+          "id": "sales-012",
+          "title": "Forecast commit requires a procurement milestone",
+          "score": 0.5878487825393677
+        },
+        {
+          "id": "sales-002",
+          "title": "Discount approval bands for enterprise deals",
+          "score": 0.5819109678268433
+        },
+        {
+          "id": "csm-010",
+          "title": "Solstice adoption trend ahead of renewal",
+          "score": 0.5776622295379639
+        }
+      ]
+    },
+    {
+      "query": "Why are deleted Drive files stopping a sync just before it finishes?",
+      "expected": [
+        "eng-006",
+        "support-006"
+      ],
+      "relevantRank": 1,
+      "hitAt5": true,
+      "top5": [
+        {
+          "id": "support-006",
+          "title": "CedarDesk sync stuck at 99 percent",
+          "score": 0.7433334589004517
+        },
+        {
+          "id": "eng-006",
+          "title": "Drive connector cursor gets stuck",
+          "score": 0.7388913631439209
+        },
+        {
+          "id": "ops-005",
+          "title": "Source deletion and backup retention are different",
+          "score": 0.6796291470527649
+        },
+        {
+          "id": "eng-010",
+          "title": "Empty results when a connector is newly attached",
+          "score": 0.623299241065979
+        },
+        {
+          "id": "ops-008",
+          "title": "Quarterly access review finds departed contractors",
+          "score": 0.6213959455490112
+        }
+      ]
+    },
+    {
+      "query": "If I have a seat can I find documents only an admin can access?",
+      "expected": [
+        "support-008",
+        "eng-002"
+      ],
+      "relevantRank": 1,
+      "hitAt5": true,
+      "top5": [
+        {
+          "id": "support-008",
+          "title": "Blank search results because of folder permissions",
+          "score": 0.6450454592704773
+        },
+        {
+          "id": "support-009",
+          "title": "Export and deletion requests need identity checks",
+          "score": 0.6271799206733704
+        },
+        {
+          "id": "eng-002",
+          "title": "Answers cite content the user cannot access",
+          "score": 0.6006236672401428
+        },
+        {
+          "id": "csm-001",
+          "title": "Northstar onboarding checklist",
+          "score": 0.5874013900756836
+        },
+        {
+          "id": "csm-005",
+          "title": "Northstar admin session finds a stale SOP folder",
+          "score": 0.5852561593055725
+        }
+      ]
+    },
+    {
+      "query": "Does logging into the app without doing any work count as adoption?",
+      "expected": [
+        "csm-004"
+      ],
+      "relevantRank": 1,
+      "hitAt5": true,
+      "top5": [
+        {
+          "id": "csm-004",
+          "title": "A weekly active user is not just someone who logs in",
+          "score": 0.6840217113494873
+        },
+        {
+          "id": "csm-002",
+          "title": "Solstice renewal risk is low weekly adoption",
+          "score": 0.6060608625411987
+        },
+        {
+          "id": "sales-005",
+          "title": "What counts toward billable monthly usage",
+          "score": 0.5969510078430176
+        },
+        {
+          "id": "csm-012",
+          "title": "Northstar first outcome review",
+          "score": 0.5923789739608765
+        },
+        {
+          "id": "csm-010",
+          "title": "Solstice adoption trend ahead of renewal",
+          "score": 0.5897620916366577
+        }
+      ]
+    },
+    {
+      "query": "Is it safe to keep both service keys active during rotation?",
+      "expected": [
+        "eng-001"
+      ],
+      "relevantRank": 1,
+      "hitAt5": true,
+      "top5": [
+        {
+          "id": "eng-001",
+          "title": "API key rotation without downtime",
+          "score": 0.74435955286026
+        },
+        {
+          "id": "cross-003",
+          "title": "Northstar security questionnaire handoff",
+          "score": 0.5954563021659851
+        },
+        {
+          "id": "support-012",
+          "title": "Weekend support coverage and handover",
+          "score": 0.5758883953094482
+        },
+        {
+          "id": "csm-005",
+          "title": "Northstar admin session finds a stale SOP folder",
+          "score": 0.5739123821258545
+        },
+        {
+          "id": "ops-005",
+          "title": "Source deletion and backup retention are different",
+          "score": 0.5736567378044128
+        }
+      ]
+    },
+    {
+      "query": "What makes a production problem urgent enough to page on-call?",
+      "expected": [
+        "support-004"
+      ],
+      "relevantRank": 1,
+      "hitAt5": true,
+      "top5": [
+        {
+          "id": "support-004",
+          "title": "Escalation targets for urgent tickets",
+          "score": 0.6770118474960327
+        },
+        {
+          "id": "csm-011",
+          "title": "Northstar production rollout gets admin sign-off",
+          "score": 0.5852250456809998
+        },
+        {
+          "id": "support-012",
+          "title": "Weekend support coverage and handover",
+          "score": 0.5842522382736206
+        },
+        {
+          "id": "sales-007",
+          "title": "How to explain yesterday’s slowdown in a prospect call",
+          "score": 0.5811380743980408
+        },
+        {
+          "id": "support-007",
+          "title": "Customer messaging during INC-2641",
+          "score": 0.5756381154060364
+        }
+      ]
+    },
+    {
+      "query": "What happened in Northstar’s first review of faster procedure lookups?",
+      "expected": [
+        "csm-012"
+      ],
+      "relevantRank": 1,
+      "hitAt5": true,
+      "top5": [
+        {
+          "id": "csm-012",
+          "title": "Northstar first outcome review",
+          "score": 0.6910362243652344
+        },
+        {
+          "id": "sales-010",
+          "title": "Northstar commercial handoff after launch",
+          "score": 0.6637686491012573
+        },
+        {
+          "id": "csm-001",
+          "title": "Northstar onboarding checklist",
+          "score": 0.6474398970603943
+        },
+        {
+          "id": "sales-001",
+          "title": "Northstar discovery and rollout boundaries",
+          "score": 0.6274498701095581
+        },
+        {
+          "id": "csm-011",
+          "title": "Northstar production rollout gets admin sign-off",
+          "score": 0.6107908487319946
+        }
+      ]
+    },
+    {
+      "query": "Are custom installations inside a customer’s own cloud supported?",
+      "expected": [
+        "sales-008"
+      ],
+      "relevantRank": 1,
+      "hitAt5": true,
+      "top5": [
+        {
+          "id": "sales-008",
+          "title": "Private deployment request from BluePeak Finance",
+          "score": 0.7052555084228516
+        },
+        {
+          "id": "sales-003",
+          "title": "Demo tenants must use synthetic customer data",
+          "score": 0.5952646136283875
+        },
+        {
+          "id": "cross-006",
+          "title": "Roadmap requests need evidence",
+          "score": 0.5834950804710388
+        },
+        {
+          "id": "cross-003",
+          "title": "Northstar security questionnaire handoff",
+          "score": 0.5752504467964172
+        },
+        {
+          "id": "sales-005",
+          "title": "What counts toward billable monthly usage",
+          "score": 0.5711104869842529
+        }
+      ]
+    }
+  ]
+}

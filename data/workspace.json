@@ -1,0 +1,3744 @@
+{
+  "schemaVersion": 1,
+  "synthetic": true,
+  "company": {
+    "name": "RelayAI",
+    "domain": "relayai.example",
+    "description": "Fictional B2B AI SaaS company providing permission-aware knowledge retrieval and reviewed workflow assistance over Slack and Drive.",
+    "period": {
+      "from": "2026-06-01",
+      "through": "2026-06-26",
+      "timezone": "UTC"
+    },
+    "departments": [
+      "Engineering",
+      "Sales",
+      "Support",
+      "CSM",
+      "Operations"
+    ],
+    "customers": [
+      "Northstar Logistics",
+      "Helio Health",
+      "MapleCloud",
+      "Atlas Retail",
+      "CedarDesk",
+      "Solstice",
+      "BluePeak Finance",
+      "BrightCart"
+    ]
+  },
+  "users": [
+    {
+      "id": "U00000001",
+      "name": "maya",
+      "real_name": "Maya Chen",
+      "department": "Engineering",
+      "role": "VP Engineering",
+      "email": "maya@relayai.example",
+      "is_bot": false,
+      "deleted": false
+    },
+    {
+      "id": "U00000002",
+      "name": "leo",
+      "real_name": "Leo Martinez",
+      "department": "Engineering",
+      "role": "Platform engineer",
+      "email": "leo@relayai.example",
+      "is_bot": false,
+      "deleted": false
+    },
+    {
+      "id": "U00000003",
+      "name": "priya",
+      "real_name": "Priya Shah",
+      "department": "Engineering",
+      "role": "ML engineer",
+      "email": "priya@relayai.example",
+      "is_bot": false,
+      "deleted": false
+    },
+    {
+      "id": "U00000004",
+      "name": "noah",
+      "real_name": "Noah Brooks",
+      "department": "Engineering",
+      "role": "Frontend engineer",
+      "email": "noah@relayai.example",
+      "is_bot": false,
+      "deleted": false
+    },
+    {
+      "id": "U00000005",
+      "name": "erin",
+      "real_name": "Erin Walsh",
+      "department": "Engineering",
+      "role": "Site reliability engineer",
+      "email": "erin@relayai.example",
+      "is_bot": false,
+      "deleted": false
+    },
+    {
+      "id": "U00000006",
+      "name": "jordan",
+      "real_name": "Jordan Ellis",
+      "department": "Sales",
+      "role": "Head of Sales",
+      "email": "jordan@relayai.example",
+      "is_bot": false,
+      "deleted": false
+    },
+    {
+      "id": "U00000007",
+      "name": "sam",
+      "real_name": "Sam Rivera",
+      "department": "Sales",
+      "role": "Account executive",
+      "email": "sam@relayai.example",
+      "is_bot": false,
+      "deleted": false
+    },
+    {
+      "id": "U00000008",
+      "name": "tess",
+      "real_name": "Tess Morgan",
+      "department": "Sales",
+      "role": "Sales engineer",
+      "email": "tess@relayai.example",
+      "is_bot": false,
+      "deleted": false
+    },
+    {
+      "id": "U00000009",
+      "name": "owen",
+      "real_name": "Owen Park",
+      "department": "Sales",
+      "role": "Account executive",
+      "email": "owen@relayai.example",
+      "is_bot": false,
+      "deleted": false
+    },
+    {
+      "id": "U00000010",
+      "name": "nina",
+      "real_name": "Nina Patel",
+      "department": "Sales",
+      "role": "Sales development representative",
+      "email": "nina@relayai.example",
+      "is_bot": false,
+      "deleted": false
+    },
+    {
+      "id": "U00000011",
+      "name": "alex",
+      "real_name": "Alex Kim",
+      "department": "Support",
+      "role": "Support lead",
+      "email": "alex@relayai.example",
+      "is_bot": false,
+      "deleted": false
+    },
+    {
+      "id": "U00000012",
+      "name": "jamie",
+      "real_name": "Jamie Ortiz",
+      "department": "Support",
+      "role": "Support specialist",
+      "email": "jamie@relayai.example",
+      "is_bot": false,
+      "deleted": false
+    },
+    {
+      "id": "U00000013",
+      "name": "riley",
+      "real_name": "Riley Scott",
+      "department": "Support",
+      "role": "Technical support engineer",
+      "email": "riley@relayai.example",
+      "is_bot": false,
+      "deleted": false
+    },
+    {
+      "id": "U00000014",
+      "name": "dev",
+      "real_name": "Dev Singh",
+      "department": "Support",
+      "role": "Support specialist",
+      "email": "dev@relayai.example",
+      "is_bot": false,
+      "deleted": false
+    },
+    {
+      "id": "U00000015",
+      "name": "zoe",
+      "real_name": "Zoe Garcia",
+      "department": "Support",
+      "role": "Support specialist",
+      "email": "zoe@relayai.example",
+      "is_bot": false,
+      "deleted": false
+    },
+    {
+      "id": "U00000016",
+      "name": "grace",
+      "real_name": "Grace Liu",
+      "department": "CSM",
+      "role": "Head of Customer Success",
+      "email": "grace@relayai.example",
+      "is_bot": false,
+      "deleted": false
+    },
+    {
+      "id": "U00000017",
+      "name": "ben",
+      "real_name": "Ben Carter",
+      "department": "CSM",
+      "role": "Enterprise customer success manager",
+      "email": "ben@relayai.example",
+      "is_bot": false,
+      "deleted": false
+    },
+    {
+      "id": "U00000018",
+      "name": "ava",
+      "real_name": "Ava Thompson",
+      "department": "CSM",
+      "role": "Customer success manager",
+      "email": "ava@relayai.example",
+      "is_bot": false,
+      "deleted": false
+    },
+    {
+      "id": "U00000019",
+      "name": "marco",
+      "real_name": "Marco Rossi",
+      "department": "CSM",
+      "role": "Implementation specialist",
+      "email": "marco@relayai.example",
+      "is_bot": false,
+      "deleted": false
+    },
+    {
+      "id": "U00000020",
+      "name": "imani",
+      "real_name": "Imani Reed",
+      "department": "CSM",
+      "role": "Customer success manager",
+      "email": "imani@relayai.example",
+      "is_bot": false,
+      "deleted": false
+    },
+    {
+      "id": "U00000021",
+      "name": "olivia",
+      "real_name": "Olivia Grant",
+      "department": "Operations",
+      "role": "COO",
+      "email": "olivia@relayai.example",
+      "is_bot": false,
+      "deleted": false
+    },
+    {
+      "id": "U00000022",
+      "name": "henry",
+      "real_name": "Henry Adams",
+      "department": "Operations",
+      "role": "Finance manager",
+      "email": "henry@relayai.example",
+      "is_bot": false,
+      "deleted": false
+    },
+    {
+      "id": "U00000023",
+      "name": "chloe",
+      "real_name": "Chloe Nguyen",
+      "department": "Operations",
+      "role": "People operations",
+      "email": "chloe@relayai.example",
+      "is_bot": false,
+      "deleted": false
+    },
+    {
+      "id": "U00000024",
+      "name": "dan",
+      "real_name": "Dan Wilson",
+      "department": "Operations",
+      "role": "Security and compliance",
+      "email": "dan@relayai.example",
+      "is_bot": false,
+      "deleted": false
+    },
+    {
+      "id": "U00000025",
+      "name": "luca",
+      "real_name": "Luca Bennett",
+      "department": "Operations",
+      "role": "Revenue operations",
+      "email": "luca@relayai.example",
+      "is_bot": false,
+      "deleted": false
+    }
+  ],
+  "channels": [
+    {
+      "id": "C00000001",
+      "name": "eng-platform",
+      "department": "Engineering",
+      "purpose": "Platform reliability, API behavior, and integrations",
+      "is_private": false
+    },
+    {
+      "id": "C00000002",
+      "name": "eng-ml",
+      "department": "Engineering",
+      "purpose": "Retrieval quality, model evaluations, and inference costs",
+      "is_private": false
+    },
+    {
+      "id": "C00000003",
+      "name": "eng-releases",
+      "department": "Engineering",
+      "purpose": "Release gates, migrations, and rollback plans",
+      "is_private": false
+    },
+    {
+      "id": "C00000004",
+      "name": "sales-pipeline",
+      "department": "Sales",
+      "purpose": "Discovery notes, pipeline reviews, and next steps",
+      "is_private": false
+    },
+    {
+      "id": "C00000005",
+      "name": "sales-deal-desk",
+      "department": "Sales",
+      "purpose": "Pricing exceptions, contracts, and approval requests",
+      "is_private": false
+    },
+    {
+      "id": "C00000006",
+      "name": "sales-enablement",
+      "department": "Sales",
+      "purpose": "Demo preparation and positioning",
+      "is_private": false
+    },
+    {
+      "id": "C00000007",
+      "name": "support-triage",
+      "department": "Support",
+      "purpose": "Customer tickets, ownership, and troubleshooting",
+      "is_private": false
+    },
+    {
+      "id": "C00000008",
+      "name": "support-bugs",
+      "department": "Support",
+      "purpose": "Reproductions and engineering escalations",
+      "is_private": false
+    },
+    {
+      "id": "C00000009",
+      "name": "support-playbooks",
+      "department": "Support",
+      "purpose": "Support macros and incident communication",
+      "is_private": false
+    },
+    {
+      "id": "C00000010",
+      "name": "csm-onboarding",
+      "department": "CSM",
+      "purpose": "Implementation milestones and administrator training",
+      "is_private": false
+    },
+    {
+      "id": "C00000011",
+      "name": "csm-renewals",
+      "department": "CSM",
+      "purpose": "Renewal risks and customer outcomes",
+      "is_private": false
+    },
+    {
+      "id": "C00000012",
+      "name": "csm-success",
+      "department": "CSM",
+      "purpose": "Adoption, business reviews, and customer feedback",
+      "is_private": false
+    },
+    {
+      "id": "C00000013",
+      "name": "ops-finance",
+      "department": "Operations",
+      "purpose": "Billing controls and spend approvals",
+      "is_private": true
+    },
+    {
+      "id": "C00000014",
+      "name": "ops-people",
+      "department": "Operations",
+      "purpose": "Hiring, time off, and company logistics",
+      "is_private": false
+    },
+    {
+      "id": "C00000015",
+      "name": "ops-security",
+      "department": "Operations",
+      "purpose": "Access reviews, vendor checks, and data governance",
+      "is_private": true
+    },
+    {
+      "id": "C00000016",
+      "name": "general",
+      "department": "Operations",
+      "purpose": "Company updates and ordinary office conversation",
+      "is_private": false
+    },
+    {
+      "id": "C00000017",
+      "name": "incidents",
+      "department": "Engineering",
+      "purpose": "Coordinated incident response",
+      "is_private": false
+    },
+    {
+      "id": "C00000018",
+      "name": "customer-northstar",
+      "department": "CSM",
+      "purpose": "Internal handoff for Northstar Logistics",
+      "is_private": true
+    },
+    {
+      "id": "C00000019",
+      "name": "customer-helio",
+      "department": "CSM",
+      "purpose": "Internal handoff for Helio Health",
+      "is_private": true
+    },
+    {
+      "id": "C00000020",
+      "name": "launch-june",
+      "department": "Engineering",
+      "purpose": "June release coordination across departments",
+      "is_private": false
+    }
+  ],
+  "messages": [
+    {
+      "type": "message",
+      "user": "U00000021",
+      "channel": "C00000016",
+      "ts": "1780303680.000000",
+      "thread_ts": "1780303680.000000",
+      "timestamp": "2026-06-01T08:48:00.000Z",
+      "text": "June focus: reliable retrieval, a careful June 18 launch, and a measurable Northstar pilot. Please surface blockers early rather than burying them in a weekly recap.",
+      "reply_count": 3,
+      "reply_users": [
+        "U00000006",
+        "U00000016",
+        "U00000001"
+      ]
+    },
+    {
+      "type": "message",
+      "user": "U00000006",
+      "channel": "C00000016",
+      "ts": "1780303860.000000",
+      "thread_ts": "1780303680.000000",
+      "timestamp": "2026-06-01T08:51:00.000Z",
+      "text": "Sales is watching Northstar, Helio security review, and Solstice renewal. EU residency requests remain blocked until we have an actual region."
+    },
+    {
+      "type": "message",
+      "user": "U00000016",
+      "channel": "C00000016",
+      "ts": "1780304700.000000",
+      "thread_ts": "1780303680.000000",
+      "timestamp": "2026-06-01T09:05:00.000Z",
+      "text": "CSM will report task outcomes alongside activity. We are keeping Helio synthetic-data-only throughout the evaluation."
+    },
+    {
+      "type": "message",
+      "user": "U00000002",
+      "channel": "C00000001",
+      "ts": "1780305120.000000",
+      "thread_ts": "1780305120.000000",
+      "timestamp": "2026-06-01T09:12:00.000Z",
+      "text": "Northstar asked whether rotating a service key will break overnight imports. Current flow is create a second key, switch the worker, then revoke the old one. Both keys can be active during the cutover.",
+      "reply_count": 3,
+      "reply_users": [
+        "U00000005",
+        "U00000013",
+        "U00000002"
+      ],
+      "reactions": [
+        {
+          "name": "eyes",
+          "users": [
+            "U00000005",
+            "U00000013"
+          ],
+          "count": 2
+        }
+      ]
+    },
+    {
+      "type": "message",
+      "user": "U00000005",
+      "channel": "C00000001",
+      "ts": "1780305300.000000",
+      "thread_ts": "1780305120.000000",
+      "timestamp": "2026-06-01T09:15:00.000Z",
+      "text": "Please leave the old key valid until the new worker has completed one successful sync. Audit events should show which key was used; the secret itself never appears in logs."
+    },
+    {
+      "type": "message",
+      "user": "U00000013",
+      "channel": "C00000001",
+      "ts": "1780305900.000000",
+      "thread_ts": "1780305120.000000",
+      "timestamp": "2026-06-01T09:25:00.000Z",
+      "text": "I can turn that into a support macro. Is the overlap window fixed?"
+    },
+    {
+      "type": "message",
+      "user": "U00000001",
+      "channel": "C00000016",
+      "ts": "1780306020.000000",
+      "thread_ts": "1780303680.000000",
+      "timestamp": "2026-06-01T09:27:00.000Z",
+      "text": "Engineering gates are permissions, retry behavior, and citation usability. Owners and rollback thresholds are in #eng-releases.",
+      "reactions": [
+        {
+          "name": "white_check_mark",
+          "users": [
+            "U00000021"
+          ],
+          "count": 1
+        }
+      ]
+    },
+    {
+      "type": "message",
+      "user": "U00000002",
+      "channel": "C00000001",
+      "ts": "1780306980.000000",
+      "thread_ts": "1780305120.000000",
+      "timestamp": "2026-06-01T09:43:00.000Z",
+      "text": "No fixed overlap window. Their workspace admin controls revocation. ENG-471 is just improving the UI warning, not changing key behavior.",
+      "reactions": [
+        {
+          "name": "white_check_mark",
+          "users": [
+            "U00000002"
+          ],
+          "count": 1
+        }
+      ]
+    },
+    {
+      "type": "message",
+      "user": "U00000012",
+      "channel": "C00000007",
+      "ts": "1780310400.000000",
+      "thread_ts": "1780310400.000000",
+      "timestamp": "2026-06-01T10:40:00.000Z",
+      "text": "SUP-1769: one Northstar user gets SAML assertion invalid while everyone else can sign in. Their invite is for jane.lee@northstar.example, but the IdP sends jane@northstar.example.",
+      "reply_count": 3,
+      "reply_users": [
+        "U00000013",
+        "U00000017",
+        "U00000012"
+      ]
+    },
+    {
+      "type": "message",
+      "user": "U00000013",
+      "channel": "C00000007",
+      "ts": "1780310580.000000",
+      "thread_ts": "1780310400.000000",
+      "timestamp": "2026-06-01T10:43:00.000Z",
+      "text": "Ask the admin to map NameID to the verified email claim. Do not turn off SAML enforcement for the entire workspace to fix one account."
+    },
+    {
+      "type": "message",
+      "user": "U00000017",
+      "channel": "C00000007",
+      "ts": "1780311180.000000",
+      "thread_ts": "1780310400.000000",
+      "timestamp": "2026-06-01T10:53:00.000Z",
+      "text": "Morgan can update the mapping during the June 5 admin session. Does the invited account need to be recreated?"
+    },
+    {
+      "type": "message",
+      "user": "U00000022",
+      "channel": "C00000013",
+      "ts": "1780311900.000000",
+      "thread_ts": "1780311900.000000",
+      "timestamp": "2026-06-01T11:05:00.000Z",
+      "text": "Software purchases below $500 need the budget owner’s approval. $500–$5,000 requires Finance, and above $5,000 also needs Olivia. Annual contract value counts, not the first monthly invoice.",
+      "reply_count": 3,
+      "reply_users": [
+        "U00000003",
+        "U00000022",
+        "U00000021"
+      ]
+    },
+    {
+      "type": "message",
+      "user": "U00000003",
+      "channel": "C00000013",
+      "ts": "1780312080.000000",
+      "thread_ts": "1780311900.000000",
+      "timestamp": "2026-06-01T11:08:00.000Z",
+      "text": "Our evaluation service is $450 per month. That sounds below $500, but the annual commitment is $5,400."
+    },
+    {
+      "type": "message",
+      "user": "U00000022",
+      "channel": "C00000013",
+      "ts": "1780312680.000000",
+      "thread_ts": "1780311900.000000",
+      "timestamp": "2026-06-01T11:18:00.000Z",
+      "text": "Exactly: use $5,400 for approval. Attach the vendor, cost center, renewal date, and whether it processes customer data."
+    },
+    {
+      "type": "message",
+      "user": "U00000012",
+      "channel": "C00000007",
+      "ts": "1780312920.000000",
+      "thread_ts": "1780310400.000000",
+      "timestamp": "2026-06-01T11:22:00.000Z",
+      "text": "No. Updated NameID, retried in an incognito window, and the existing invited account logged in successfully. Closing with the mapping example.",
+      "reactions": [
+        {
+          "name": "white_check_mark",
+          "users": [
+            "U00000012"
+          ],
+          "count": 1
+        }
+      ]
+    },
+    {
+      "type": "message",
+      "user": "U00000021",
+      "channel": "C00000013",
+      "ts": "1780314300.000000",
+      "thread_ts": "1780311900.000000",
+      "timestamp": "2026-06-01T11:45:00.000Z",
+      "text": "Bring that request through the purchase record before subscribing. Security review is a separate requirement for customer-data processors.",
+      "reactions": [
+        {
+          "name": "white_check_mark",
+          "users": [
+            "U00000022"
+          ],
+          "count": 1
+        }
+      ]
+    },
+    {
+      "type": "message",
+      "user": "U00000019",
+      "channel": "C00000010",
+      "ts": "1780323300.000000",
+      "thread_ts": "1780323300.000000",
+      "timestamp": "2026-06-01T14:15:00.000Z",
+      "text": "CSM-104 Northstar plan: name the admin, validate SAML, connect only the approved SOP folder, then train the warehouse leads before inviting the other 180 users.",
+      "reply_count": 3,
+      "reply_users": [
+        "U00000017",
+        "U00000007",
+        "U00000019"
+      ],
+      "reactions": [
+        {
+          "name": "eyes",
+          "users": [
+            "U00000017",
+            "U00000007"
+          ],
+          "count": 2
+        }
+      ]
+    },
+    {
+      "type": "message",
+      "user": "U00000017",
+      "channel": "C00000010",
+      "ts": "1780323480.000000",
+      "thread_ts": "1780323300.000000",
+      "timestamp": "2026-06-01T14:18:00.000Z",
+      "text": "Morgan is the admin. The executive sponsor wants evidence that people find current instructions instead of last quarter’s PDF copies."
+    },
+    {
+      "type": "message",
+      "user": "U00000007",
+      "channel": "C00000010",
+      "ts": "1780324320.000000",
+      "thread_ts": "1780323300.000000",
+      "timestamp": "2026-06-01T14:32:00.000Z",
+      "text": "Baseline from discovery is 6.4 minutes per lookup. Pilot goal below two minutes, plus 85% of answers citing the approved folder."
+    },
+    {
+      "type": "message",
+      "user": "U00000019",
+      "channel": "C00000010",
+      "ts": "1780325760.000000",
+      "thread_ts": "1780323300.000000",
+      "timestamp": "2026-06-01T14:56:00.000Z",
+      "text": "Added those outcomes to the checklist. Broad access stays gated until Morgan signs off on the source folder and the admin training.",
+      "reactions": [
+        {
+          "name": "white_check_mark",
+          "users": [
+            "U00000019"
+          ],
+          "count": 1
+        }
+      ]
+    },
+    {
+      "type": "message",
+      "user": "U00000007",
+      "channel": "C00000004",
+      "ts": "1780330140.000000",
+      "thread_ts": "1780330140.000000",
+      "timestamp": "2026-06-01T16:09:00.000Z",
+      "text": "Northstar Logistics discovery: 180 internal users, SOP search across Drive and Slack, and a hard requirement for SAML before rollout. Their pain is warehouse staff finding obsolete handoff instructions.",
+      "reply_count": 3,
+      "reply_users": [
+        "U00000008",
+        "U00000006",
+        "U00000007"
+      ]
+    },
+    {
+      "type": "message",
+      "user": "U00000008",
+      "channel": "C00000004",
+      "ts": "1780330320.000000",
+      "thread_ts": "1780330140.000000",
+      "timestamp": "2026-06-01T16:12:00.000Z",
+      "text": "I can demo the current-document citation path. Do not position this as an autonomous dispatch agent; the product retrieves knowledge and drafts workflow steps for review."
+    },
+    {
+      "type": "message",
+      "user": "U00000006",
+      "channel": "C00000004",
+      "ts": "1780331160.000000",
+      "thread_ts": "1780330140.000000",
+      "timestamp": "2026-06-01T16:26:00.000Z",
+      "text": "Success criteria should be time to find an approved SOP, not total questions asked. Please confirm who owns source-document cleanup."
+    },
+    {
+      "type": "message",
+      "user": "U00000007",
+      "channel": "C00000004",
+      "ts": "1780332720.000000",
+      "thread_ts": "1780330140.000000",
+      "timestamp": "2026-06-01T16:52:00.000Z",
+      "text": "Morgan Hale owns the SOP library. Pilot goal is median lookup below two minutes, with 85% of answers citing the approved folder. Admin session booked June 5.",
+      "reactions": [
+        {
+          "name": "white_check_mark",
+          "users": [
+            "U00000007"
+          ],
+          "count": 1
+        }
+      ]
+    },
+    {
+      "type": "message",
+      "user": "U00000024",
+      "channel": "C00000015",
+      "ts": "1780391400.000000",
+      "thread_ts": "1780391400.000000",
+      "timestamp": "2026-06-02T09:10:00.000Z",
+      "text": "Helio requested our SOC 2 Type II report. Share it only through the trust portal after their NDA is signed. Do not attach the report to a prospect email chain.",
+      "reply_count": 3,
+      "reply_users": [
+        "U00000007",
+        "U00000024",
+        "U00000025"
+      ]
+    },
+    {
+      "type": "message",
+      "user": "U00000007",
+      "channel": "C00000015",
+      "ts": "1780391640.000000",
+      "thread_ts": "1780391400.000000",
+      "timestamp": "2026-06-02T09:14:00.000Z",
+      "text": "Their security analyst wants the report plus subprocessor list. Can the list be shared before the NDA?"
+    },
+    {
+      "type": "message",
+      "user": "U00000024",
+      "channel": "C00000015",
+      "ts": "1780392240.000000",
+      "thread_ts": "1780391400.000000",
+      "timestamp": "2026-06-02T09:24:00.000Z",
+      "text": "The public subprocessor list can be shared directly. The full audit report and penetration-test details stay behind verified portal access."
+    },
+    {
+      "type": "message",
+      "user": "U00000025",
+      "channel": "C00000015",
+      "ts": "1780393860.000000",
+      "thread_ts": "1780391400.000000",
+      "timestamp": "2026-06-02T09:51:00.000Z",
+      "text": "NDA is signed and portal invite sent to the named analyst. Logged the request and access expiry in the security-review record."
+    },
+    {
+      "type": "message",
+      "user": "U00000003",
+      "channel": "C00000002",
+      "ts": "1780394700.000000",
+      "thread_ts": "1780394700.000000",
+      "timestamp": "2026-06-02T10:05:00.000Z",
+      "text": "Found a nasty evaluation case: a sales viewer got a citation to an executive-only Drive folder. The answer text looked harmless, but the title itself leaks information. Opening ENG-482.",
+      "reply_count": 3,
+      "reply_users": [
+        "U00000024",
+        "U00000001",
+        "U00000003"
+      ]
+    },
+    {
+      "type": "message",
+      "user": "U00000024",
+      "channel": "C00000002",
+      "ts": "1780394940.000000",
+      "thread_ts": "1780394700.000000",
+      "timestamp": "2026-06-02T10:09:00.000Z",
+      "text": "ACL filtering has to happen before candidate passages reach the answer step. Hiding the link in the browser is insufficient. Please include folder titles in the regression case."
+    },
+    {
+      "type": "message",
+      "user": "U00000001",
+      "channel": "C00000002",
+      "ts": "1780395540.000000",
+      "thread_ts": "1780394700.000000",
+      "timestamp": "2026-06-02T10:19:00.000Z",
+      "text": "Block the June launch on this. Reindex the affected sandbox after fixing the permission snapshot; no customer workspaces are enabled on this new retrieval path yet."
+    },
+    {
+      "type": "message",
+      "user": "U00000003",
+      "channel": "C00000002",
+      "ts": "1780396620.000000",
+      "thread_ts": "1780394700.000000",
+      "timestamp": "2026-06-02T10:37:00.000Z",
+      "text": "Added viewer, departed employee, and revoked-folder cases. All unauthorized candidates are excluded before scoring. I will bring the evidence to the June 12 release gate."
+    },
+    {
+      "type": "message",
+      "user": "U00000018",
+      "channel": "C00000011",
+      "ts": "1780398840.000000",
+      "thread_ts": "1780398840.000000",
+      "timestamp": "2026-06-02T11:14:00.000Z",
+      "text": "Solstice renewal due June 30. Only 23 of 80 licensed people used RelayAI last week. Champion says the team defaults to asking one analyst for policy links.",
+      "reply_count": 3,
+      "reply_users": [
+        "U00000016",
+        "U00000018",
+        "U00000006"
+      ]
+    },
+    {
+      "type": "message",
+      "user": "U00000016",
+      "channel": "C00000011",
+      "ts": "1780399080.000000",
+      "thread_ts": "1780398840.000000",
+      "timestamp": "2026-06-02T11:18:00.000Z",
+      "text": "Seat utilization alone is not enough. Find the recurring task we can shorten and measure whether the people doing that task return."
+    },
+    {
+      "type": "message",
+      "user": "U00000018",
+      "channel": "C00000011",
+      "ts": "1780399920.000000",
+      "thread_ts": "1780398840.000000",
+      "timestamp": "2026-06-02T11:32:00.000Z",
+      "text": "Planning a policy-search workshop with their analyst on June 11. Success measure is weekly active usage among the 35 people handling procurement reviews."
+    },
+    {
+      "type": "message",
+      "user": "U00000006",
+      "channel": "C00000011",
+      "ts": "1780401360.000000",
+      "thread_ts": "1780398840.000000",
+      "timestamp": "2026-06-02T11:56:00.000Z",
+      "text": "Please attach that plan to the renewal record. Sales will handle commercial terms separately, without implying a discount solves the adoption problem."
+    },
+    {
+      "type": "message",
+      "user": "U00000015",
+      "channel": "C00000008",
+      "ts": "1780405680.000000",
+      "thread_ts": "1780405680.000000",
+      "timestamp": "2026-06-02T13:08:00.000Z",
+      "text": "SUP-1774: MapleCloud sees a good answer but its source link returns access denied after an hour. I can reproduce by leaving a result tab open.",
+      "reply_count": 3,
+      "reply_users": [
+        "U00000004",
+        "U00000024",
+        "U00000015"
+      ]
+    },
+    {
+      "type": "message",
+      "user": "U00000004",
+      "channel": "C00000008",
+      "ts": "1780405920.000000",
+      "thread_ts": "1780405680.000000",
+      "timestamp": "2026-06-02T13:12:00.000Z",
+      "text": "The citation drawer cached a signed download URL. It should request a new URL when the user opens the source."
+    },
+    {
+      "type": "message",
+      "user": "U00000024",
+      "channel": "C00000008",
+      "ts": "1780406520.000000",
+      "thread_ts": "1780405680.000000",
+      "timestamp": "2026-06-02T13:22:00.000Z",
+      "text": "A refresh must still recheck permissions. Please do not just lengthen the signed-link lifetime."
+    },
+    {
+      "type": "message",
+      "user": "U00000015",
+      "channel": "C00000008",
+      "ts": "1780408260.000000",
+      "thread_ts": "1780405680.000000",
+      "timestamp": "2026-06-02T13:51:00.000Z",
+      "text": "Patch verified: a stale tab fetches a fresh URL, and revoking source access correctly prevents opening it. Customer confirmed the fix."
+    },
+    {
+      "type": "message",
+      "user": "U00000009",
+      "channel": "C00000005",
+      "ts": "1780410840.000000",
+      "thread_ts": "1780410840.000000",
+      "timestamp": "2026-06-02T14:34:00.000Z",
+      "text": "DEAL-211: Solstice wants 18% off a twelve-month enterprise agreement if they sign before month end. Is that within my approval limit?",
+      "reply_count": 3,
+      "reply_users": [
+        "U00000025",
+        "U00000022",
+        "U00000006"
+      ]
+    },
+    {
+      "type": "message",
+      "user": "U00000025",
+      "channel": "C00000005",
+      "ts": "1780411080.000000",
+      "thread_ts": "1780410840.000000",
+      "timestamp": "2026-06-02T14:38:00.000Z",
+      "text": "AE limit is 10%. Jordan can approve 11–15%. Anything above 15%, nonstandard payment terms, or custom indemnity requires Olivia and Finance."
+    },
+    {
+      "type": "message",
+      "user": "U00000022",
+      "channel": "C00000005",
+      "ts": "1780411920.000000",
+      "thread_ts": "1780410840.000000",
+      "timestamp": "2026-06-02T14:52:00.000Z",
+      "text": "Please attach the gross margin calculation and the full order form. Do not combine a discount with free implementation without showing both concessions."
+    },
+    {
+      "type": "message",
+      "user": "U00000006",
+      "channel": "C00000005",
+      "ts": "1780412700.000000",
+      "thread_ts": "1780410840.000000",
+      "timestamp": "2026-06-02T15:05:00.000Z",
+      "text": "For this one, ask for a two-year term before escalating 18%. No verbal commitment until the exception is recorded in the deal desk."
+    },
+    {
+      "type": "message",
+      "user": "U00000023",
+      "channel": "C00000016",
+      "ts": "1780420140.000000",
+      "thread_ts": "1780420140.000000",
+      "timestamp": "2026-06-02T17:09:00.000Z",
+      "text": "Ordering Thursday lunch at noon. Reply here with dietary restrictions by tomorrow morning; use the form for your meal choice so I do not lose it in the thread.",
+      "reply_count": 3,
+      "reply_users": [
+        "U00000004",
+        "U00000012",
+        "U00000023"
+      ]
+    },
+    {
+      "type": "message",
+      "user": "U00000004",
+      "channel": "C00000016",
+      "ts": "1780420380.000000",
+      "thread_ts": "1780420140.000000",
+      "timestamp": "2026-06-02T17:13:00.000Z",
+      "text": "Vegetarian for me. Also, whoever left a navy water bottle in the meeting room, it is on the kitchen counter."
+    },
+    {
+      "type": "message",
+      "user": "U00000012",
+      "channel": "C00000016",
+      "ts": "1780421220.000000",
+      "thread_ts": "1780420140.000000",
+      "timestamp": "2026-06-02T17:27:00.000Z",
+      "text": "Gluten-free please. I will cover the support queue through lunch and join a little later."
+    },
+    {
+      "type": "message",
+      "user": "U00000023",
+      "channel": "C00000016",
+      "ts": "1780422540.000000",
+      "thread_ts": "1780420140.000000",
+      "timestamp": "2026-06-02T17:49:00.000Z",
+      "text": "Noted both. There will be a labeled option saved for the late support shift."
+    },
+    {
+      "type": "message",
+      "user": "U00000008",
+      "channel": "C00000006",
+      "ts": "1780478700.000000",
+      "thread_ts": "1780478700.000000",
+      "timestamp": "2026-06-03T09:25:00.000Z",
+      "text": "Quick reminder before the Helio demo: use the sanitized healthcare sandbox. The slide deck contains fictional patient names; never paste production records into the demo workspace.",
+      "reply_count": 3,
+      "reply_users": [
+        "U00000010",
+        "U00000008",
+        "U00000024"
+      ]
+    },
+    {
+      "type": "message",
+      "user": "U00000010",
+      "channel": "C00000006",
+      "ts": "1780479000.000000",
+      "thread_ts": "1780478700.000000",
+      "timestamp": "2026-06-03T09:30:00.000Z",
+      "text": "Does the sandbox reset wipe the saved connector settings? My discovery demo tomorrow depends on the prepared Drive collection."
+    },
+    {
+      "type": "message",
+      "user": "U00000008",
+      "channel": "C00000006",
+      "ts": "1780479840.000000",
+      "thread_ts": "1780478700.000000",
+      "timestamp": "2026-06-03T09:44:00.000Z",
+      "text": "Only generated questions and answer history are reset nightly. Seeded documents and demo connector configuration remain."
+    },
+    {
+      "type": "message",
+      "user": "U00000024",
+      "channel": "C00000006",
+      "ts": "1780480620.000000",
+      "thread_ts": "1780478700.000000",
+      "timestamp": "2026-06-03T09:57:00.000Z",
+      "text": "And please do not say we support protected health information. Helio is assessing a pilot with synthetic records; we have not signed a BAA."
+    },
+    {
+      "type": "message",
+      "user": "U00000002",
+      "channel": "C00000001",
+      "ts": "1780485960.000000",
+      "thread_ts": "1780485960.000000",
+      "timestamp": "2026-06-03T11:26:00.000Z",
+      "text": "MapleCloud needs to know whether workflow webhooks are exactly once. They are at least once: retry delays are 30 seconds, 2 minutes, then 10 minutes, with a 24-hour delivery deadline.",
+      "reply_count": 3,
+      "reply_users": [
+        "U00000008",
+        "U00000002",
+        "U00000011"
+      ]
+    },
+    {
+      "type": "message",
+      "user": "U00000008",
+      "channel": "C00000001",
+      "ts": "1780486260.000000",
+      "thread_ts": "1780485960.000000",
+      "timestamp": "2026-06-03T11:31:00.000Z",
+      "text": "Thanks. I had said retries were automatic but did not promise exactly once. What should they deduplicate on?"
+    },
+    {
+      "type": "message",
+      "user": "U00000002",
+      "channel": "C00000001",
+      "ts": "1780486860.000000",
+      "thread_ts": "1780485960.000000",
+      "timestamp": "2026-06-03T11:41:00.000Z",
+      "text": "Use event_id as the idempotency key, and return a 2xx promptly before doing slow work. The event_id stays the same across delivery attempts."
+    },
+    {
+      "type": "message",
+      "user": "U00000011",
+      "channel": "C00000001",
+      "ts": "1780487940.000000",
+      "thread_ts": "1780485960.000000",
+      "timestamp": "2026-06-03T11:59:00.000Z",
+      "text": "Putting that in SUP-1782 and the integration guide. A timeout can produce a retry even if their endpoint already accepted the first attempt."
+    },
+    {
+      "type": "message",
+      "user": "U00000011",
+      "channel": "C00000007",
+      "ts": "1780496700.000000",
+      "thread_ts": "1780496700.000000",
+      "timestamp": "2026-06-03T14:25:00.000Z",
+      "text": "SUP-1782: MapleCloud believes repeated webhook delivery means they are charged twice. Need the event IDs and invoice export before assuming which system duplicated the event.",
+      "reply_count": 3,
+      "reply_users": [
+        "U00000014",
+        "U00000002",
+        "U00000011"
+      ]
+    },
+    {
+      "type": "message",
+      "user": "U00000014",
+      "channel": "C00000007",
+      "ts": "1780497000.000000",
+      "thread_ts": "1780496700.000000",
+      "timestamp": "2026-06-03T14:30:00.000Z",
+      "text": "Asked for event_id, response status, and timestamps. They have two delivery attempts with the same event_id after their endpoint timed out."
+    },
+    {
+      "type": "message",
+      "user": "U00000002",
+      "channel": "C00000007",
+      "ts": "1780497600.000000",
+      "thread_ts": "1780496700.000000",
+      "timestamp": "2026-06-03T14:40:00.000Z",
+      "text": "Delivery attempts alone are not billable executions. Their consumer should deduplicate on event_id. Finance is checking whether our own ledger has a duplicate too."
+    },
+    {
+      "type": "message",
+      "user": "U00000011",
+      "channel": "C00000007",
+      "ts": "1780498560.000000",
+      "thread_ts": "1780496700.000000",
+      "timestamp": "2026-06-03T14:56:00.000Z",
+      "text": "Keep ticket open until Finance reconciles it. We can explain at-least-once delivery now, but we cannot say the invoice is correct before that check."
+    },
+    {
+      "type": "message",
+      "user": "U00000020",
+      "channel": "C00000010",
+      "ts": "1780501680.000000",
+      "thread_ts": "1780501680.000000",
+      "timestamp": "2026-06-03T15:48:00.000Z",
+      "text": "Helio onboarding should use synthetic records and internal staff policies only. Elena asked whether clinicians can upload real patient charts during the trial.",
+      "reply_count": 3,
+      "reply_users": [
+        "U00000024",
+        "U00000019",
+        "U00000020"
+      ]
+    },
+    {
+      "type": "message",
+      "user": "U00000024",
+      "channel": "C00000010",
+      "ts": "1780501980.000000",
+      "thread_ts": "1780501680.000000",
+      "timestamp": "2026-06-03T15:53:00.000Z",
+      "text": "No. We have not signed a business associate agreement and the pilot does not permit PHI. Put that boundary in the admin training, not just the contract notes."
+    },
+    {
+      "type": "message",
+      "user": "U00000019",
+      "channel": "C00000010",
+      "ts": "1780502820.000000",
+      "thread_ts": "1780501680.000000",
+      "timestamp": "2026-06-03T16:07:00.000Z",
+      "text": "I will use a fake vacation-policy document and a synthetic scheduling guide in the workshop. Both are already in the sanitized sandbox."
+    },
+    {
+      "type": "message",
+      "user": "U00000020",
+      "channel": "C00000010",
+      "ts": "1780504260.000000",
+      "thread_ts": "1780501680.000000",
+      "timestamp": "2026-06-03T16:31:00.000Z",
+      "text": "Elena acknowledged the boundary. Their security analyst still needs to approve subprocessors before any sandbox expansion."
+    },
+    {
+      "type": "message",
+      "user": "U00000023",
+      "channel": "C00000014",
+      "ts": "1780504500.000000",
+      "thread_ts": "1780504500.000000",
+      "timestamp": "2026-06-03T16:35:00.000Z",
+      "text": "We are interviewing two support engineer candidates next week. Jamie covers customer communication, Riley covers troubleshooting, and Alex does the hiring-manager interview.",
+      "reply_count": 3,
+      "reply_users": [
+        "U00000011",
+        "U00000023",
+        "U00000013"
+      ]
+    },
+    {
+      "type": "message",
+      "user": "U00000011",
+      "channel": "C00000014",
+      "ts": "1780504800.000000",
+      "thread_ts": "1780504500.000000",
+      "timestamp": "2026-06-03T16:40:00.000Z",
+      "text": "Please use the same connector-failure scenario for both candidates. A clever guess should not outscore someone who asks for logs and checks permissions."
+    },
+    {
+      "type": "message",
+      "user": "U00000023",
+      "channel": "C00000014",
+      "ts": "1780505400.000000",
+      "thread_ts": "1780504500.000000",
+      "timestamp": "2026-06-03T16:50:00.000Z",
+      "text": "Rubric includes diagnostic sequence, clarity, and appropriate escalation. Submit notes independently before the debrief so the first opinion does not anchor everyone."
+    },
+    {
+      "type": "message",
+      "user": "U00000013",
+      "channel": "C00000014",
+      "ts": "1780507020.000000",
+      "thread_ts": "1780504500.000000",
+      "timestamp": "2026-06-03T17:17:00.000Z",
+      "text": "I will keep the exercise to 30 minutes and use synthetic logs. Candidates do not need access to a live customer environment."
+    },
+    {
+      "type": "message",
+      "user": "U00000011",
+      "channel": "C00000009",
+      "ts": "1780563960.000000",
+      "thread_ts": "1780563960.000000",
+      "timestamp": "2026-06-04T09:06:00.000Z",
+      "text": "Support targets: P1 means a production workspace cannot complete its core workflow. Acknowledge in 15 minutes and page the on-call engineer. P2 is a degraded workflow with a workaround; acknowledge within 4 business hours.",
+      "reply_count": 3,
+      "reply_users": [
+        "U00000014",
+        "U00000011",
+        "U00000013"
+      ],
+      "reactions": [
+        {
+          "name": "eyes",
+          "users": [
+            "U00000014",
+            "U00000011"
+          ],
+          "count": 2
+        }
+      ]
+    },
+    {
+      "type": "message",
+      "user": "U00000014",
+      "channel": "C00000009",
+      "ts": "1780564320.000000",
+      "thread_ts": "1780563960.000000",
+      "timestamp": "2026-06-04T09:12:00.000Z",
+      "text": "What if one user is blocked by SSO but the workspace is otherwise working?"
+    },
+    {
+      "type": "message",
+      "user": "U00000011",
+      "channel": "C00000009",
+      "ts": "1780564920.000000",
+      "thread_ts": "1780563960.000000",
+      "timestamp": "2026-06-04T09:22:00.000Z",
+      "text": "Usually P2. If that user is the only admin and a business-critical rollout is blocked, reassess impact with CSM. Severity is about impact, not how loud the request is."
+    },
+    {
+      "type": "message",
+      "user": "U00000013",
+      "channel": "C00000009",
+      "ts": "1780565880.000000",
+      "thread_ts": "1780563960.000000",
+      "timestamp": "2026-06-04T09:38:00.000Z",
+      "text": "Added examples to the queue guide. The pager rotation is in #eng-platform; do not rely on a random engineer noticing a mention.",
+      "reactions": [
+        {
+          "name": "white_check_mark",
+          "users": [
+            "U00000011"
+          ],
+          "count": 1
+        }
+      ]
+    },
+    {
+      "type": "message",
+      "user": "U00000016",
+      "channel": "C00000012",
+      "ts": "1780570320.000000",
+      "thread_ts": "1780570320.000000",
+      "timestamp": "2026-06-04T10:52:00.000Z",
+      "text": "Please use completed workflow executions for weekly active usage in customer reviews. A login with no work completed is not adoption.",
+      "reply_count": 3,
+      "reply_users": [
+        "U00000018",
+        "U00000016",
+        "U00000025"
+      ]
+    },
+    {
+      "type": "message",
+      "user": "U00000018",
+      "channel": "C00000012",
+      "ts": "1780570680.000000",
+      "thread_ts": "1780570320.000000",
+      "timestamp": "2026-06-04T10:58:00.000Z",
+      "text": "For Solstice, should repeated use by the same analyst count once or once per question?"
+    },
+    {
+      "type": "message",
+      "user": "U00000016",
+      "channel": "C00000012",
+      "ts": "1780571520.000000",
+      "thread_ts": "1780570320.000000",
+      "timestamp": "2026-06-04T11:12:00.000Z",
+      "text": "Once per person per week for the adoption metric. Track successful executions separately as volume. Otherwise one power user can hide an inactive team."
+    },
+    {
+      "type": "message",
+      "user": "U00000025",
+      "channel": "C00000012",
+      "ts": "1780572180.000000",
+      "thread_ts": "1780570320.000000",
+      "timestamp": "2026-06-04T11:23:00.000Z",
+      "text": "Dashboard definitions updated: active person = at least one completed execution in the trailing seven days. Connector syncs do not count.",
+      "reactions": [
+        {
+          "name": "white_check_mark",
+          "users": [
+            "U00000016"
+          ],
+          "count": 1
+        }
+      ]
+    },
+    {
+      "type": "message",
+      "user": "U00000009",
+      "channel": "C00000004",
+      "ts": "1780575600.000000",
+      "thread_ts": "1780575600.000000",
+      "timestamp": "2026-06-04T12:20:00.000Z",
+      "text": "Atlas Retail procurement asks whether all processing can stay in Frankfurt. This is a blocker, not a nice-to-have. What can I commit to?",
+      "reply_count": 3,
+      "reply_users": [
+        "U00000024",
+        "U00000006",
+        "U00000009"
+      ]
+    },
+    {
+      "type": "message",
+      "user": "U00000024",
+      "channel": "C00000004",
+      "ts": "1780575960.000000",
+      "thread_ts": "1780575600.000000",
+      "timestamp": "2026-06-04T12:26:00.000Z",
+      "text": "Current hosting is US East. An EU region is on the roadmap but has no committed availability date. Standard contractual clauses do not make it EU-only processing."
+    },
+    {
+      "type": "message",
+      "user": "U00000006",
+      "channel": "C00000004",
+      "ts": "1780576800.000000",
+      "thread_ts": "1780575600.000000",
+      "timestamp": "2026-06-04T12:40:00.000Z",
+      "text": "State the current limitation clearly. We cannot trade away a residency requirement with a discount. Mark opportunity blocked by residency."
+    },
+    {
+      "type": "message",
+      "user": "U00000009",
+      "channel": "C00000004",
+      "ts": "1780577580.000000",
+      "thread_ts": "1780575600.000000",
+      "timestamp": "2026-06-04T12:53:00.000Z",
+      "text": "Updated the CRM and sent the accurate architecture statement. They will revisit after we have an EU deployment ready, not on a speculative launch month.",
+      "reactions": [
+        {
+          "name": "white_check_mark",
+          "users": [
+            "U00000009"
+          ],
+          "count": 1
+        }
+      ]
+    },
+    {
+      "type": "message",
+      "user": "U00000022",
+      "channel": "C00000013",
+      "ts": "1780584600.000000",
+      "thread_ts": "1780584600.000000",
+      "timestamp": "2026-06-04T14:50:00.000Z",
+      "text": "Reminder: net-30 invoices get a reminder at day 25 and an overdue notice at day 31. Service suspension is not automatic on day 31.",
+      "reply_count": 3,
+      "reply_users": [
+        "U00000017",
+        "U00000022",
+        "U00000021"
+      ]
+    },
+    {
+      "type": "message",
+      "user": "U00000017",
+      "channel": "C00000013",
+      "ts": "1780584960.000000",
+      "thread_ts": "1780584600.000000",
+      "timestamp": "2026-06-04T14:56:00.000Z",
+      "text": "Northstar asked about this during procurement. When can access actually be suspended?"
+    },
+    {
+      "type": "message",
+      "user": "U00000022",
+      "channel": "C00000013",
+      "ts": "1780585560.000000",
+      "thread_ts": "1780584600.000000",
+      "timestamp": "2026-06-04T15:06:00.000Z",
+      "text": "Finance and CSM review at 45 days overdue, with a written notice and a chance to resolve the issue. Never let a support agent threaten suspension ad hoc."
+    },
+    {
+      "type": "message",
+      "user": "U00000001",
+      "channel": "C00000003",
+      "ts": "1780585800.000000",
+      "thread_ts": "1780585800.000000",
+      "timestamp": "2026-06-04T15:10:00.000Z",
+      "text": "June 18 rollout plan: enable 5% of eligible workspaces first. Hold for 30 minutes. Roll back if answer errors exceed 1% or p95 response latency stays above 3 seconds for 10 minutes.",
+      "reply_count": 3,
+      "reply_users": [
+        "U00000005",
+        "U00000004",
+        "U00000001"
+      ]
+    },
+    {
+      "type": "message",
+      "user": "U00000005",
+      "channel": "C00000003",
+      "ts": "1780586160.000000",
+      "thread_ts": "1780585800.000000",
+      "timestamp": "2026-06-04T15:16:00.000Z",
+      "text": "The old retrieval path stays available behind the feature flag. Connector workers do not need to be restarted during a rollback."
+    },
+    {
+      "type": "message",
+      "user": "U00000004",
+      "channel": "C00000003",
+      "ts": "1780586760.000000",
+      "thread_ts": "1780585800.000000",
+      "timestamp": "2026-06-04T15:26:00.000Z",
+      "text": "I will keep the new citation drawer disabled until the backend flag is on. That prevents a half-migrated UI."
+    },
+    {
+      "type": "message",
+      "user": "U00000021",
+      "channel": "C00000013",
+      "ts": "1780587180.000000",
+      "thread_ts": "1780584600.000000",
+      "timestamp": "2026-06-04T15:33:00.000Z",
+      "text": "Approved wording is in the billing playbook. A disputed invoice should have a named owner and review date rather than falling through the generic reminder sequence.",
+      "reactions": [
+        {
+          "name": "white_check_mark",
+          "users": [
+            "U00000022"
+          ],
+          "count": 1
+        }
+      ]
+    },
+    {
+      "type": "message",
+      "user": "U00000001",
+      "channel": "C00000003",
+      "ts": "1780587840.000000",
+      "thread_ts": "1780585800.000000",
+      "timestamp": "2026-06-04T15:44:00.000Z",
+      "text": "Good. Erin owns the switch, Priya watches quality, and Alex handles the support notice. Next gate is June 12, not the deployment day.",
+      "reactions": [
+        {
+          "name": "white_check_mark",
+          "users": [
+            "U00000001"
+          ],
+          "count": 1
+        }
+      ]
+    },
+    {
+      "type": "message",
+      "user": "U00000003",
+      "channel": "C00000002",
+      "ts": "1780652520.000000",
+      "thread_ts": "1780652520.000000",
+      "timestamp": "2026-06-05T09:42:00.000Z",
+      "text": "The evaluation misses pricing tables when a row gets split from its column heading. Trying 600-token chunks with 80-token overlap, while preserving markdown tables as a single unit when they fit.",
+      "reply_count": 3,
+      "reply_users": [
+        "U00000004",
+        "U00000003",
+        "U00000001"
+      ]
+    },
+    {
+      "type": "message",
+      "user": "U00000004",
+      "channel": "C00000002",
+      "ts": "1780652940.000000",
+      "thread_ts": "1780652520.000000",
+      "timestamp": "2026-06-05T09:49:00.000Z",
+      "text": "Can citations still jump to the original heading? A raw chunk number would be pretty confusing to users."
+    },
+    {
+      "type": "message",
+      "user": "U00000003",
+      "channel": "C00000002",
+      "ts": "1780653540.000000",
+      "thread_ts": "1780652520.000000",
+      "timestamp": "2026-06-05T09:59:00.000Z",
+      "text": "Yes, source section IDs stay attached. We are measuring retrieval recall separately from answer quality so a fluent answer does not hide a missed passage."
+    },
+    {
+      "type": "message",
+      "user": "U00000024",
+      "channel": "C00000015",
+      "ts": "1780653780.000000",
+      "thread_ts": "1780653780.000000",
+      "timestamp": "2026-06-05T10:03:00.000Z",
+      "text": "When a source document is deleted, its searchable content is removed on the next successful sync, targeted within 24 hours. Encrypted backups age out within 30 days.",
+      "reply_count": 3,
+      "reply_users": [
+        "U00000012",
+        "U00000024",
+        "U00000002"
+      ]
+    },
+    {
+      "type": "message",
+      "user": "U00000012",
+      "channel": "C00000015",
+      "ts": "1780654200.000000",
+      "thread_ts": "1780653780.000000",
+      "timestamp": "2026-06-05T10:10:00.000Z",
+      "text": "Customers sometimes hear deletion complete and assume there can be no copy anywhere. Which wording should Support use?"
+    },
+    {
+      "type": "message",
+      "user": "U00000001",
+      "channel": "C00000002",
+      "ts": "1780654620.000000",
+      "thread_ts": "1780652520.000000",
+      "timestamp": "2026-06-05T10:17:00.000Z",
+      "text": "Ship the boundary fix only if the 40-query table set improves without hurting prose. Keep the previous chunker available for comparison."
+    },
+    {
+      "type": "message",
+      "user": "U00000024",
+      "channel": "C00000015",
+      "ts": "1780654800.000000",
+      "thread_ts": "1780653780.000000",
+      "timestamp": "2026-06-05T10:20:00.000Z",
+      "text": "Say removed from active search after sync; backups expire within 30 days. Legal holds are an exception handled by Security, not a promise Support can override."
+    },
+    {
+      "type": "message",
+      "user": "U00000002",
+      "channel": "C00000015",
+      "ts": "1780655640.000000",
+      "thread_ts": "1780653780.000000",
+      "timestamp": "2026-06-05T10:34:00.000Z",
+      "text": "Deletion events retain a non-content audit record. We do not keep deleted document text in the audit stream."
+    },
+    {
+      "type": "message",
+      "user": "U00000014",
+      "channel": "C00000007",
+      "ts": "1780662660.000000",
+      "thread_ts": "1780662660.000000",
+      "timestamp": "2026-06-05T12:31:00.000Z",
+      "text": "BrightCart import says missing email column, but the first column is visibly email. File came from Excel, encoded as UTF-8 with a BOM.",
+      "reply_count": 3,
+      "reply_users": [
+        "U00000002",
+        "U00000014"
+      ]
+    },
+    {
+      "type": "message",
+      "user": "U00000002",
+      "channel": "C00000007",
+      "ts": "1780663080.000000",
+      "thread_ts": "1780662660.000000",
+      "timestamp": "2026-06-05T12:38:00.000Z",
+      "text": "Parser was reading the hidden BOM as part of the column name. Workaround is UTF-8 CSV without BOM, but we should accept both."
+    },
+    {
+      "type": "message",
+      "user": "U00000014",
+      "channel": "C00000007",
+      "ts": "1780663680.000000",
+      "thread_ts": "1780662660.000000",
+      "timestamp": "2026-06-05T12:48:00.000Z",
+      "text": "Sent a clean sample with email, name, and role columns. Their 12 users imported successfully. They do not need to re-create the workspace."
+    },
+    {
+      "type": "message",
+      "user": "U00000002",
+      "channel": "C00000007",
+      "ts": "1780664640.000000",
+      "thread_ts": "1780662660.000000",
+      "timestamp": "2026-06-05T13:04:00.000Z",
+      "text": "ENG-479 strips the BOM before header validation. It also tells users which required columns are missing instead of returning a generic import error."
+    },
+    {
+      "type": "message",
+      "user": "U00000019",
+      "channel": "C00000010",
+      "ts": "1780666200.000000",
+      "thread_ts": "1780666200.000000",
+      "timestamp": "2026-06-05T13:30:00.000Z",
+      "text": "Northstar admin session complete. SAML works after the NameID fix. We found an old SOP folder that was still shared broadly alongside the approved one.",
+      "reply_count": 3,
+      "reply_users": [
+        "U00000017",
+        "U00000019"
+      ]
+    },
+    {
+      "type": "message",
+      "user": "U00000017",
+      "channel": "C00000010",
+      "ts": "1780666620.000000",
+      "thread_ts": "1780666200.000000",
+      "timestamp": "2026-06-05T13:37:00.000Z",
+      "text": "Ask Morgan to archive the old folder at the source. We should not teach users to compensate for two contradictory policies by writing longer search queries."
+    },
+    {
+      "type": "message",
+      "user": "U00000019",
+      "channel": "C00000010",
+      "ts": "1780666980.000000",
+      "thread_ts": "1780666200.000000",
+      "timestamp": "2026-06-05T13:43:00.000Z",
+      "text": "Morgan will move it to an archive and remove the connector scope. Only the approved folder stays indexed for the pilot."
+    },
+    {
+      "type": "message",
+      "user": "U00000017",
+      "channel": "C00000010",
+      "ts": "1780668120.000000",
+      "thread_ts": "1780666200.000000",
+      "timestamp": "2026-06-05T14:02:00.000Z",
+      "text": "Logged as a source hygiene task. Broad access remains pending; SSO passing alone is not the full onboarding sign-off."
+    },
+    {
+      "type": "message",
+      "user": "U00000007",
+      "channel": "C00000005",
+      "ts": "1780672560.000000",
+      "thread_ts": "1780672560.000000",
+      "timestamp": "2026-06-05T15:16:00.000Z",
+      "text": "MapleCloud asked whether repeated questions count again. I want to avoid quoting a number that does not match the invoice.",
+      "reply_count": 3,
+      "reply_users": [
+        "U00000022",
+        "U00000008",
+        "U00000007"
+      ]
+    },
+    {
+      "type": "message",
+      "user": "U00000022",
+      "channel": "C00000005",
+      "ts": "1780672980.000000",
+      "thread_ts": "1780672560.000000",
+      "timestamp": "2026-06-05T15:23:00.000Z",
+      "text": "A successful workflow execution counts once. Failed runs before completion are not billed. Reusing a cached answer still counts if it completes a new workflow execution."
+    },
+    {
+      "type": "message",
+      "user": "U00000008",
+      "channel": "C00000005",
+      "ts": "1780673340.000000",
+      "thread_ts": "1780672560.000000",
+      "timestamp": "2026-06-05T15:29:00.000Z",
+      "text": "Connector syncs and document indexing are not workflow executions. They asked about that during the trial too."
+    },
+    {
+      "type": "message",
+      "user": "U00000007",
+      "channel": "C00000005",
+      "ts": "1780674600.000000",
+      "thread_ts": "1780672560.000000",
+      "timestamp": "2026-06-05T15:50:00.000Z",
+      "text": "Got it. I will send the worked example: 800 completed runs plus 200 failed runs means 800 billable runs, excluding connector activity."
+    },
+    {
+      "type": "message",
+      "user": "U00000017",
+      "channel": "C00000018",
+      "ts": "1780676280.000000",
+      "thread_ts": "1780676280.000000",
+      "timestamp": "2026-06-05T16:18:00.000Z",
+      "text": "Northstar questionnaire asks about SAML, audit retention, and deleting source files. I want one approved answer set rather than different replies from Sales and Support.",
+      "reply_count": 3,
+      "reply_users": [
+        "U00000024",
+        "U00000007",
+        "U00000017"
+      ]
+    },
+    {
+      "type": "message",
+      "user": "U00000024",
+      "channel": "C00000018",
+      "ts": "1780676580.000000",
+      "thread_ts": "1780676280.000000",
+      "timestamp": "2026-06-05T16:23:00.000Z",
+      "text": "SAML is supported. Source deletions leave active search on the next successful sync, targeted within 24 hours; backups expire within 30 days. Retention-policy update will be finalized June 15."
+    },
+    {
+      "type": "message",
+      "user": "U00000007",
+      "channel": "C00000018",
+      "ts": "1780677420.000000",
+      "thread_ts": "1780676280.000000",
+      "timestamp": "2026-06-05T16:37:00.000Z",
+      "text": "I will leave the audit duration pending until the policy is final. No customer has been promised a custom seven-year setting."
+    },
+    {
+      "type": "message",
+      "user": "U00000017",
+      "channel": "C00000018",
+      "ts": "1780678740.000000",
+      "thread_ts": "1780676280.000000",
+      "timestamp": "2026-06-05T16:59:00.000Z",
+      "text": "Consolidated response prepared with retention marked pending. Morgan has the exact source-deletion wording and the trust-portal access."
+    },
+    {
+      "type": "message",
+      "user": "U00000010",
+      "channel": "C00000004",
+      "ts": "1780912200.000000",
+      "thread_ts": "1780912200.000000",
+      "timestamp": "2026-06-08T09:50:00.000Z",
+      "text": "Helio Health is still marked qualified but their pilot has stalled. The clinical lead says they are waiting on our security pack. Who is the buyer?",
+      "reply_count": 3,
+      "reply_users": [
+        "U00000007",
+        "U00000024",
+        "U00000010"
+      ]
+    },
+    {
+      "type": "message",
+      "user": "U00000007",
+      "channel": "C00000004",
+      "ts": "1780912680.000000",
+      "thread_ts": "1780912200.000000",
+      "timestamp": "2026-06-08T09:58:00.000Z",
+      "text": "Operations director Elena Moss owns the pilot, with their security analyst approving the sandbox. This is internal policy search, not clinical decision support."
+    },
+    {
+      "type": "message",
+      "user": "U00000024",
+      "channel": "C00000004",
+      "ts": "1780913040.000000",
+      "thread_ts": "1780912200.000000",
+      "timestamp": "2026-06-08T10:04:00.000Z",
+      "text": "The security pack went out June 4. I need a list of the subprocessors they object to; a generic pending-security note does not tell us what to fix."
+    },
+    {
+      "type": "message",
+      "user": "U00000010",
+      "channel": "C00000004",
+      "ts": "1780914300.000000",
+      "thread_ts": "1780912200.000000",
+      "timestamp": "2026-06-08T10:25:00.000Z",
+      "text": "Next step scheduled for June 11 with Elena and their analyst. I changed the CRM blocker to subprocessor review and kept the pilot synthetic-data-only."
+    },
+    {
+      "type": "message",
+      "user": "U00000023",
+      "channel": "C00000014",
+      "ts": "1780920120.000000",
+      "thread_ts": "1780920120.000000",
+      "timestamp": "2026-06-08T12:02:00.000Z",
+      "text": "June 18 launch week: please record PTO and nominate a backup by Wednesday. This is coverage planning, not a request to cancel approved leave.",
+      "reply_count": 3,
+      "reply_users": [
+        "U00000005",
+        "U00000001",
+        "U00000023"
+      ]
+    },
+    {
+      "type": "message",
+      "user": "U00000005",
+      "channel": "C00000014",
+      "ts": "1780920600.000000",
+      "thread_ts": "1780920120.000000",
+      "timestamp": "2026-06-08T12:10:00.000Z",
+      "text": "I am off Friday June 19. Leo can cover the deployment flag, but Maya should be the decision owner for a rollback while I am away."
+    },
+    {
+      "type": "message",
+      "user": "U00000001",
+      "channel": "C00000014",
+      "ts": "1780921200.000000",
+      "thread_ts": "1780920120.000000",
+      "timestamp": "2026-06-08T12:20:00.000Z",
+      "text": "Confirmed. Leo operates the flag, I decide rollback, and Alex coordinates customer notices. The runbook will say that explicitly."
+    },
+    {
+      "type": "message",
+      "user": "U00000023",
+      "channel": "C00000014",
+      "ts": "1780922040.000000",
+      "thread_ts": "1780920120.000000",
+      "timestamp": "2026-06-08T12:34:00.000Z",
+      "text": "Coverage sheet updated. Nobody should need to guess who is responsible from someone’s Slack presence status."
+    },
+    {
+      "type": "message",
+      "user": "U00000002",
+      "channel": "C00000001",
+      "ts": "1780924620.000000",
+      "thread_ts": "1780924620.000000",
+      "timestamp": "2026-06-08T13:17:00.000Z",
+      "text": "CedarDesk has been stuck at syncing 99% since Friday. A deleted shared-drive file returns 404 and we keep retrying the same changes cursor. Reproduced in a fixture with a deleted file.",
+      "reply_count": 3,
+      "reply_users": [
+        "U00000013",
+        "U00000002",
+        "U00000005"
+      ]
+    },
+    {
+      "type": "message",
+      "user": "U00000013",
+      "channel": "C00000001",
+      "ts": "1780925100.000000",
+      "thread_ts": "1780924620.000000",
+      "timestamp": "2026-06-08T13:25:00.000Z",
+      "text": "Ticket SUP-1796. They asked if disconnecting and reconnecting would help. I have not told them to do that because it could trigger a full resync."
+    },
+    {
+      "type": "message",
+      "user": "U00000002",
+      "channel": "C00000001",
+      "ts": "1780925700.000000",
+      "thread_ts": "1780924620.000000",
+      "timestamp": "2026-06-08T13:35:00.000Z",
+      "text": "Correct. Skip the tombstone, persist the next cursor, and keep a deletion audit event. I will backport that small fix today."
+    },
+    {
+      "type": "message",
+      "user": "U00000005",
+      "channel": "C00000001",
+      "ts": "1780926780.000000",
+      "thread_ts": "1780924620.000000",
+      "timestamp": "2026-06-08T13:53:00.000Z",
+      "text": "Backport is deployed. CedarDesk progressed to current within six minutes, and the cursor no longer loops. Watching the next scheduled run."
+    },
+    {
+      "type": "message",
+      "user": "U00000013",
+      "channel": "C00000008",
+      "ts": "1780927440.000000",
+      "thread_ts": "1780927440.000000",
+      "timestamp": "2026-06-08T14:04:00.000Z",
+      "text": "SUP-1796: CedarDesk says syncing 99% has not moved since Friday. The last successful cursor update is followed by repeated 404 responses for a deleted Drive file.",
+      "reply_count": 3,
+      "reply_users": [
+        "U00000002",
+        "U00000013",
+        "U00000011"
+      ]
+    },
+    {
+      "type": "message",
+      "user": "U00000002",
+      "channel": "C00000008",
+      "ts": "1780927920.000000",
+      "thread_ts": "1780927440.000000",
+      "timestamp": "2026-06-08T14:12:00.000Z",
+      "text": "This matches the tombstone bug in #eng-platform. Please hold off on advising them to disconnect the connector. I am shipping a cursor fix today."
+    },
+    {
+      "type": "message",
+      "user": "U00000013",
+      "channel": "C00000008",
+      "ts": "1780928520.000000",
+      "thread_ts": "1780927440.000000",
+      "timestamp": "2026-06-08T14:22:00.000Z",
+      "text": "Customer is okay waiting for the targeted patch. Their existing searchable documents still work, so this is P2 rather than a total outage."
+    },
+    {
+      "type": "message",
+      "user": "U00000011",
+      "channel": "C00000008",
+      "ts": "1780929480.000000",
+      "thread_ts": "1780927440.000000",
+      "timestamp": "2026-06-08T14:38:00.000Z",
+      "text": "Confirmed sync is now current after the backport. Closed the ticket with the deleted-file explanation and the next-run monitoring result."
+    },
+    {
+      "type": "message",
+      "user": "U00000018",
+      "channel": "C00000011",
+      "ts": "1780932180.000000",
+      "thread_ts": "1780932180.000000",
+      "timestamp": "2026-06-08T15:23:00.000Z",
+      "text": "CedarDesk lost several days to the stuck Drive sync. Their current 14-day trial expires June 12. Requesting seven more days so they can finish the evaluation.",
+      "reply_count": 3,
+      "reply_users": [
+        "U00000016",
+        "U00000025",
+        "U00000018"
+      ]
+    },
+    {
+      "type": "message",
+      "user": "U00000016",
+      "channel": "C00000011",
+      "ts": "1780932660.000000",
+      "thread_ts": "1780932180.000000",
+      "timestamp": "2026-06-08T15:31:00.000Z",
+      "text": "Approved through June 19. Record the service issue and the two remaining evaluation tasks: policy lookup and administrator audit review."
+    },
+    {
+      "type": "message",
+      "user": "U00000025",
+      "channel": "C00000011",
+      "ts": "1780933020.000000",
+      "thread_ts": "1780932180.000000",
+      "timestamp": "2026-06-08T15:37:00.000Z",
+      "text": "Extension recorded. This is a manual exception for an existing trial, not the new 21-day trial policy that starts June 17."
+    },
+    {
+      "type": "message",
+      "user": "U00000018",
+      "channel": "C00000011",
+      "ts": "1780934160.000000",
+      "thread_ts": "1780932180.000000",
+      "timestamp": "2026-06-08T15:56:00.000Z",
+      "text": "Customer notified with the June 19 expiration and the workshop date. I did not promise an automatic second extension."
+    },
+    {
+      "type": "message",
+      "user": "U00000005",
+      "channel": "C00000017",
+      "ts": "1781013900.000000",
+      "thread_ts": "1781013900.000000",
+      "timestamp": "2026-06-09T14:05:00.000Z",
+      "text": "Opening INC-2641. We have elevated 429s from our inference provider and queue age is climbing. The new retry loop is sending requests immediately after rate limiting. Pausing the June canary flag while we investigate.",
+      "reply_count": 3,
+      "reply_users": [
+        "U00000002",
+        "U00000011",
+        "U00000005"
+      ]
+    },
+    {
+      "type": "message",
+      "user": "U00000011",
+      "channel": "C00000009",
+      "ts": "1781014500.000000",
+      "thread_ts": "1781014500.000000",
+      "timestamp": "2026-06-09T14:15:00.000Z",
+      "text": "Incident macro for the current slowdown: we are investigating increased response delays. Accepted jobs remain queued. Link the status page and promise the next update at 14:45 UTC.",
+      "reply_count": 3,
+      "reply_users": [
+        "U00000015",
+        "U00000005",
+        "U00000011"
+      ]
+    },
+    {
+      "type": "message",
+      "user": "U00000015",
+      "channel": "C00000009",
+      "ts": "1781014680.000000",
+      "thread_ts": "1781014500.000000",
+      "timestamp": "2026-06-09T14:18:00.000Z",
+      "text": "Two customers are asking whether to resubmit. Should they do that now?"
+    },
+    {
+      "type": "message",
+      "user": "U00000002",
+      "channel": "C00000017",
+      "ts": "1781014920.000000",
+      "thread_ts": "1781013900.000000",
+      "timestamp": "2026-06-09T14:22:00.000Z",
+      "text": "Confirmed the retry amplification. Applying exponential backoff with jitter and limiting concurrency to 12 requests per tenant. Accepted jobs are still queued; there is no evidence of lost jobs."
+    },
+    {
+      "type": "message",
+      "user": "U00000005",
+      "channel": "C00000009",
+      "ts": "1781015640.000000",
+      "thread_ts": "1781014500.000000",
+      "timestamp": "2026-06-09T14:34:00.000Z",
+      "text": "Please ask them not to repeatedly submit the same job while it is queued. Retrying in a new browser session can create extra work even though provider retries are being fixed."
+    },
+    {
+      "type": "message",
+      "user": "U00000011",
+      "channel": "C00000017",
+      "ts": "1781016120.000000",
+      "thread_ts": "1781013900.000000",
+      "timestamp": "2026-06-09T14:42:00.000Z",
+      "text": "Status notice is up. Support should say requests are delayed, not that customer data is lost. Next update at 14:45 UTC, even if we are still investigating."
+    },
+    {
+      "type": "message",
+      "user": "U00000011",
+      "channel": "C00000009",
+      "ts": "1781016600.000000",
+      "thread_ts": "1781014500.000000",
+      "timestamp": "2026-06-09T14:50:00.000Z",
+      "text": "Macro updated. Incident resolved at 14:58. Offer to verify specific job IDs if a customer still sees a pending execution after the queue drains.",
+      "reactions": [
+        {
+          "name": "white_check_mark",
+          "users": [
+            "U00000011"
+          ],
+          "count": 1
+        }
+      ]
+    },
+    {
+      "type": "message",
+      "user": "U00000005",
+      "channel": "C00000017",
+      "ts": "1781017080.000000",
+      "thread_ts": "1781013900.000000",
+      "timestamp": "2026-06-09T14:58:00.000Z",
+      "text": "Resolved at 14:58 UTC. Queue age is back under 30 seconds. Impact window was 14:05–14:58, 53 minutes. Keep the retry fix and add a rate-limit load test before the June 18 release.",
+      "reactions": [
+        {
+          "name": "white_check_mark",
+          "users": [
+            "U00000005"
+          ],
+          "count": 1
+        }
+      ]
+    },
+    {
+      "type": "message",
+      "user": "U00000017",
+      "channel": "C00000012",
+      "ts": "1781084220.000000",
+      "thread_ts": "1781084220.000000",
+      "timestamp": "2026-06-10T09:37:00.000Z",
+      "text": "Northstar sponsor wants to understand yesterday’s 53-minute slowdown before the June launch. They do not want a generic everything is stable reply.",
+      "reply_count": 3,
+      "reply_users": [
+        "U00000005",
+        "U00000017",
+        "U00000001"
+      ]
+    },
+    {
+      "type": "message",
+      "user": "U00000005",
+      "channel": "C00000012",
+      "ts": "1781084400.000000",
+      "thread_ts": "1781084220.000000",
+      "timestamp": "2026-06-10T09:40:00.000Z",
+      "text": "Root cause was immediate retries amplifying provider rate limiting. Capped concurrency, exponential backoff with jitter, and earlier queue-age warnings are the prevention actions."
+    },
+    {
+      "type": "message",
+      "user": "U00000017",
+      "channel": "C00000012",
+      "ts": "1781085120.000000",
+      "thread_ts": "1781084220.000000",
+      "timestamp": "2026-06-10T09:52:00.000Z",
+      "text": "I will walk Morgan through those actions and the rollout gates. Does the incident change their planned launch date?"
+    },
+    {
+      "type": "message",
+      "user": "U00000001",
+      "channel": "C00000012",
+      "ts": "1781086260.000000",
+      "thread_ts": "1781084220.000000",
+      "timestamp": "2026-06-10T10:11:00.000Z",
+      "text": "No date change yet. The retry load test must pass June 12 before we proceed on June 18. Tell them that condition explicitly.",
+      "reactions": [
+        {
+          "name": "white_check_mark",
+          "users": [
+            "U00000017"
+          ],
+          "count": 1
+        }
+      ]
+    },
+    {
+      "type": "message",
+      "user": "U00000005",
+      "channel": "C00000001",
+      "ts": "1781087460.000000",
+      "thread_ts": "1781087460.000000",
+      "timestamp": "2026-06-10T10:31:00.000Z",
+      "text": "Postmortem draft is ready. Yesterday was retry amplification, not a database outage. No accepted jobs were lost. The queue dashboard did not alert until age exceeded five minutes.",
+      "reply_count": 3,
+      "reply_users": [
+        "U00000001",
+        "U00000011",
+        "U00000005"
+      ]
+    },
+    {
+      "type": "message",
+      "user": "U00000001",
+      "channel": "C00000001",
+      "ts": "1781087700.000000",
+      "thread_ts": "1781087460.000000",
+      "timestamp": "2026-06-10T10:35:00.000Z",
+      "text": "Action owners: Leo adds capped jittered retries; Erin adds a 90-second queue-age warning; Priya verifies whether a partial answer can be safely retried. Due June 12."
+    },
+    {
+      "type": "message",
+      "user": "U00000011",
+      "channel": "C00000001",
+      "ts": "1781088660.000000",
+      "thread_ts": "1781087460.000000",
+      "timestamp": "2026-06-10T10:51:00.000Z",
+      "text": "Please give us one approved customer paragraph. We had three people writing slightly different explanations during the incident."
+    },
+    {
+      "type": "message",
+      "user": "U00000005",
+      "channel": "C00000001",
+      "ts": "1781089740.000000",
+      "thread_ts": "1781087460.000000",
+      "timestamp": "2026-06-10T11:09:00.000Z",
+      "text": "Approved paragraph is in the incident runbook. The alert and capped retries are deployed; partial-answer retries remain disabled until their deduplication test passes."
+    },
+    {
+      "type": "message",
+      "user": "U00000008",
+      "channel": "C00000006",
+      "ts": "1781091600.000000",
+      "thread_ts": "1781091600.000000",
+      "timestamp": "2026-06-10T11:40:00.000Z",
+      "text": "Two prospects noticed our status page yesterday. Suggested wording: inference-provider rate limiting increased queue delays for 53 minutes; accepted jobs were preserved and the retry amplification was fixed.",
+      "reply_count": 3,
+      "reply_users": [
+        "U00000006",
+        "U00000005",
+        "U00000007"
+      ],
+      "reactions": [
+        {
+          "name": "eyes",
+          "users": [
+            "U00000006",
+            "U00000005"
+          ],
+          "count": 2
+        }
+      ]
+    },
+    {
+      "type": "message",
+      "user": "U00000006",
+      "channel": "C00000006",
+      "ts": "1781091780.000000",
+      "thread_ts": "1781091600.000000",
+      "timestamp": "2026-06-10T11:43:00.000Z",
+      "text": "Link the incident report if asked. Do not claim zero impact just because nothing was lost. A delayed response during a live workflow is still impact."
+    },
+    {
+      "type": "message",
+      "user": "U00000005",
+      "channel": "C00000006",
+      "ts": "1781092500.000000",
+      "thread_ts": "1781091600.000000",
+      "timestamp": "2026-06-10T11:55:00.000Z",
+      "text": "Exactly. The interval was June 9, 14:05–14:58 UTC. Database availability was unaffected. The queue alert threshold is being lowered."
+    },
+    {
+      "type": "message",
+      "user": "U00000007",
+      "channel": "C00000006",
+      "ts": "1781093760.000000",
+      "thread_ts": "1781091600.000000",
+      "timestamp": "2026-06-10T12:16:00.000Z",
+      "text": "Used that explanation with Northstar. They appreciated the concrete times and asked for the prevention measures in their launch briefing.",
+      "reactions": [
+        {
+          "name": "white_check_mark",
+          "users": [
+            "U00000008"
+          ],
+          "count": 1
+        }
+      ]
+    },
+    {
+      "type": "message",
+      "user": "U00000022",
+      "channel": "C00000013",
+      "ts": "1781104020.000000",
+      "thread_ts": "1781104020.000000",
+      "timestamp": "2026-06-10T15:07:00.000Z",
+      "text": "Yesterday’s inference spend was 2.3x the daily baseline during the rate-limit incident. We need to separate wasted retries from normal growth before revising the monthly forecast.",
+      "reply_count": 3,
+      "reply_users": [
+        "U00000005",
+        "U00000003",
+        "U00000022"
+      ],
+      "reactions": [
+        {
+          "name": "eyes",
+          "users": [
+            "U00000005",
+            "U00000003"
+          ],
+          "count": 2
+        }
+      ]
+    },
+    {
+      "type": "message",
+      "user": "U00000005",
+      "channel": "C00000013",
+      "ts": "1781104200.000000",
+      "thread_ts": "1781104020.000000",
+      "timestamp": "2026-06-10T15:10:00.000Z",
+      "text": "INC-2641 retry amplification accounts for the spike. Capped concurrency and jittered backoff are now enabled. This was not a sudden customer adoption jump."
+    },
+    {
+      "type": "message",
+      "user": "U00000003",
+      "channel": "C00000013",
+      "ts": "1781105160.000000",
+      "thread_ts": "1781104020.000000",
+      "timestamp": "2026-06-10T15:26:00.000Z",
+      "text": "I will tag retry attempts in the cost report so successful executions and upstream attempts have separate denominators."
+    },
+    {
+      "type": "message",
+      "user": "U00000022",
+      "channel": "C00000013",
+      "ts": "1781106000.000000",
+      "thread_ts": "1781104020.000000",
+      "timestamp": "2026-06-10T15:40:00.000Z",
+      "text": "Thanks. No price change planned from this one incident. We will recheck seven days of spend after the fix before adjusting the forecast.",
+      "reactions": [
+        {
+          "name": "white_check_mark",
+          "users": [
+            "U00000022"
+          ],
+          "count": 1
+        }
+      ]
+    },
+    {
+      "type": "message",
+      "user": "U00000012",
+      "channel": "C00000007",
+      "ts": "1781174640.000000",
+      "thread_ts": "1781174640.000000",
+      "timestamp": "2026-06-11T10:44:00.000Z",
+      "text": "SUP-1804: Solstice says search is broken for a new analyst. The admin can find the same policy, but the analyst gets no result.",
+      "reply_count": 3,
+      "reply_users": [
+        "U00000013",
+        "U00000012",
+        "U00000011"
+      ]
+    },
+    {
+      "type": "message",
+      "user": "U00000013",
+      "channel": "C00000007",
+      "ts": "1781174880.000000",
+      "thread_ts": "1781174640.000000",
+      "timestamp": "2026-06-11T10:48:00.000Z",
+      "text": "Check whether the source folder was shared with that analyst. Permission-aware search should not reveal a private document just because an admin connected it."
+    },
+    {
+      "type": "message",
+      "user": "U00000012",
+      "channel": "C00000007",
+      "ts": "1781175840.000000",
+      "thread_ts": "1781174640.000000",
+      "timestamp": "2026-06-11T11:04:00.000Z",
+      "text": "That was it. The analyst was in the workspace but not the Drive access group. Admin added them and the next permission sync made the policy searchable."
+    },
+    {
+      "type": "message",
+      "user": "U00000011",
+      "channel": "C00000007",
+      "ts": "1781176800.000000",
+      "thread_ts": "1781174640.000000",
+      "timestamp": "2026-06-11T11:20:00.000Z",
+      "text": "Closing as configuration, not a search outage. Mention that workspace membership and source-system access are separate permissions."
+    },
+    {
+      "type": "message",
+      "user": "U00000009",
+      "channel": "C00000005",
+      "ts": "1781183160.000000",
+      "thread_ts": "1781183160.000000",
+      "timestamp": "2026-06-11T13:06:00.000Z",
+      "text": "BluePeak wants a copy of RelayAI installed in their own cloud account. They called it private SaaS. Is that something we sell?",
+      "reply_count": 3,
+      "reply_users": [
+        "U00000001",
+        "U00000024",
+        "U00000009"
+      ]
+    },
+    {
+      "type": "message",
+      "user": "U00000001",
+      "channel": "C00000005",
+      "ts": "1781183400.000000",
+      "thread_ts": "1781183160.000000",
+      "timestamp": "2026-06-11T13:10:00.000Z",
+      "text": "We currently provide managed multi-tenant SaaS with workspace isolation. Customer-hosted or on-prem deployments are not an available SKU."
+    },
+    {
+      "type": "message",
+      "user": "U00000024",
+      "channel": "C00000005",
+      "ts": "1781184120.000000",
+      "thread_ts": "1781183160.000000",
+      "timestamp": "2026-06-11T13:22:00.000Z",
+      "text": "We can share the isolation design and encryption controls. That does not satisfy a requirement that processing happen inside their cloud account."
+    },
+    {
+      "type": "message",
+      "user": "U00000009",
+      "channel": "C00000005",
+      "ts": "1781185380.000000",
+      "thread_ts": "1781183160.000000",
+      "timestamp": "2026-06-11T13:43:00.000Z",
+      "text": "Marked deployment model as the blocker. No custom deployment quote will go out without a supported product offering."
+    },
+    {
+      "type": "message",
+      "user": "U00000020",
+      "channel": "C00000019",
+      "ts": "1781187120.000000",
+      "thread_ts": "1781187120.000000",
+      "timestamp": "2026-06-11T14:12:00.000Z",
+      "text": "Helio security call: Elena’s analyst is reviewing the inference subprocessor. They need data-flow details, retention, and confirmation that the sandbox contains no patient records.",
+      "reply_count": 3,
+      "reply_users": [
+        "U00000024",
+        "U00000007",
+        "U00000020"
+      ],
+      "reactions": [
+        {
+          "name": "eyes",
+          "users": [
+            "U00000024",
+            "U00000007"
+          ],
+          "count": 2
+        }
+      ]
+    },
+    {
+      "type": "message",
+      "user": "U00000024",
+      "channel": "C00000019",
+      "ts": "1781187480.000000",
+      "thread_ts": "1781187120.000000",
+      "timestamp": "2026-06-11T14:18:00.000Z",
+      "text": "Sent the architecture diagram and approved subprocessor list. We cannot claim the inference vendor is absent from the flow just because RelayAI is the user-facing product."
+    },
+    {
+      "type": "message",
+      "user": "U00000007",
+      "channel": "C00000019",
+      "ts": "1781188320.000000",
+      "thread_ts": "1781187120.000000",
+      "timestamp": "2026-06-11T14:32:00.000Z",
+      "text": "Commercial timeline now depends on their review. I will not promise a production start during this week’s forecast."
+    },
+    {
+      "type": "message",
+      "user": "U00000020",
+      "channel": "C00000019",
+      "ts": "1781189640.000000",
+      "thread_ts": "1781187120.000000",
+      "timestamp": "2026-06-11T14:54:00.000Z",
+      "text": "Next review June 24. Training continues with synthetic policies; production traffic stays disabled.",
+      "reactions": [
+        {
+          "name": "white_check_mark",
+          "users": [
+            "U00000020"
+          ],
+          "count": 1
+        }
+      ]
+    },
+    {
+      "type": "message",
+      "user": "U00000018",
+      "channel": "C00000012",
+      "ts": "1781194200.000000",
+      "thread_ts": "1781194200.000000",
+      "timestamp": "2026-06-11T16:10:00.000Z",
+      "text": "Solstice policy workshop done. The analyst showed how to link to an approved source instead of copying paragraphs into email. Twenty-eight procurement reviewers attended.",
+      "reply_count": 3,
+      "reply_users": [
+        "U00000016",
+        "U00000018",
+        "U00000024"
+      ]
+    },
+    {
+      "type": "message",
+      "user": "U00000016",
+      "channel": "C00000012",
+      "ts": "1781194440.000000",
+      "thread_ts": "1781194200.000000",
+      "timestamp": "2026-06-11T16:14:00.000Z",
+      "text": "Nice. Follow the 35-person review cohort next week; do not measure success by attendance alone."
+    },
+    {
+      "type": "message",
+      "user": "U00000018",
+      "channel": "C00000012",
+      "ts": "1781195160.000000",
+      "thread_ts": "1781194200.000000",
+      "timestamp": "2026-06-11T16:26:00.000Z",
+      "text": "We will compare completed-workflow activity next Thursday. Also found six inactive accounts belonging to former contractors, so their admin is cleaning those up."
+    },
+    {
+      "type": "message",
+      "user": "U00000024",
+      "channel": "C00000012",
+      "ts": "1781196300.000000",
+      "thread_ts": "1781194200.000000",
+      "timestamp": "2026-06-11T16:45:00.000Z",
+      "text": "Please make sure removal in the source access group propagates too. Disabling only the RelayAI account should not leave access active elsewhere."
+    },
+    {
+      "type": "message",
+      "user": "U00000024",
+      "channel": "C00000015",
+      "ts": "1781264700.000000",
+      "thread_ts": "1781264700.000000",
+      "timestamp": "2026-06-12T11:45:00.000Z",
+      "text": "Quarterly access review: six former Solstice contractors still appear in their source group. Their RelayAI seats are inactive, but the upstream group needs cleanup too.",
+      "reply_count": 3,
+      "reply_users": [
+        "U00000018",
+        "U00000024",
+        "U00000002"
+      ]
+    },
+    {
+      "type": "message",
+      "user": "U00000018",
+      "channel": "C00000015",
+      "ts": "1781264940.000000",
+      "thread_ts": "1781264700.000000",
+      "timestamp": "2026-06-12T11:49:00.000Z",
+      "text": "Their admin found the same six accounts during yesterday’s workshop and is removing them from Drive and the identity provider today."
+    },
+    {
+      "type": "message",
+      "user": "U00000024",
+      "channel": "C00000015",
+      "ts": "1781265900.000000",
+      "thread_ts": "1781264700.000000",
+      "timestamp": "2026-06-12T12:05:00.000Z",
+      "text": "Good. Request a completion confirmation; do not infer source revocation solely from seat status. Our permission sync must consume those changes."
+    },
+    {
+      "type": "message",
+      "user": "U00000002",
+      "channel": "C00000015",
+      "ts": "1781266740.000000",
+      "thread_ts": "1781264700.000000",
+      "timestamp": "2026-06-12T12:19:00.000Z",
+      "text": "Next sync shows all six removed. Verified a revoked-account query cannot retrieve the formerly shared policy. Review item closed."
+    },
+    {
+      "type": "message",
+      "user": "U00000003",
+      "channel": "C00000003",
+      "ts": "1781280000.000000",
+      "thread_ts": "1781280000.000000",
+      "timestamp": "2026-06-12T16:00:00.000Z",
+      "text": "ENG-482 gate results: all 36 permission cases pass, including revoked folders and departed users. The executive folder title no longer appears in a sales viewer result.",
+      "reply_count": 3,
+      "reply_users": [
+        "U00000024",
+        "U00000005",
+        "U00000001"
+      ]
+    },
+    {
+      "type": "message",
+      "user": "U00000024",
+      "channel": "C00000003",
+      "ts": "1781280300.000000",
+      "thread_ts": "1781280000.000000",
+      "timestamp": "2026-06-12T16:05:00.000Z",
+      "text": "Reviewed the candidate logs with synthetic documents. Permission filtering happens before retrieval results are passed downstream. Security gate is approved."
+    },
+    {
+      "type": "message",
+      "user": "U00000005",
+      "channel": "C00000003",
+      "ts": "1781280780.000000",
+      "thread_ts": "1781280000.000000",
+      "timestamp": "2026-06-12T16:13:00.000Z",
+      "text": "Retry-storm test also passes at 4x normal load. Queue-age warning fired at 92 seconds. The canary checklist now links both results."
+    },
+    {
+      "type": "message",
+      "user": "U00000001",
+      "channel": "C00000003",
+      "ts": "1781282340.000000",
+      "thread_ts": "1781280000.000000",
+      "timestamp": "2026-06-12T16:39:00.000Z",
+      "text": "Proceed with the June 18 plan. This approves the gate; it does not mean the feature is live for every customer today."
+    },
+    {
+      "type": "message",
+      "user": "U00000001",
+      "channel": "C00000020",
+      "ts": "1781283900.000000",
+      "thread_ts": "1781283900.000000",
+      "timestamp": "2026-06-12T17:05:00.000Z",
+      "text": "June 12 go/no-go: permissions regression suite passed, retry load test passed, and rollback is rehearsed. Engineering is go for June 18.",
+      "reply_count": 3,
+      "reply_users": [
+        "U00000011",
+        "U00000008",
+        "U00000016"
+      ]
+    },
+    {
+      "type": "message",
+      "user": "U00000011",
+      "channel": "C00000020",
+      "ts": "1781284320.000000",
+      "thread_ts": "1781283900.000000",
+      "timestamp": "2026-06-12T17:12:00.000Z",
+      "text": "Support is go. Incident macro and citation-refresh workaround are ready; we have coverage through the rollout window."
+    },
+    {
+      "type": "message",
+      "user": "U00000008",
+      "channel": "C00000020",
+      "ts": "1781284680.000000",
+      "thread_ts": "1781283900.000000",
+      "timestamp": "2026-06-12T17:18:00.000Z",
+      "text": "Sales deck describes citations and admin controls accurately. It makes no autonomous-agent or EU-hosting promise."
+    },
+    {
+      "type": "message",
+      "user": "U00000016",
+      "channel": "C00000020",
+      "ts": "1781286480.000000",
+      "thread_ts": "1781283900.000000",
+      "timestamp": "2026-06-12T17:48:00.000Z",
+      "text": "CSM is go for eligible customers. Helio remains excluded pending security approval, and Northstar broad employee access still needs Morgan’s onboarding sign-off."
+    },
+    {
+      "type": "message",
+      "user": "U00000024",
+      "channel": "C00000015",
+      "ts": "1781515920.000000",
+      "thread_ts": "1781515920.000000",
+      "timestamp": "2026-06-15T09:32:00.000Z",
+      "text": "Policy update effective today: audit-event retention is 90 days on Pro and 365 days on Enterprise. Custom retention requires a signed order-form addendum; ordinary chat history is a separate setting.",
+      "reply_count": 3,
+      "reply_users": [
+        "U00000017",
+        "U00000024",
+        "U00000025"
+      ]
+    },
+    {
+      "type": "message",
+      "user": "U00000017",
+      "channel": "C00000015",
+      "ts": "1781516220.000000",
+      "thread_ts": "1781515920.000000",
+      "timestamp": "2026-06-15T09:37:00.000Z",
+      "text": "Northstar is Enterprise, so we can say 365 days for audit events? Their buyer asked about keeping access records for a full year."
+    },
+    {
+      "type": "message",
+      "user": "U00000024",
+      "channel": "C00000015",
+      "ts": "1781516700.000000",
+      "thread_ts": "1781515920.000000",
+      "timestamp": "2026-06-15T09:45:00.000Z",
+      "text": "Yes, under the standard Enterprise plan. Do not promise seven years or assume the audit setting preserves deleted source documents."
+    },
+    {
+      "type": "message",
+      "user": "U00000025",
+      "channel": "C00000015",
+      "ts": "1781518020.000000",
+      "thread_ts": "1781515920.000000",
+      "timestamp": "2026-06-15T10:07:00.000Z",
+      "text": "Updated plan matrix and the security questionnaire template. The previous draft saying 180 days for Enterprise is superseded."
+    },
+    {
+      "type": "message",
+      "user": "U00000011",
+      "channel": "C00000009",
+      "ts": "1781522820.000000",
+      "thread_ts": "1781522820.000000",
+      "timestamp": "2026-06-15T11:27:00.000Z",
+      "text": "For workspace data exports or deletion requests, verify the requester is a workspace admin through the account record. A forwarded email from an executive is not sufficient.",
+      "reply_count": 3,
+      "reply_users": [
+        "U00000015",
+        "U00000024",
+        "U00000011"
+      ]
+    },
+    {
+      "type": "message",
+      "user": "U00000015",
+      "channel": "C00000009",
+      "ts": "1781523120.000000",
+      "thread_ts": "1781522820.000000",
+      "timestamp": "2026-06-15T11:32:00.000Z",
+      "text": "If an employee asks us to delete their messages from a company-owned connector, do we route them to their admin?"
+    },
+    {
+      "type": "message",
+      "user": "U00000024",
+      "channel": "C00000009",
+      "ts": "1781523600.000000",
+      "thread_ts": "1781522820.000000",
+      "timestamp": "2026-06-15T11:40:00.000Z",
+      "text": "Yes. Escalate privacy requests to Security as well. We need to distinguish deleting an individual account from deleting source documents owned by the organization."
+    },
+    {
+      "type": "message",
+      "user": "U00000011",
+      "channel": "C00000009",
+      "ts": "1781525040.000000",
+      "thread_ts": "1781522820.000000",
+      "timestamp": "2026-06-15T12:04:00.000Z",
+      "text": "Added a macro with the admin verification step and the privacy escalation. Never send an export archive to an unverified address."
+    },
+    {
+      "type": "message",
+      "user": "U00000021",
+      "channel": "C00000016",
+      "ts": "1781541480.000000",
+      "thread_ts": "1781541480.000000",
+      "timestamp": "2026-06-15T16:38:00.000Z",
+      "text": "Please attach a user problem and affected customer to roadmap requests. Five mentions of the same feature in Slack do not mean five independent customers asked for it.",
+      "reply_count": 3,
+      "reply_users": [
+        "U00000009",
+        "U00000003",
+        "U00000021"
+      ]
+    },
+    {
+      "type": "message",
+      "user": "U00000009",
+      "channel": "C00000016",
+      "ts": "1781541960.000000",
+      "thread_ts": "1781541480.000000",
+      "timestamp": "2026-06-15T16:46:00.000Z",
+      "text": "EU residency is a real blocker for Atlas Retail. I will link the procurement note and keep it separate from BluePeak’s customer-hosted deployment request."
+    },
+    {
+      "type": "message",
+      "user": "U00000003",
+      "channel": "C00000016",
+      "ts": "1781542320.000000",
+      "thread_ts": "1781541480.000000",
+      "timestamp": "2026-06-15T16:52:00.000Z",
+      "text": "Useful distinction. Those require different architecture decisions and should not be grouped as security improvements."
+    },
+    {
+      "type": "message",
+      "user": "U00000021",
+      "channel": "C00000016",
+      "ts": "1781543340.000000",
+      "thread_ts": "1781541480.000000",
+      "timestamp": "2026-06-15T17:09:00.000Z",
+      "text": "Exactly. No launch dates are being committed in this thread; we are collecting evidence for prioritization."
+    },
+    {
+      "type": "message",
+      "user": "U00000025",
+      "channel": "C00000006",
+      "ts": "1781605320.000000",
+      "thread_ts": "1781605320.000000",
+      "timestamp": "2026-06-16T10:22:00.000Z",
+      "text": "Heads-up: from June 17, new self-serve trials last 21 days instead of 14. Existing trials keep their original expiration unless CSM records an extension.",
+      "reply_count": 3,
+      "reply_users": [
+        "U00000010",
+        "U00000025",
+        "U00000008"
+      ]
+    },
+    {
+      "type": "message",
+      "user": "U00000010",
+      "channel": "C00000006",
+      "ts": "1781605620.000000",
+      "thread_ts": "1781605320.000000",
+      "timestamp": "2026-06-16T10:27:00.000Z",
+      "text": "Our outbound sequence still says two weeks. I will update it before tomorrow’s sends. Is the no-credit-card requirement changing?"
+    },
+    {
+      "type": "message",
+      "user": "U00000025",
+      "channel": "C00000006",
+      "ts": "1781606340.000000",
+      "thread_ts": "1781605320.000000",
+      "timestamp": "2026-06-16T10:39:00.000Z",
+      "text": "No credit card remains required. The change is duration only. The approval flow for manual extensions stays with CSM."
+    },
+    {
+      "type": "message",
+      "user": "U00000008",
+      "channel": "C00000006",
+      "ts": "1781607600.000000",
+      "thread_ts": "1781605320.000000",
+      "timestamp": "2026-06-16T11:00:00.000Z",
+      "text": "Updated the demo deck and screenshot captions. Old proposals already sent keep their stated terms until we explicitly amend them."
+    },
+    {
+      "type": "message",
+      "user": "U00000003",
+      "channel": "C00000002",
+      "ts": "1781607840.000000",
+      "thread_ts": "1781607840.000000",
+      "timestamp": "2026-06-16T11:04:00.000Z",
+      "text": "Freshly connected workspaces sometimes show no matches because the search index is still catching up to ingestion. We should not render this as an answer saying there are no documents.",
+      "reply_count": 3,
+      "reply_users": [
+        "U00000004",
+        "U00000002",
+        "U00000003"
+      ],
+      "reactions": [
+        {
+          "name": "eyes",
+          "users": [
+            "U00000004",
+            "U00000002"
+          ],
+          "count": 2
+        }
+      ]
+    },
+    {
+      "type": "message",
+      "user": "U00000004",
+      "channel": "C00000002",
+      "ts": "1781608200.000000",
+      "thread_ts": "1781607840.000000",
+      "timestamp": "2026-06-16T11:10:00.000Z",
+      "text": "I can show indexing in progress and a retry action. Need a real readiness signal, rather than a fixed 30-second timer."
+    },
+    {
+      "type": "message",
+      "user": "U00000002",
+      "channel": "C00000002",
+      "ts": "1781608680.000000",
+      "thread_ts": "1781607840.000000",
+      "timestamp": "2026-06-16T11:18:00.000Z",
+      "text": "Use the index watermark. Sync complete means source fetching is done; searchable means the index has consumed that sync generation. Those are different milestones."
+    },
+    {
+      "type": "message",
+      "user": "U00000003",
+      "channel": "C00000002",
+      "ts": "1781610240.000000",
+      "thread_ts": "1781607840.000000",
+      "timestamp": "2026-06-16T11:44:00.000Z",
+      "text": "Agreed. Added the watermark to the connector status response. The drawer waits for searchable=true before showing the empty-results state.",
+      "reactions": [
+        {
+          "name": "white_check_mark",
+          "users": [
+            "U00000003"
+          ],
+          "count": 1
+        }
+      ]
+    },
+    {
+      "type": "message",
+      "user": "U00000017",
+      "channel": "C00000018",
+      "ts": "1781622060.000000",
+      "thread_ts": "1781622060.000000",
+      "timestamp": "2026-06-16T15:01:00.000Z",
+      "text": "Following up on the June 5 questionnaire: standard Enterprise audit retention is now 365 days under the June 15 policy. Updated the answer that had been pending.",
+      "reply_count": 3,
+      "reply_users": [
+        "U00000024",
+        "U00000007",
+        "U00000017"
+      ]
+    },
+    {
+      "type": "message",
+      "user": "U00000024",
+      "channel": "C00000018",
+      "ts": "1781622240.000000",
+      "thread_ts": "1781622060.000000",
+      "timestamp": "2026-06-16T15:04:00.000Z",
+      "text": "Correct. That is audit events, not a promise to preserve every source document or chat message for a year. Custom durations need a signed addendum."
+    },
+    {
+      "type": "message",
+      "user": "U00000007",
+      "channel": "C00000018",
+      "ts": "1781622960.000000",
+      "thread_ts": "1781622060.000000",
+      "timestamp": "2026-06-16T15:16:00.000Z",
+      "text": "Order form is standard Enterprise, so no custom addendum needed for 365 days. I have updated the deal handoff too."
+    },
+    {
+      "type": "message",
+      "user": "U00000017",
+      "channel": "C00000018",
+      "ts": "1781623980.000000",
+      "thread_ts": "1781622060.000000",
+      "timestamp": "2026-06-16T15:33:00.000Z",
+      "text": "Morgan acknowledged the final answer. Questionnaire item closed. The earlier 180-day draft should not be reused.",
+      "reactions": [
+        {
+          "name": "white_check_mark",
+          "users": [
+            "U00000017"
+          ],
+          "count": 1
+        }
+      ]
+    },
+    {
+      "type": "message",
+      "user": "U00000025",
+      "channel": "C00000013",
+      "ts": "1781687700.000000",
+      "thread_ts": "1781687700.000000",
+      "timestamp": "2026-06-17T09:15:00.000Z",
+      "text": "OPS-077 is live: new self-serve trials created from June 17 get 21 days. Trials already in progress keep their existing end date unless CSM approved an extension.",
+      "reply_count": 3,
+      "reply_users": [
+        "U00000022",
+        "U00000010",
+        "U00000025"
+      ]
+    },
+    {
+      "type": "message",
+      "user": "U00000022",
+      "channel": "C00000013",
+      "ts": "1781688060.000000",
+      "thread_ts": "1781687700.000000",
+      "timestamp": "2026-06-17T09:21:00.000Z",
+      "text": "Please keep extension audit records. A one-off exception for CedarDesk should not look like the whole trial cohort was reset."
+    },
+    {
+      "type": "message",
+      "user": "U00000010",
+      "channel": "C00000013",
+      "ts": "1781688540.000000",
+      "thread_ts": "1781687700.000000",
+      "timestamp": "2026-06-17T09:29:00.000Z",
+      "text": "Outbound copy and demo deck were updated yesterday. No credit card is required, same as before."
+    },
+    {
+      "type": "message",
+      "user": "U00000025",
+      "channel": "C00000013",
+      "ts": "1781689860.000000",
+      "thread_ts": "1781687700.000000",
+      "timestamp": "2026-06-17T09:51:00.000Z",
+      "text": "Verified with a new test signup: 21-day expiration. Verified an existing signup: original date unchanged. Policy and app behavior match.",
+      "reactions": [
+        {
+          "name": "white_check_mark",
+          "users": [
+            "U00000025"
+          ],
+          "count": 1
+        }
+      ]
+    },
+    {
+      "type": "message",
+      "user": "U00000020",
+      "channel": "C00000010",
+      "ts": "1781705100.000000",
+      "thread_ts": "1781705100.000000",
+      "timestamp": "2026-06-17T14:05:00.000Z",
+      "text": "BrightCart asked whether today’s 21-day trial change restarts their existing trial clock. Their trial began June 5.",
+      "reply_count": 3,
+      "reply_users": [
+        "U00000025",
+        "U00000016",
+        "U00000020"
+      ]
+    },
+    {
+      "type": "message",
+      "user": "U00000025",
+      "channel": "C00000010",
+      "ts": "1781705400.000000",
+      "thread_ts": "1781705100.000000",
+      "timestamp": "2026-06-17T14:10:00.000Z",
+      "text": "No automatic reset. New trials starting today get 21 days. Existing trials retain their original expiration unless CSM records a manual extension."
+    },
+    {
+      "type": "message",
+      "user": "U00000016",
+      "channel": "C00000010",
+      "ts": "1781706120.000000",
+      "thread_ts": "1781705100.000000",
+      "timestamp": "2026-06-17T14:22:00.000Z",
+      "text": "If BrightCart needs more time, ask which evaluation milestone is unfinished. We are not extending simply because a new policy was announced."
+    },
+    {
+      "type": "message",
+      "user": "U00000020",
+      "channel": "C00000010",
+      "ts": "1781707260.000000",
+      "thread_ts": "1781705100.000000",
+      "timestamp": "2026-06-17T14:41:00.000Z",
+      "text": "They have completed import and discovery but still lack a buyer. No extension approved yet; Nina has a budget-owner call on July 1."
+    },
+    {
+      "type": "message",
+      "user": "U00000018",
+      "channel": "C00000011",
+      "ts": "1781795940.000000",
+      "thread_ts": "1781795940.000000",
+      "timestamp": "2026-06-18T15:19:00.000Z",
+      "text": "Solstice weekly active cohort increased from 11 to 26 of the 35 procurement reviewers after the workshop. Overall weekly active seats went from 23 to 41 of 80.",
+      "reply_count": 3,
+      "reply_users": [
+        "U00000016",
+        "U00000018",
+        "U00000009"
+      ],
+      "reactions": [
+        {
+          "name": "eyes",
+          "users": [
+            "U00000016",
+            "U00000018"
+          ],
+          "count": 2
+        }
+      ]
+    },
+    {
+      "type": "message",
+      "user": "U00000016",
+      "channel": "C00000011",
+      "ts": "1781796300.000000",
+      "thread_ts": "1781795940.000000",
+      "timestamp": "2026-06-18T15:25:00.000Z",
+      "text": "That is a useful trend, but one week does not establish sustained value. Include examples of reviews completed faster, not just the chart."
+    },
+    {
+      "type": "message",
+      "user": "U00000018",
+      "channel": "C00000011",
+      "ts": "1781797020.000000",
+      "thread_ts": "1781795940.000000",
+      "timestamp": "2026-06-18T15:37:00.000Z",
+      "text": "Their analyst reports median policy lookup fell from five minutes to about 90 seconds in the sample of ten reviews. I labeled that as a small sample."
+    },
+    {
+      "type": "message",
+      "user": "U00000009",
+      "channel": "C00000011",
+      "ts": "1781798160.000000",
+      "thread_ts": "1781795940.000000",
+      "timestamp": "2026-06-18T15:56:00.000Z",
+      "text": "Commercial terms are still under review in DEAL-211. I will not treat the improving adoption numbers as a signed renewal.",
+      "reactions": [
+        {
+          "name": "white_check_mark",
+          "users": [
+            "U00000018"
+          ],
+          "count": 1
+        }
+      ]
+    },
+    {
+      "type": "message",
+      "user": "U00000005",
+      "channel": "C00000003",
+      "ts": "1781803200.000000",
+      "thread_ts": "1781803200.000000",
+      "timestamp": "2026-06-18T17:20:00.000Z",
+      "text": "June launch canary: first 30 minutes at 5% are clean. p95 is 1.8 seconds and error rate is 0.2%. Expanding to 25% now; next check in 30 minutes.",
+      "reply_count": 3,
+      "reply_users": [
+        "U00000003",
+        "U00000011",
+        "U00000001"
+      ]
+    },
+    {
+      "type": "message",
+      "user": "U00000003",
+      "channel": "C00000003",
+      "ts": "1781803620.000000",
+      "thread_ts": "1781803200.000000",
+      "timestamp": "2026-06-18T17:27:00.000Z",
+      "text": "No permission failures in the sampled retrieval traces. Pricing-table queries also improved against the June 5 baseline."
+    },
+    {
+      "type": "message",
+      "user": "U00000011",
+      "channel": "C00000003",
+      "ts": "1781804100.000000",
+      "thread_ts": "1781803200.000000",
+      "timestamp": "2026-06-18T17:35:00.000Z",
+      "text": "Support is staffed through the final check. Only one report so far: a browser tab needed refresh to show the new citation drawer."
+    },
+    {
+      "type": "message",
+      "user": "U00000001",
+      "channel": "C00000003",
+      "ts": "1781805660.000000",
+      "thread_ts": "1781803200.000000",
+      "timestamp": "2026-06-18T18:01:00.000Z",
+      "text": "Second check is clean. Enable for all eligible workspaces, excluding Helio until their sandbox owner signs off. Keep the rollback flag available through tomorrow."
+    },
+    {
+      "type": "message",
+      "user": "U00000015",
+      "channel": "C00000008",
+      "ts": "1781805660.000000",
+      "thread_ts": "1781805660.000000",
+      "timestamp": "2026-06-18T18:01:00.000Z",
+      "text": "First June release ticket: Northstar user sees the old answer layout after their workspace was enabled. A coworker sees the citation drawer.",
+      "reply_count": 3,
+      "reply_users": [
+        "U00000004",
+        "U00000015",
+        "U00000011"
+      ]
+    },
+    {
+      "type": "message",
+      "user": "U00000004",
+      "channel": "C00000008",
+      "ts": "1781806020.000000",
+      "thread_ts": "1781805660.000000",
+      "timestamp": "2026-06-18T18:07:00.000Z",
+      "text": "Probably an old browser tab using cached assets. Ask for a refresh first. The workspace flag is on and their response has citation metadata."
+    },
+    {
+      "type": "message",
+      "user": "U00000015",
+      "channel": "C00000008",
+      "ts": "1781806500.000000",
+      "thread_ts": "1781805660.000000",
+      "timestamp": "2026-06-18T18:15:00.000Z",
+      "text": "Refresh fixed it. No need to clear all cookies or log out. I will add a short note to the launch macro."
+    },
+    {
+      "type": "message",
+      "user": "U00000011",
+      "channel": "C00000020",
+      "ts": "1781807760.000000",
+      "thread_ts": "1781807760.000000",
+      "timestamp": "2026-06-18T18:36:00.000Z",
+      "text": "Launch note is ready to send to enabled workspaces: clearer citations, improved table retrieval, and permission-aware results. Support has a refresh tip for tabs open before deployment.",
+      "reply_count": 3,
+      "reply_users": [
+        "U00000001",
+        "U00000016",
+        "U00000008"
+      ]
+    },
+    {
+      "type": "message",
+      "user": "U00000011",
+      "channel": "C00000008",
+      "ts": "1781807940.000000",
+      "thread_ts": "1781805660.000000",
+      "timestamp": "2026-06-18T18:39:00.000Z",
+      "text": "Good. One UI refresh issue, no search failure. Keep watching for accessibility reports in the drawer rather than assuming every layout question is caching.",
+      "reactions": [
+        {
+          "name": "white_check_mark",
+          "users": [
+            "U00000015"
+          ],
+          "count": 1
+        }
+      ]
+    },
+    {
+      "type": "message",
+      "user": "U00000001",
+      "channel": "C00000020",
+      "ts": "1781808000.000000",
+      "thread_ts": "1781807760.000000",
+      "timestamp": "2026-06-18T18:40:00.000Z",
+      "text": "All eligible workspaces are enabled after two clean canary checks. Helio is excluded until security sign-off. Rollback remains available."
+    },
+    {
+      "type": "message",
+      "user": "U00000016",
+      "channel": "C00000020",
+      "ts": "1781808720.000000",
+      "thread_ts": "1781807760.000000",
+      "timestamp": "2026-06-18T18:52:00.000Z",
+      "text": "Northstar has the feature but their broad invitation step is still separate. Marco is collecting the admin’s source and training sign-off."
+    },
+    {
+      "type": "message",
+      "user": "U00000008",
+      "channel": "C00000020",
+      "ts": "1781809740.000000",
+      "thread_ts": "1781807760.000000",
+      "timestamp": "2026-06-18T19:09:00.000Z",
+      "text": "Updated the demo tenant. Please do not announce automatic enrollment for every healthcare prospect; eligibility matters."
+    },
+    {
+      "type": "message",
+      "user": "U00000004",
+      "channel": "C00000016",
+      "ts": "1781874600.000000",
+      "thread_ts": "1781874600.000000",
+      "timestamp": "2026-06-19T13:10:00.000Z",
+      "text": "Friday demo at 16:00 UTC: the citation drawer now supports keyboard navigation and keeps focus on the source you open. I will show it with the synthetic pricing table.",
+      "reply_count": 3,
+      "reply_users": [
+        "U00000015",
+        "U00000004",
+        "U00000023"
+      ]
+    },
+    {
+      "type": "message",
+      "user": "U00000015",
+      "channel": "C00000016",
+      "ts": "1781874900.000000",
+      "thread_ts": "1781874600.000000",
+      "timestamp": "2026-06-19T13:15:00.000Z",
+      "text": "Nice, a customer had asked about focus jumping back to the composer. That was making their screen-reader workflow awkward."
+    },
+    {
+      "type": "message",
+      "user": "U00000004",
+      "channel": "C00000016",
+      "ts": "1781875620.000000",
+      "thread_ts": "1781874600.000000",
+      "timestamp": "2026-06-19T13:27:00.000Z",
+      "text": "That is the case I tested. Escape closes the drawer and returns focus to its trigger. We still need to review long document titles next week."
+    },
+    {
+      "type": "message",
+      "user": "U00000023",
+      "channel": "C00000016",
+      "ts": "1781876640.000000",
+      "thread_ts": "1781874600.000000",
+      "timestamp": "2026-06-19T13:44:00.000Z",
+      "text": "Recording link goes in the internal demo folder afterward for folks who are out today."
+    },
+    {
+      "type": "message",
+      "user": "U00000007",
+      "channel": "C00000004",
+      "ts": "1781877720.000000",
+      "thread_ts": "1781877720.000000",
+      "timestamp": "2026-06-19T14:02:00.000Z",
+      "text": "Northstar signed. 180 seats, annual enterprise plan, standard 30-day payment terms. Morgan is the technical owner and operations VP Casey Bell is the executive sponsor.",
+      "reply_count": 3,
+      "reply_users": [
+        "U00000016",
+        "U00000007",
+        "U00000017"
+      ]
+    },
+    {
+      "type": "message",
+      "user": "U00000016",
+      "channel": "C00000004",
+      "ts": "1781878080.000000",
+      "thread_ts": "1781877720.000000",
+      "timestamp": "2026-06-19T14:08:00.000Z",
+      "text": "Assigning Ben as CSM and Marco for implementation. Please include the SOP baseline and the promise that admin training happens before broad employee access."
+    },
+    {
+      "type": "message",
+      "user": "U00000007",
+      "channel": "C00000004",
+      "ts": "1781878800.000000",
+      "thread_ts": "1781877720.000000",
+      "timestamp": "2026-06-19T14:20:00.000Z",
+      "text": "Handoff attached: lookup median was 6.4 minutes, target below 2 minutes. No custom model, no EU hosting promise, and no autonomous dispatch integration in scope."
+    },
+    {
+      "type": "message",
+      "user": "U00000017",
+      "channel": "C00000004",
+      "ts": "1781880060.000000",
+      "thread_ts": "1781877720.000000",
+      "timestamp": "2026-06-19T14:41:00.000Z",
+      "text": "Accepted. I will schedule the first outcome review for June 26 and leave the production rollout gated on Morgan’s sign-off.",
+      "reactions": [
+        {
+          "name": "white_check_mark",
+          "users": [
+            "U00000007"
+          ],
+          "count": 1
+        }
+      ]
+    },
+    {
+      "type": "message",
+      "user": "U00000019",
+      "channel": "C00000010",
+      "ts": "1782120000.000000",
+      "thread_ts": "1782120000.000000",
+      "timestamp": "2026-06-22T09:20:00.000Z",
+      "text": "CSM-104: Morgan signed off on the approved SOP folder, source permissions, and admin training. The archive is excluded and the June 18 feature flag is live.",
+      "reply_count": 3,
+      "reply_users": [
+        "U00000017",
+        "U00000012",
+        "U00000019"
+      ]
+    },
+    {
+      "type": "message",
+      "user": "U00000017",
+      "channel": "C00000010",
+      "ts": "1782120420.000000",
+      "thread_ts": "1782120000.000000",
+      "timestamp": "2026-06-22T09:27:00.000Z",
+      "text": "Okay to invite the broader employee cohort now. Start with warehouse leads, then the remaining staff tomorrow."
+    },
+    {
+      "type": "message",
+      "user": "U00000012",
+      "channel": "C00000010",
+      "ts": "1782121140.000000",
+      "thread_ts": "1782120000.000000",
+      "timestamp": "2026-06-22T09:39:00.000Z",
+      "text": "I have the SAML troubleshooting macro ready. If a user cannot find an SOP, check source-group membership before reconnecting anything."
+    },
+    {
+      "type": "message",
+      "user": "U00000019",
+      "channel": "C00000010",
+      "ts": "1782122280.000000",
+      "thread_ts": "1782120000.000000",
+      "timestamp": "2026-06-22T09:58:00.000Z",
+      "text": "Invites sent to the first 40 leads. We will measure the lookup outcome at the June 26 review rather than counting invites as adoption."
+    },
+    {
+      "type": "message",
+      "user": "U00000009",
+      "channel": "C00000005",
+      "ts": "1782142380.000000",
+      "thread_ts": "1782142380.000000",
+      "timestamp": "2026-06-22T15:33:00.000Z",
+      "text": "Follow-up on DEAL-211: Solstice accepted the two-year term. They still want 18% off and quarterly invoicing.",
+      "reply_count": 3,
+      "reply_users": [
+        "U00000021",
+        "U00000022",
+        "U00000009"
+      ]
+    },
+    {
+      "type": "message",
+      "user": "U00000021",
+      "channel": "C00000005",
+      "ts": "1782142800.000000",
+      "thread_ts": "1782142380.000000",
+      "timestamp": "2026-06-22T15:40:00.000Z",
+      "text": "Approved 16% for the two-year term, annual invoicing, and standard payment timing. Quarterly billing is not part of this approval."
+    },
+    {
+      "type": "message",
+      "user": "U00000022",
+      "channel": "C00000005",
+      "ts": "1782143520.000000",
+      "thread_ts": "1782142380.000000",
+      "timestamp": "2026-06-22T15:52:00.000Z",
+      "text": "Margin check is attached to the exception record. Implementation stays a separate paid line item. Please regenerate the order form from those approved values."
+    },
+    {
+      "type": "message",
+      "user": "U00000009",
+      "channel": "C00000005",
+      "ts": "1782144780.000000",
+      "thread_ts": "1782142380.000000",
+      "timestamp": "2026-06-22T16:13:00.000Z",
+      "text": "Order form updated to 16%, annual billing, two years. Solstice has the final version; the earlier 18% request is superseded."
+    },
+    {
+      "type": "message",
+      "user": "U00000002",
+      "channel": "C00000001",
+      "ts": "1782204840.000000",
+      "thread_ts": "1782204840.000000",
+      "timestamp": "2026-06-23T08:54:00.000Z",
+      "text": "MapleCloud duplicated two usage events after a webhook timeout. This is downstream of the at-least-once contract from June 3. Our billing consumer had not persisted event_id before acknowledging.",
+      "reply_count": 3,
+      "reply_users": [
+        "U00000022",
+        "U00000002"
+      ]
+    },
+    {
+      "type": "message",
+      "user": "U00000022",
+      "channel": "C00000001",
+      "ts": "1782205320.000000",
+      "thread_ts": "1782204840.000000",
+      "timestamp": "2026-06-23T09:02:00.000Z",
+      "text": "Please do not delete invoice lines in place. Issue a credit memo so the correction is traceable. I have the two event IDs from SUP-1782."
+    },
+    {
+      "type": "message",
+      "user": "U00000002",
+      "channel": "C00000001",
+      "ts": "1782205800.000000",
+      "thread_ts": "1782204840.000000",
+      "timestamp": "2026-06-23T09:10:00.000Z",
+      "text": "The consumer now commits the idempotency record and ledger entry together. Replaying the same event 10 times produces one billable entry."
+    },
+    {
+      "type": "message",
+      "user": "U00000022",
+      "channel": "C00000001",
+      "ts": "1782207360.000000",
+      "thread_ts": "1782204840.000000",
+      "timestamp": "2026-06-23T09:36:00.000Z",
+      "text": "Credit memo CM-104 issued for $186.40. Customer balance is corrected. June usage exports retain the original entries plus the credit, as agreed."
+    },
+    {
+      "type": "message",
+      "user": "U00000014",
+      "channel": "C00000007",
+      "ts": "1782217200.000000",
+      "thread_ts": "1782217200.000000",
+      "timestamp": "2026-06-23T12:20:00.000Z",
+      "text": "SUP-1782 update: Finance found two duplicate ledger entries totaling $186.40. This was not caused by the customer issuing a new job; our consumer acknowledged before committing the idempotency record.",
+      "reply_count": 3,
+      "reply_users": [
+        "U00000022",
+        "U00000002",
+        "U00000014"
+      ]
+    },
+    {
+      "type": "message",
+      "user": "U00000022",
+      "channel": "C00000007",
+      "ts": "1782217620.000000",
+      "thread_ts": "1782217200.000000",
+      "timestamp": "2026-06-23T12:27:00.000Z",
+      "text": "CM-104 is posted. Their account balance includes the credit and the corrected statement is available. Please include the memo number in the customer reply."
+    },
+    {
+      "type": "message",
+      "user": "U00000002",
+      "channel": "C00000007",
+      "ts": "1782218100.000000",
+      "thread_ts": "1782217200.000000",
+      "timestamp": "2026-06-23T12:35:00.000Z",
+      "text": "Fix verified against ten replays of the same event. Only one execution is billed now. At-least-once webhook delivery remains the documented contract."
+    },
+    {
+      "type": "message",
+      "user": "U00000014",
+      "channel": "C00000007",
+      "ts": "1782219540.000000",
+      "thread_ts": "1782217200.000000",
+      "timestamp": "2026-06-23T12:59:00.000Z",
+      "text": "Customer received the statement and confirmed the balance. Ticket closed with the credit memo and the duplicate-event prevention explanation."
+    },
+    {
+      "type": "message",
+      "user": "U00000022",
+      "channel": "C00000013",
+      "ts": "1782222240.000000",
+      "thread_ts": "1782222240.000000",
+      "timestamp": "2026-06-23T13:44:00.000Z",
+      "text": "MapleCloud credit memo CM-104 for $186.40 is finalized. It offsets duplicate usage entries from SUP-1782. Do not remove the original entries from the ledger or silently edit a paid invoice.",
+      "reply_count": 3,
+      "reply_users": [
+        "U00000021",
+        "U00000002",
+        "U00000022"
+      ]
+    },
+    {
+      "type": "message",
+      "user": "U00000021",
+      "channel": "C00000013",
+      "ts": "1782222660.000000",
+      "thread_ts": "1782222240.000000",
+      "timestamp": "2026-06-23T13:51:00.000Z",
+      "text": "What check prevents this recurring? A customer apology by itself does not close the control gap."
+    },
+    {
+      "type": "message",
+      "user": "U00000002",
+      "channel": "C00000013",
+      "ts": "1782223140.000000",
+      "thread_ts": "1782222240.000000",
+      "timestamp": "2026-06-23T13:59:00.000Z",
+      "text": "Ledger and event_id deduplication commit in one transaction now. The replay test produces one billable entry even after repeated deliveries."
+    },
+    {
+      "type": "message",
+      "user": "U00000022",
+      "channel": "C00000013",
+      "ts": "1782224460.000000",
+      "thread_ts": "1782222240.000000",
+      "timestamp": "2026-06-23T14:21:00.000Z",
+      "text": "Control evidence saved with the memo. Next reconciliation includes a duplicate-event check before invoice generation."
+    },
+    {
+      "type": "message",
+      "user": "U00000020",
+      "channel": "C00000019",
+      "ts": "1782312000.000000",
+      "thread_ts": "1782312000.000000",
+      "timestamp": "2026-06-24T14:40:00.000Z",
+      "text": "June 24 Helio review complete. Their analyst approved the synthetic policy sandbox and named-user pilot. That is not approval to upload patient records.",
+      "reply_count": 3,
+      "reply_users": [
+        "U00000024",
+        "U00000001",
+        "U00000007"
+      ]
+    },
+    {
+      "type": "message",
+      "user": "U00000024",
+      "channel": "C00000019",
+      "ts": "1782312360.000000",
+      "thread_ts": "1782312000.000000",
+      "timestamp": "2026-06-24T14:46:00.000Z",
+      "text": "Correct. No BAA is signed and PHI remains prohibited. Scope is internal policy lookup with sanitized documents."
+    },
+    {
+      "type": "message",
+      "user": "U00000001",
+      "channel": "C00000019",
+      "ts": "1782313080.000000",
+      "thread_ts": "1782312000.000000",
+      "timestamp": "2026-06-24T14:58:00.000Z",
+      "text": "Okay to enable the June citation feature for that sandbox. Production integrations stay off until the separate requirements are met."
+    },
+    {
+      "type": "message",
+      "user": "U00000007",
+      "channel": "C00000019",
+      "ts": "1782314100.000000",
+      "thread_ts": "1782312000.000000",
+      "timestamp": "2026-06-24T15:15:00.000Z",
+      "text": "CRM updated: sandbox review passed, broader deployment still pending. Elena has the scoped pilot plan in writing.",
+      "reactions": [
+        {
+          "name": "white_check_mark",
+          "users": [
+            "U00000020"
+          ],
+          "count": 1
+        }
+      ]
+    },
+    {
+      "type": "message",
+      "user": "U00000006",
+      "channel": "C00000004",
+      "ts": "1782378660.000000",
+      "thread_ts": "1782378660.000000",
+      "timestamp": "2026-06-25T09:11:00.000Z",
+      "text": "Friday forecast: do not call BrightCart a commit because the champion likes the demo. We need a buyer, a procurement path, and a dated next step.",
+      "reply_count": 3,
+      "reply_users": [
+        "U00000010",
+        "U00000009",
+        "U00000006"
+      ]
+    },
+    {
+      "type": "message",
+      "user": "U00000010",
+      "channel": "C00000004",
+      "ts": "1782379140.000000",
+      "thread_ts": "1782378660.000000",
+      "timestamp": "2026-06-25T09:19:00.000Z",
+      "text": "Their champion has 12 users in the trial but no budget owner. I moved it back to discovery and booked a budget-owner call for July 1."
+    },
+    {
+      "type": "message",
+      "user": "U00000009",
+      "channel": "C00000004",
+      "ts": "1782379860.000000",
+      "thread_ts": "1782378660.000000",
+      "timestamp": "2026-06-25T09:31:00.000Z",
+      "text": "Solstice is still commit: approved order form, buyer confirmed, legal cleared. Signature meeting is June 29."
+    },
+    {
+      "type": "message",
+      "user": "U00000006",
+      "channel": "C00000004",
+      "ts": "1782381120.000000",
+      "thread_ts": "1782378660.000000",
+      "timestamp": "2026-06-25T09:52:00.000Z",
+      "text": "That distinction helps. Use evidence in the notes; enthusiastic Slack replies are not a procurement milestone."
+    },
+    {
+      "type": "message",
+      "user": "U00000023",
+      "channel": "C00000014",
+      "ts": "1782384960.000000",
+      "thread_ts": "1782384960.000000",
+      "timestamp": "2026-06-25T10:56:00.000Z",
+      "text": "Our new support engineer starts July 6. Please prepare a laptop, sandbox access, and the troubleshooting guide before day one.",
+      "reply_count": 3,
+      "reply_users": [
+        "U00000024",
+        "U00000011",
+        "U00000023"
+      ]
+    },
+    {
+      "type": "message",
+      "user": "U00000024",
+      "channel": "C00000014",
+      "ts": "1782385440.000000",
+      "thread_ts": "1782384960.000000",
+      "timestamp": "2026-06-25T11:04:00.000Z",
+      "text": "Default access is Support tools and synthetic demo workspaces. Production exports and secret management need separate role approval."
+    },
+    {
+      "type": "message",
+      "user": "U00000011",
+      "channel": "C00000014",
+      "ts": "1782385920.000000",
+      "thread_ts": "1782384960.000000",
+      "timestamp": "2026-06-25T11:12:00.000Z",
+      "text": "Jamie will be the onboarding buddy. First-week work is shadowing tickets and practicing the SAML and connector runbooks, not taking solo P1 pages."
+    },
+    {
+      "type": "message",
+      "user": "U00000023",
+      "channel": "C00000014",
+      "ts": "1782387240.000000",
+      "thread_ts": "1782384960.000000",
+      "timestamp": "2026-06-25T11:34:00.000Z",
+      "text": "Checklist has owners and due dates. I will confirm the equipment shipment tomorrow instead of assuming the order confirmation means it arrived."
+    },
+    {
+      "type": "message",
+      "user": "U00000021",
+      "channel": "C00000016",
+      "ts": "1782474480.000000",
+      "thread_ts": "1782474480.000000",
+      "timestamp": "2026-06-26T11:48:00.000Z",
+      "text": "June review: Northstar is live, Solstice usage is improving, and Helio’s synthetic sandbox is approved. Keep signed contracts, activation, and measured outcomes separate in the report.",
+      "reply_count": 3,
+      "reply_users": [
+        "U00000022",
+        "U00000016",
+        "U00000006"
+      ]
+    },
+    {
+      "type": "message",
+      "user": "U00000022",
+      "channel": "C00000016",
+      "ts": "1782474900.000000",
+      "thread_ts": "1782474480.000000",
+      "timestamp": "2026-06-26T11:55:00.000Z",
+      "text": "MapleCloud credit is closed and the duplicate-event control is documented. Retry-related inference spend is back near baseline."
+    },
+    {
+      "type": "message",
+      "user": "U00000016",
+      "channel": "C00000016",
+      "ts": "1782475620.000000",
+      "thread_ts": "1782474480.000000",
+      "timestamp": "2026-06-26T12:07:00.000Z",
+      "text": "Northstar outcome review is this afternoon. We will report the sample size and the remaining night-shift adoption gap."
+    },
+    {
+      "type": "message",
+      "user": "U00000006",
+      "channel": "C00000016",
+      "ts": "1782476640.000000",
+      "thread_ts": "1782474480.000000",
+      "timestamp": "2026-06-26T12:24:00.000Z",
+      "text": "Solstice signature meeting is June 29. Improved adoption is encouraging, but the renewal is not signed yet."
+    },
+    {
+      "type": "message",
+      "user": "U00000011",
+      "channel": "C00000007",
+      "ts": "1782488820.000000",
+      "thread_ts": "1782488820.000000",
+      "timestamp": "2026-06-26T15:47:00.000Z",
+      "text": "Weekend handover: Jamie has primary coverage, Riley backs up technical escalations. Only page Engineering for P1 impact; leave ordinary how-to tickets in the queue for Monday.",
+      "reply_count": 3,
+      "reply_users": [
+        "U00000012",
+        "U00000013",
+        "U00000011"
+      ]
+    },
+    {
+      "type": "message",
+      "user": "U00000012",
+      "channel": "C00000007",
+      "ts": "1782489300.000000",
+      "thread_ts": "1782488820.000000",
+      "timestamp": "2026-06-26T15:55:00.000Z",
+      "text": "I have the incident runbook and the remaining tickets. CedarDesk sync is current, MapleCloud billing is closed, and Helio has no production traffic enabled."
+    },
+    {
+      "type": "message",
+      "user": "U00000013",
+      "channel": "C00000007",
+      "ts": "1782489780.000000",
+      "thread_ts": "1782488820.000000",
+      "timestamp": "2026-06-26T16:03:00.000Z",
+      "text": "Available Saturday until 18:00 UTC. If a connector token expires, ask the workspace admin to reauthorize; do not ask for their password."
+    },
+    {
+      "type": "message",
+      "user": "U00000017",
+      "channel": "C00000012",
+      "ts": "1782491040.000000",
+      "thread_ts": "1782491040.000000",
+      "timestamp": "2026-06-26T16:24:00.000Z",
+      "text": "Northstar review: 112 of 180 users completed a workflow this week. In 25 sampled SOP lookups, median time was 1.7 minutes versus the 6.4-minute baseline.",
+      "reply_count": 3,
+      "reply_users": [
+        "U00000019",
+        "U00000016",
+        "U00000017"
+      ]
+    },
+    {
+      "type": "message",
+      "user": "U00000011",
+      "channel": "C00000007",
+      "ts": "1782491220.000000",
+      "thread_ts": "1782488820.000000",
+      "timestamp": "2026-06-26T16:27:00.000Z",
+      "text": "Thanks. Update the handover note when taking an escalation so we do not have two people making conflicting customer promises."
+    },
+    {
+      "type": "message",
+      "user": "U00000019",
+      "channel": "C00000012",
+      "ts": "1782491520.000000",
+      "thread_ts": "1782491040.000000",
+      "timestamp": "2026-06-26T16:32:00.000Z",
+      "text": "Twenty-three of the 25 sampled answers cited the approved SOP folder, so 92%. Both pilot targets are met in this sample."
+    },
+    {
+      "type": "message",
+      "user": "U00000016",
+      "channel": "C00000012",
+      "ts": "1782492240.000000",
+      "thread_ts": "1782491040.000000",
+      "timestamp": "2026-06-26T16:44:00.000Z",
+      "text": "Keep the sample size visible. Next focus is onboarding the night shift, where usage is still lower. Do not extrapolate this into a guaranteed productivity percentage."
+    },
+    {
+      "type": "message",
+      "user": "U00000017",
+      "channel": "C00000012",
+      "ts": "1782493380.000000",
+      "thread_ts": "1782491040.000000",
+      "timestamp": "2026-06-26T17:03:00.000Z",
+      "text": "Agreed with Morgan: night-shift training July 2, then repeat the lookup sample. Sponsor has the measured results and the remaining adoption gap."
+    },
+    {
+      "type": "message",
+      "user": "U00000023",
+      "channel": "C00000016",
+      "ts": "1782496320.000000",
+      "thread_ts": "1782496320.000000",
+      "timestamp": "2026-06-26T17:52:00.000Z",
+      "text": "Before logging off: clear leftovers from the office fridge and check whether you are listed as someone’s Monday backup. The navy water bottle is still here.",
+      "reply_count": 3,
+      "reply_users": [
+        "U00000012",
+        "U00000004",
+        "U00000023"
+      ]
+    },
+    {
+      "type": "message",
+      "user": "U00000012",
+      "channel": "C00000016",
+      "ts": "1782496800.000000",
+      "thread_ts": "1782496320.000000",
+      "timestamp": "2026-06-26T18:00:00.000Z",
+      "text": "Weekend queue handover is acknowledged. I will use the incident runbook for P1 escalations and leave routine how-to tickets for Monday."
+    },
+    {
+      "type": "message",
+      "user": "U00000004",
+      "channel": "C00000016",
+      "ts": "1782497520.000000",
+      "thread_ts": "1782496320.000000",
+      "timestamp": "2026-06-26T18:12:00.000Z",
+      "text": "Water bottle is mine 😅 picking it up now. Have a good weekend, folks."
+    },
+    {
+      "type": "message",
+      "user": "U00000023",
+      "channel": "C00000016",
+      "ts": "1782498540.000000",
+      "thread_ts": "1782496320.000000",
+      "timestamp": "2026-06-26T18:29:00.000Z",
+      "text": "Mystery solved. Thanks everyone."
+    }
+  ]
+}

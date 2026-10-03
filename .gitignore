@@ -1,0 +1,10 @@
+node_modules/
+.env
+.env.*
+!.env.example
+.venv/
+coverage/
+recordings/
+docs/validation/newman-full.json
+*.log
+.DS_Store

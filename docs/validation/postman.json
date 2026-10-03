@@ -1,0 +1,274 @@
+{
+  "testedAt": "2026-10-03T00:37:39.739Z",
+  "collection": "RelayAI Semantic Search",
+  "target": "http://127.0.0.1:3019",
+  "liveServices": true,
+  "requests": {
+    "total": 13,
+    "pending": 0,
+    "failed": 0
+  },
+  "assertions": {
+    "total": 41,
+    "pending": 0,
+    "failed": 0
+  },
+  "failures": [],
+  "executions": [
+    {
+      "name": "Readiness: every document embedded and index queryable",
+      "status": 200,
+      "responseTimeMs": 31,
+      "assertions": [
+        {
+          "name": "Ready",
+          "passed": true
+        },
+        {
+          "name": "Correct model and dimensions",
+          "passed": true
+        },
+        {
+          "name": "Complete corpus and cosine index",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "name": "Incident cause and prevention",
+      "status": 200,
+      "responseTimeMs": 427,
+      "assertions": [
+        {
+          "name": "HTTP 200 JSON",
+          "passed": true
+        },
+        {
+          "name": "Ordered array with finite cosine search scores",
+          "passed": true
+        },
+        {
+          "name": "Global search is capped at 20",
+          "passed": true
+        },
+        {
+          "name": "Relevant conversation appears in top 5",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "name": "Support: company login",
+      "status": 200,
+      "responseTimeMs": 517,
+      "assertions": [
+        {
+          "name": "HTTP 200 JSON",
+          "passed": true
+        },
+        {
+          "name": "Ordered array with finite cosine search scores",
+          "passed": true
+        },
+        {
+          "name": "Global search is capped at 20",
+          "passed": true
+        },
+        {
+          "name": "Relevant conversation appears in top 5",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "name": "Sales: discount approval",
+      "status": 200,
+      "responseTimeMs": 416,
+      "assertions": [
+        {
+          "name": "HTTP 200 JSON",
+          "passed": true
+        },
+        {
+          "name": "Ordered array with finite cosine search scores",
+          "passed": true
+        },
+        {
+          "name": "Global search is capped at 20",
+          "passed": true
+        },
+        {
+          "name": "Relevant conversation appears in top 5",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "name": "Operations: audit history",
+      "status": 200,
+      "responseTimeMs": 481,
+      "assertions": [
+        {
+          "name": "HTTP 200 JSON",
+          "passed": true
+        },
+        {
+          "name": "Ordered array with finite cosine search scores",
+          "passed": true
+        },
+        {
+          "name": "Global search is capped at 20",
+          "passed": true
+        },
+        {
+          "name": "Relevant conversation appears in top 5",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "name": "CSM: policy change",
+      "status": 200,
+      "responseTimeMs": 427,
+      "assertions": [
+        {
+          "name": "HTTP 200 JSON",
+          "passed": true
+        },
+        {
+          "name": "Ordered array with finite cosine search scores",
+          "passed": true
+        },
+        {
+          "name": "Global search is capped at 20",
+          "passed": true
+        },
+        {
+          "name": "Relevant conversation appears in top 5",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "name": "Billing handoff and resolution",
+      "status": 200,
+      "responseTimeMs": 419,
+      "assertions": [
+        {
+          "name": "HTTP 200 JSON",
+          "passed": true
+        },
+        {
+          "name": "Ordered array with finite cosine search scores",
+          "passed": true
+        },
+        {
+          "name": "Global search is capped at 20",
+          "passed": true
+        },
+        {
+          "name": "Relevant conversation appears in top 5",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "name": "Department filter: Sales",
+      "status": 200,
+      "responseTimeMs": 518,
+      "assertions": [
+        {
+          "name": "HTTP 200 JSON",
+          "passed": true
+        },
+        {
+          "name": "Ordered array with finite cosine search scores",
+          "passed": true
+        },
+        {
+          "name": "Only Sales conversations",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "name": "Client cannot override the result limit",
+      "status": 200,
+      "responseTimeMs": 407,
+      "assertions": [
+        {
+          "name": "HTTP 200 JSON",
+          "passed": true
+        },
+        {
+          "name": "Ordered array with finite cosine search scores",
+          "passed": true
+        },
+        {
+          "name": "Exactly 20 results despite limit=1000",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "name": "Missing query",
+      "status": 400,
+      "responseTimeMs": 1,
+      "assertions": [
+        {
+          "name": "Invalid input returns 400",
+          "passed": true
+        },
+        {
+          "name": "JSON error explains the problem",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "name": "Blank query",
+      "status": 400,
+      "responseTimeMs": 2,
+      "assertions": [
+        {
+          "name": "Invalid input returns 400",
+          "passed": true
+        },
+        {
+          "name": "JSON error explains the problem",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "name": "Repeated query parameter",
+      "status": 400,
+      "responseTimeMs": 2,
+      "assertions": [
+        {
+          "name": "Invalid input returns 400",
+          "passed": true
+        },
+        {
+          "name": "JSON error explains the problem",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "name": "Unknown department",
+      "status": 400,
+      "responseTimeMs": 1,
+      "assertions": [
+        {
+          "name": "Invalid input returns 400",
+          "passed": true
+        },
+        {
+          "name": "JSON error explains the problem",
+          "passed": true
+        }
+      ]
+    }
+  ]
+}

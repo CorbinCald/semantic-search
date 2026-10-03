@@ -1,0 +1,28 @@
+{
+  "name": "relayai-semantic-search",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Semantic search over a simulated AI SaaS company's Slack workspace",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "start": "node --env-file-if-exists=.env src/server.js",
+    "dataset": "node scripts/generate-dataset.js",
+    "import": "node --env-file-if-exists=.env scripts/import.js",
+    "index": "node --env-file-if-exists=.env scripts/create-index.js",
+    "setup": "npm run dataset && npm run import && npm run index",
+    "verify": "node --env-file-if-exists=.env scripts/verify.js",
+    "eval": "node --env-file-if-exists=.env scripts/evaluate.js",
+    "test": "node --test test/*.test.js",
+    "test:postman": "node scripts/run-postman.js"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "mongodb": "^7.7.0"
+  },
+  "devDependencies": {
+    "newman": "^6.2.1"
+  }
+}

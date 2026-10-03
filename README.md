@@ -1,147 +1,138 @@
-# RelayAI Semantic Search
+# Northstar AI · Slack semantic search
 
-Semantic search over a fictional AI SaaS company's Slack workspace. A natural-language question is embedded, searched in MongoDB, and returned as an ordered JSON array of up to **20 conversations with scores**. This assignment implements retrieval only; there is no chat model or agent.
+An Express API that retrieves conversations from a realistically simulated AI SaaS company. Natural-language questions become embeddings, and MongoDB ranks the matching Slack threads. There is no answer-generating LLM or agent in this application.
 
-**Demo recording:** [Watch the 98-second walkthrough on Google Drive](https://drive.google.com/file/d/1888JheB8Vj5GMrzxfmpcGba8Q-QM7Zq7/view?usp=sharing). Public viewing access was verified without a Google sign-in.
+**Model choice:** this submission uses **`qwen/qwen3-embedding-8b` hosted through OpenRouter**, as requested for this rebuild. This is a deliberate change from the assignment's named `Qwen3-Embedding-8B-4bit-DWQ` checkpoint; it does **not** claim to use that quantized variant. All stored vectors and live query vectors use the same hosted model, pinned to the Nebius provider, with **4096 dimensions**. The MongoDB index uses **cosine similarity**.
 
-The workspace contains **25 employees, 20 channels, 288 messages, and 72 threads** across **Engineering, Sales, Support, CSM, and Operations**, covering June 1–26, 2026. Conversations include incidents and postmortems, sales approvals, support diagnostics, onboarding, renewals, security, billing, policy changes, and ordinary office chatter. Customers, people, policies, and events are invented. Addresses and source links use reserved `.example` domains.
+## Dataset
 
-## Embedding model
+[`data/workspace.json`](data/workspace.json) contains **150 original messages in 50 threads**, from **15 employees in five departments**, spanning September 14–October 1, 2026. Northstar sells Beacon, a workplace knowledge search product. The company, people, customers, incidents, policies, and metrics are all fictional. No real Slack data was exported.
 
-The updated requirement was to use a model released in the second half of 2026. This project uses **NVIDIA Nemotron 3 Embed 1B**, released **July 16, 2026**, through OpenRouter as `nvidia/nemotron-3-embed-1b:free`.
+| Department | Channel | Threads | Typical conversations |
+| --- | --- | ---: | --- |
+| Engineering | `eng-platform` | 10 | Connector backlogs, access revocation, reliability, API key rotation |
+| Sales | `sales-deals` | 10 | Pilots, pricing, residency requirements, qualification, handoffs |
+| Support | `support-triage` | 10 | Login loops, missing results, billing disputes, scanned PDFs |
+| CSM | `csm-accounts` | 10 | Onboarding, adoption, champions, success measurement, renewals |
+| Operations | `ops-business` | 10 | Invoice corrections, vendor reviews, access, staffing, everyday coordination |
 
-The model's native vector dimension is **2048**. Both document and query embeddings, and the MongoDB cosine index, use that dimension. This is an explicit adaptation from the original rubric's Qwen model and 4096 dimensions. Vectors are never padded to manufacture a different size. See the [NVIDIA model card](https://huggingface.co/nvidia/Nemotron-3-Embed-1B-BF16) and [OpenRouter endpoint](https://openrouter.ai/nvidia/nemotron-3-embed-1b:free).
+The conversations are individually authored, not created by substituting names into a template. Shared events develop across teams: Harbor's delayed Drive sync, Birch's duplicated invoice, Cedar's pilot, and Morrow's renewal risk. Threads include questions, corrections, decisions, follow-up, Slack timestamps, author identities, and occasional reactions.
 
-Both paths use the same fixed model in `src/config.js`. As documented by NVIDIA, document inputs start with `passage: ` and queries with `query: `. Outputs are checked for the correct model, result indices, 2048 finite coordinates, and a nonzero norm, then normalized. OpenRouter sometimes identifies this model with its internal serving name; the small explicit allowlist accepts that identifier for the same model. There is no fallback to a different model.
+**Retrieval unit:** one complete thread becomes one MongoDB document. Each stores its original messages, author names, channel, department, title, readable text, SHA-256 content hash, embedding, and embedding metadata. Keeping replies together retains the resolution alongside the initial question. Every message is included in an embedded thread; no message text is discarded. These short threads fit comfortably within the model context window.
 
-## Run
+## Run locally
 
-Requirements: **Node.js 22 or later**, Docker with Compose, and an OpenRouter API key. The included local MongoDB deployment contains both `mongod` and the `mongot` search engine; a plain `mongo` image does not provide this setup.
+Requires Node.js 24+, Docker with Compose, an OpenRouter API key with embedding access, and an internet connection. The included MongoDB Atlas Local image provides both `mongod` and `mongot`; a plain `mongo` container does not provide this vector-search setup. No GPU, Python installation, or local model download is required.
 
-```sh
+```bash
 npm ci
 cp .env.example .env
-# Put your OPENROUTER_API_KEY in .env, or export it in your shell.
+# Set OPENROUTER_API_KEY in .env, or export it in the shell.
+# Do not commit the key. An exported value takes precedence over .env.
 docker compose up -d --wait
-npm run setup
+npm run seed
 npm run verify
 npm start
 ```
 
-The API listens at `http://127.0.0.1:3019`. The database persists in Docker volumes, and the ports bind to loopback. Stop the API with Ctrl+C and the database with `docker compose stop`; restart with `docker compose up -d --wait`. On a Linux host where Docker requires administrator access, prefix the Docker commands with `sudo`.
+Default addresses:
 
-`npm run setup` generates the deterministic dataset, imports embedded threads, creates the vector index, and waits for it to become queryable. Import can be rerun: unchanged documents with valid embeddings are skipped. Each completed batch is saved, so an interrupted import can resume. No raw document is inserted without an embedding.
+| Setting | Default |
+| --- | --- |
+| Express API | `http://127.0.0.1:3210` |
+| MongoDB | `mongodb://127.0.0.1:27028/?directConnection=true` |
+| Database / collection | `northstar_slack.threads` |
+| Vector index | `slack_cosine_4096` |
+| Embedding API | `https://openrouter.ai/api/v1/embeddings` |
+| Model | `qwen/qwen3-embedding-8b` |
 
-To use MongoDB Atlas instead, set `MONGODB_URI` to your connection string and choose `MONGODB_DATABASE` and `MONGODB_COLLECTION` in `.env`. Use a deployment supporting vector search and a database user allowed to write documents and create search indexes. Keep credentials out of Git. Local MongoDB needs no Atlas account.
+The seed script calls the embedding API, validates each returned vector, and upserts each complete document. On reruns, unchanged text reuses its verified vector; changed text is embedded again. It refuses unrelated documents in the target collection. Index creation is automated, and the script waits until all 50 documents are searchable. A failed run can be resumed with `npm run seed`.
+
+For an Atlas deployment, set `MONGODB_URI` and `MONGODB_DATABASE` in `.env` instead of starting the local container. The database account must be allowed to write documents and create search indexes. Use a dedicated empty collection for the first import.
+
+Stop the local database with `docker compose stop`. Its named volumes preserve the imported data. Restart with `docker compose up -d --wait`.
 
 ## API
 
-| Endpoint | Parameters | Response |
-| --- | --- | --- |
-| `GET /api/search` | Required `q`: a natural-language question, 1–2000 characters. Optional `department`: `Engineering`, `Sales`, `Support`, `CSM`, or `Operations`. | JSON array, best match first, at most 20 results. |
-| `GET /api/health` | None | Database readiness, document/embedding counts, model, dimensions, and index status. |
+### `GET /api/search?q=<natural-language question>`
 
-```sh
-curl --get http://127.0.0.1:3019/api/search \
-  --data-urlencode 'q=What caused the June 9 slowdown and what fixed it?'
+`q` is required: one nonblank string, at most 1,500 characters after trimming. Repeated `q` parameters are rejected. The endpoint embeds the query, performs MongoDB `$vectorSearch`, and returns a **JSON array ordered by descending score, limited to 20 results**. With the included 50-thread corpus it returns 20. There is no keyword-search or in-memory similarity fallback.
 
-curl --get http://127.0.0.1:3019/api/search \
-  --data-urlencode 'q=Which pricing concessions need approval?' \
-  --data-urlencode 'department=Sales'
-
-curl http://127.0.0.1:3019/api/health
+```bash
+curl --get 'http://127.0.0.1:3210/api/search' \
+  --data-urlencode 'q=Why do scanned invoices upload but never appear when I search for a vendor?'
 ```
 
-Each result includes `_id`, `title`, `channel`, `department`, `text`, the original `messages`, participants, timestamps, a simulated permalink, and `score`. The 2048-number embedding is excluded from API responses. A shortened illustration of the response shape:
+Each result contains `id`, `workspace`, `channel`, `department`, `title`, `startedAt`, `messages`, `text`, and `score`. The original conversation remains available so the client can inspect its source. Raw embedding arrays are excluded from API responses. See [`evidence/postman-verification.json`](evidence/postman-verification.json) for actual scores and top-five results from the live checks.
 
-```json
-[
-  {
-    "_id": "eng-007",
-    "title": "INC-2641 elevated 429 errors and a stuck queue",
-    "department": "Engineering",
-    "channel": "incidents",
-    "messageCount": 4,
-    "score": 0.678
-  }
-]
-```
+For this small dataset, exact nearest-neighbor search (`exact: true`) gives reproducible ranking without tuning an approximate candidate count. MongoDB's cosine score is normalized to `[0, 1]`: `(1 + cosine similarity) / 2`. A score expresses semantic similarity, not factual correctness or a probability. Ties are ordered by document ID.
 
-MongoDB's `vectorSearchScore` for cosine is normalized into `[0, 1]`: `(1 + cosineSimilarity) / 2`. Higher is more similar. These scores are similarity measurements, not probabilities. The response contains nearest neighbors even for a question the workspace does not answer. Historical and superseded policies remain searchable; use dates and follow-up messages to interpret them.
+Queries receive Qwen's retrieval instruction format (`Instruct: …\nQuery: …`); document text is embedded without that prefix. Both paths call the same client and the same model. The client checks the returned model identity, vector length, finite values, and nonzero magnitude before any database operation.
 
-The pipeline uses `$vectorSearch` with `numCandidates: 200` and a fixed `limit: 20`, then projects scores and sorts descending. Department selection is a vector-index prefilter. The model and document-representation version are also prefiltered to prevent incompatible embeddings from being mixed. Passing a `limit` parameter cannot increase the fixed cap.
+### `GET /health`
+
+Returns document and embedding counts, configured model, dimension count, and live index readiness. It returns `200` only when all documents have vectors from the configured model and the correct cosine index is ready. It checks MongoDB readiness; it does not make a paid embedding request. A successful search additionally verifies the upstream service.
 
 | Status | Meaning |
 | --- | --- |
-| `200` | Search results, or a ready health report. |
-| `400` | Missing, blank, repeated, or oversized `q`, or an invalid department. |
-| `502` | Embedding provider failed or returned invalid embeddings. |
-| `503` | MongoDB/search unavailable, or health is not ready. |
-| `404` | Unknown endpoint. |
+| `200` | Search array or healthy database/index |
+| `400` | Missing, blank, repeated, or excessive `q` |
+| `404` | Unknown endpoint |
+| `503` | Embedding dependency unavailable, invalid embedding response, or database failure |
 
-OpenRouter calls have a 45-second timeout and bounded retries for transient HTTP failures. Provider failures are reported as errors, rather than successful empty search results.
+Errors are JSON objects with an `error` string. Upstream response bodies, credentials, and stack traces are not returned. The app binds to localhost by default; authentication and internet-facing deployment are outside this assignment.
 
-## Dataset and storage
+## MongoDB index
 
-`data/scenarios.js` contains the authored conversations. `npm run dataset` deterministically produces:
-
-| File | Purpose |
-| --- | --- |
-| `data/workspace.json` | Slack-style users, channel metadata, chronological messages, thread links, and reactions. |
-| `data/threads.json` | One retrieval document per complete thread, including every reply and author. |
-| `data/manifest.json` | Counts by department and a SHA-256 fingerprint of the corpus. |
-
-Thread-level documents retain the context of short replies and connect symptoms with resolutions. For example, INC-2641 appears in Engineering, Support, Sales, CSM, and Finance conversations. The trial-duration change preserves the earlier 14-day policy and the June 17 switch to 21 days; MapleCloud's billing story progresses from an uncertain report to a confirmed $186.40 credit memo.
-
-MongoDB stores all 72 documents in **`relayai.slack_threads`**. Every document has a normalized embedding, model ID, dimensions, representation version, embedding timestamp, and hashes of its source text and exact embedding input. The simulated Slack export remains available for the next RAG assignment.
-
-The index, `slack_cosine_2048`, is created through the MongoDB driver's `createSearchIndex` API:
+The seed script creates this `vectorSearch` index:
 
 ```json
 {
-  "fields": [
-    { "type": "vector", "path": "embedding", "numDimensions": 2048, "similarity": "cosine" },
-    { "type": "filter", "path": "department" },
-    { "type": "filter", "path": "embeddingModel" },
-    { "type": "filter", "path": "representation" }
-  ]
+  "name": "slack_cosine_4096",
+  "type": "vectorSearch",
+  "definition": {
+    "fields": [
+      {
+        "type": "vector",
+        "path": "embedding",
+        "numDimensions": 4096,
+        "similarity": "cosine"
+      }
+    ]
+  }
 }
 ```
 
-## Postman and verification
+The pipeline in [`src/database.js`](src/database.js) uses `$vectorSearch` with `limit: 20` and projects `score: { $meta: "vectorSearchScore" }`.
 
-Import **`postman/RelayAI.postman_collection.json`** into Postman, set `baseUrl` to the running API, and run the collection. It checks real responses for readiness, all five departments' use cases, descending scores, relevant results in the top five, the 20-result cap, department filtering, and input errors. No API key belongs in Postman; the server holds it.
+## Verify with Postman
 
-The same collection runs with Postman's Newman runner:
+Import [`postman/Northstar.postman_collection.json`](postman/Northstar.postman_collection.json) and [`postman/local.postman_environment.json`](postman/local.postman_environment.json), select **Northstar local**, and run the collection. The environment contains only the API base URL; clients never need the OpenRouter key.
 
-```sh
+The collection verifies real searches across all five departments, cross-team incident retrieval, a semantic paraphrase, score ordering, the 20-result bound, source context, and invalid-input behavior. Expected relevant threads must appear in the first five results; it does not assert brittle exact floating-point scores. The Postman desktop Lightweight API Client can also send the example GET requests without an account.
+
+The same collection runs through Postman's Newman runner:
+
+```bash
+npm test
+npm run verify
 npm run test:postman
-# For a different running API:
-API_BASE_URL=http://localhost:3019 npm run test:postman
 ```
 
-Additional checks:
+`npm test` covers input handling, dependency failures, model/vector validation, and dataset integrity. The live Postman collection uses the real hosted embeddings and real MongoDB index. `npm run verify` checks every stored vector, content hash, source message, model ID, and vector uniqueness, then tests self-retrieval through MongoDB.
 
-```sh
-npm test            # API behavior, provider contracts, and corpus integrity; no credentials needed
-npm run verify      # Real MongoDB: every vector, source hash, index definition, and exact self-search
-npm run eval        # Real model + MongoDB: 16 hand-labeled, paraphrased retrieval questions
-npm run import      # Rerun to confirm unchanged documents are skipped
-```
+Committed evidence:
 
-Validated against the live MongoDB and OpenRouter services:
+- [`evidence/ingestion.json`](evidence/ingestion.json): import and index readiness.
+- [`evidence/database-verification.json`](evidence/database-verification.json): full collection audit and actual index definition.
+- [`evidence/postman-verification.json`](evidence/postman-verification.json): request outcomes, assertions, timing, and actual ranked results.
+- [`docs/submission.md`](docs/submission.md): recording and submission references.
 
-| Check | Observed result |
-| --- | --- |
-| Automated behavior and dataset checks | **14/14 passed**. |
-| MongoDB verification | **72/72 embedded**, normalized, matching source hashes; cosine index READY; document self-search score 1. |
-| Live Postman collection | **13 requests, 41/41 assertions passed**. |
-| Hand-labeled retrieval evaluation | **16/16** relevant threads in the top five; mean reciprocal rank **0.9375**. |
-| Repeated import | **72 unchanged, 0 new embeddings**. |
-| Production dependency audit | **0 vulnerabilities** at validation time. |
+This is a small, curated educational corpus, not a measured production benchmark. New queries always return the nearest 20 available conversations, even for topics outside the dataset; the API does not generate an answer or apply a relevance cutoff. It does not implement real Slack authorization. The account-access discussions in the fictional data describe the fictional product, not security features of this demo.
 
-Machine-readable evidence is committed in `docs/validation/database.json`, `postman.json`, and `retrieval.json`. Retrieval cases are limited to this authored corpus; the score does not claim general-world accuracy. GitHub Actions reruns the behavior tests and confirms the generated dataset is reproducible, without external credentials.
+## References
 
-For a quick review, run the Postman collection, open its incident result, and confirm the thread includes both the retry-storm cause and the 14:58 resolution. Then search for the trial extension policy and check the dated distinction between new and existing trials.
-
-References: [NVIDIA model and retrieval prefixes](https://huggingface.co/nvidia/Nemotron-3-Embed-1B-BF16), [OpenRouter embeddings API](https://openrouter.ai/docs/api/api-reference/embeddings/submit-an-embedding-request), [MongoDB local Docker deployment](https://www.mongodb.com/docs/atlas/cli/current/atlas-cli-deploy-docker/), [MongoDB vector search stage](https://www.mongodb.com/docs/vector-search/query/aggregation-stages/vector-search-stage/), and [Postman Newman](https://learning.postman.com/docs/collections/using-newman-cli/command-line-integration-with-newman/).
+- [OpenRouter Qwen3 Embedding 8B](https://openrouter.ai/qwen/qwen3-embedding-8b) and [embeddings API](https://openrouter.ai/docs/api/api-reference/embeddings/create-embeddings)
+- [Qwen3 embedding model card and retrieval instructions](https://huggingface.co/Qwen/Qwen3-Embedding-8B)
+- [MongoDB Atlas Local with Docker](https://www.mongodb.com/docs/atlas/cli/current/atlas-cli-deploy-docker/) and [vector search stage](https://www.mongodb.com/docs/atlas/atlas-vector-search/vector-search-stage/)
+- [Postman Newman](https://learning.postman.com/docs/reference/newman-cli/installing-running-newman/)

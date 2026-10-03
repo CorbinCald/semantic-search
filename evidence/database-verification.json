@@ -1,0 +1,40 @@
+{
+  "checkedAt": "2026-10-03T01:24:17.632Z",
+  "datasetSha256": "8bb0a2130f70c81c196350f8e8c99f739930ed5308ee04899d6545c5124ea141",
+  "ready": true,
+  "documents": 50,
+  "embeddedDocuments": 50,
+  "model": "qwen/qwen3-embedding-8b",
+  "dimensions": 4096,
+  "index": {
+    "name": "slack_cosine_4096",
+    "status": "READY",
+    "queryable": true,
+    "similarity": "cosine"
+  },
+  "messages": 150,
+  "departments": {
+    "Engineering": 10,
+    "Sales": 10,
+    "Support": 10,
+    "CSM": 10,
+    "Operations": 10
+  },
+  "uniqueVectors": 50,
+  "maxNormError": 7.757422415544113e-8,
+  "selfMatch": {
+    "id": "csm-01",
+    "score": 1,
+    "resultCount": 20
+  },
+  "indexDefinition": {
+    "fields": [
+      {
+        "type": "vector",
+        "path": "embedding",
+        "numDimensions": 4096,
+        "similarity": "cosine"
+      }
+    ]
+  }
+}

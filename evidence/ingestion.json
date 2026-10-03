@@ -1,0 +1,17 @@
+{
+  "checkedAt": "2026-10-03T01:19:35.649Z",
+  "datasetSha256": "8bb0a2130f70c81c196350f8e8c99f739930ed5308ee04899d6545c5124ea141",
+  "generatedThisRun": 2,
+  "indexedDocuments": 50,
+  "ready": true,
+  "documents": 50,
+  "embeddedDocuments": 50,
+  "model": "qwen/qwen3-embedding-8b",
+  "dimensions": 4096,
+  "index": {
+    "name": "slack_cosine_4096",
+    "status": "READY",
+    "queryable": true,
+    "similarity": "cosine"
+  }
+}

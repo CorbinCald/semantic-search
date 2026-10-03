@@ -1,32 +1,23 @@
-import { createApp } from './app.js';
-import { DIMENSIONS, MODEL, readConfig } from './config.js';
-import { embeddingFilter, indexStatus, openDatabase } from './database.js';
+import { config } from './config.js';
 import { createEmbedder } from './embeddings.js';
-import { createSearch } from './search.js';
+import { connectDatabase, readiness, searchPipeline } from './database.js';
+import { createApp } from './app.js';
 
-const config = readConfig();
-const embed = createEmbedder({ apiKey: config.openrouterKey });
-const { client, db, collection } = await openDatabase(config);
-const app = createApp({
-  search: createSearch({ collection, embed }),
-  health: async () => {
-    await db.command({ ping: 1 });
-    const index = await indexStatus(collection);
-    const [documents, embeddedDocuments] = await Promise.all([
-      collection.countDocuments(),
-      collection.countDocuments({ ...embeddingFilter(), embedding: { $size: DIMENSIONS } }),
-    ]);
-    return { ready: index.queryable && documents > 0 && documents === embeddedDocuments,
-      database: config.database, collection: config.collection, documents, embeddedDocuments,
-      model: MODEL, dimensions: DIMENSIONS, similarity: 'cosine', index };
-  },
-});
-const server = app.listen(config.port, config.host, () => console.log(`Semantic search: http://${config.host}:${config.port}/api/search?q=What+caused+the+June+9+outage`));
-async function shutdown() {
-  const drained = new Promise(resolve => server.close(resolve));
-  server.closeIdleConnections();
-  await drained;
+const settings = config();
+const embed = createEmbedder(settings);
+const { client, collection } = await connectDatabase(settings);
+const state = await readiness(collection, settings.model);
+if (!state.ready) {
   await client.close();
+  throw new Error('Dataset/index is not ready. Run npm run seed, then npm run verify.');
 }
-process.once('SIGTERM', shutdown);
-process.once('SIGINT', shutdown);
+const app = createApp({
+  embed,
+  search: vector => collection.aggregate(searchPipeline(vector), { maxTimeMS: 15000 }).toArray(),
+  health: () => readiness(collection, settings.model),
+});
+const server = app.listen(settings.port, settings.host, () => console.log(`Northstar semantic search: http://${settings.host}:${settings.port}`));
+for (const signal of ['SIGINT', 'SIGTERM']) process.once(signal, () => {
+  server.close(async () => { await client.close(); process.exit(0); });
+  setTimeout(() => process.exit(1), 5000).unref();
+});

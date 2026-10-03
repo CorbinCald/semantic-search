@@ -1,0 +1,398 @@
+{
+  "info": {
+    "name": "Northstar Slack — semantic search verification",
+    "description": "Live tests against Express, the OpenRouter Qwen3 Embedding 8B model, and MongoDB Vector Search. No mocks in this collection.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Database readiness and exact model",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/health"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"HTTP 200\", () => pm.response.to.have.status(200));",
+              "const b = pm.response.json();",
+              "pm.test(\"All 50 conversations embedded with configured model\", () => { pm.expect(b.ready).to.eql(true); pm.expect(b.documents).to.eql(50); pm.expect(b.embeddedDocuments).to.eql(50); pm.expect(b.model).to.eql(\"qwen/qwen3-embedding-8b\"); pm.expect(b.dimensions).to.eql(4096); });",
+              "pm.test(\"Cosine index is ready\", () => { pm.expect(b.index.status).to.eql(\"READY\"); pm.expect(b.index.similarity).to.eql(\"cosine\"); });"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Engineering: rotate secrets safely",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{baseUrl}}/api/search?q=How%20can%20we%20replace%20an%20API%20credential%20without%20interrupting%20callers%3F",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "search"
+          ],
+          "query": [
+            {
+              "key": "q",
+              "value": "How can we replace an API credential without interrupting callers?"
+            }
+          ]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"HTTP 200\", () => pm.response.to.have.status(200));",
+              "const rows = pm.response.json();",
+              "pm.test(\"JSON array with exactly 20 results\", () => { pm.expect(rows).to.be.an(\"array\"); pm.expect(rows.length).to.eql(20); });",
+              "pm.test(\"Scores are numeric and sorted highest first\", () => rows.forEach((r,i) => { pm.expect(r.score).to.be.a(\"number\").within(0,1); if(i) pm.expect(r.score).to.be.at.most(rows[i-1].score); }));",
+              "pm.test(\"Source context retained without raw vectors\", () => rows.forEach(r => { pm.expect(r.id).to.be.a(\"string\"); pm.expect(r.messages.length).to.be.above(0); pm.expect(r).not.to.have.property(\"embedding\"); pm.expect(r.channel).to.be.a(\"string\"); }));",
+              "pm.test(\"Relevant conversation appears in the first five\", () => pm.expect(rows.slice(0,5).some(r=>[\"eng-09\"].includes(r.id))).to.eql(true));",
+              "pm.test(\"No duplicate conversations\", () => pm.expect(new Set(rows.map(r=>r.id)).size).to.eql(rows.length));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Sales: a deal blocked by data location",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{baseUrl}}/api/search?q=Which%20prospect%20needs%20all%20of%20its%20operational%20data%20to%20stay%20in%20Europe%3F",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "search"
+          ],
+          "query": [
+            {
+              "key": "q",
+              "value": "Which prospect needs all of its operational data to stay in Europe?"
+            }
+          ]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"HTTP 200\", () => pm.response.to.have.status(200));",
+              "const rows = pm.response.json();",
+              "pm.test(\"JSON array with exactly 20 results\", () => { pm.expect(rows).to.be.an(\"array\"); pm.expect(rows.length).to.eql(20); });",
+              "pm.test(\"Scores are numeric and sorted highest first\", () => rows.forEach((r,i) => { pm.expect(r.score).to.be.a(\"number\").within(0,1); if(i) pm.expect(r.score).to.be.at.most(rows[i-1].score); }));",
+              "pm.test(\"Source context retained without raw vectors\", () => rows.forEach(r => { pm.expect(r.id).to.be.a(\"string\"); pm.expect(r.messages.length).to.be.above(0); pm.expect(r).not.to.have.property(\"embedding\"); pm.expect(r.channel).to.be.a(\"string\"); }));",
+              "pm.test(\"Relevant conversation appears in the first five\", () => pm.expect(rows.slice(0,5).some(r=>[\"sales-07\",\"eng-07\"].includes(r.id))).to.eql(true));",
+              "pm.test(\"No duplicate conversations\", () => pm.expect(new Set(rows.map(r=>r.id)).size).to.eql(rows.length));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Support: uploaded images have no searchable words",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{baseUrl}}/api/search?q=Why%20do%20scanned%20invoices%20upload%20successfully%20but%20never%20appear%20when%20I%20search%20for%20a%20vendor%3F",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "search"
+          ],
+          "query": [
+            {
+              "key": "q",
+              "value": "Why do scanned invoices upload successfully but never appear when I search for a vendor?"
+            }
+          ]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"HTTP 200\", () => pm.response.to.have.status(200));",
+              "const rows = pm.response.json();",
+              "pm.test(\"JSON array with exactly 20 results\", () => { pm.expect(rows).to.be.an(\"array\"); pm.expect(rows.length).to.eql(20); });",
+              "pm.test(\"Scores are numeric and sorted highest first\", () => rows.forEach((r,i) => { pm.expect(r.score).to.be.a(\"number\").within(0,1); if(i) pm.expect(r.score).to.be.at.most(rows[i-1].score); }));",
+              "pm.test(\"Source context retained without raw vectors\", () => rows.forEach(r => { pm.expect(r.id).to.be.a(\"string\"); pm.expect(r.messages.length).to.be.above(0); pm.expect(r).not.to.have.property(\"embedding\"); pm.expect(r.channel).to.be.a(\"string\"); }));",
+              "pm.test(\"Relevant conversation appears in the first five\", () => pm.expect(rows.slice(0,5).some(r=>[\"support-07\",\"eng-08\"].includes(r.id))).to.eql(true));",
+              "pm.test(\"No duplicate conversations\", () => pm.expect(new Set(rows.map(r=>r.id)).size).to.eql(rows.length));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "CSM: adoption falls after sponsor moves",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{baseUrl}}/api/search?q=What%20are%20we%20doing%20about%20the%20account%20whose%20champion%20changed%20jobs%20and%20usage%20declined%3F",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "search"
+          ],
+          "query": [
+            {
+              "key": "q",
+              "value": "What are we doing about the account whose champion changed jobs and usage declined?"
+            }
+          ]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"HTTP 200\", () => pm.response.to.have.status(200));",
+              "const rows = pm.response.json();",
+              "pm.test(\"JSON array with exactly 20 results\", () => { pm.expect(rows).to.be.an(\"array\"); pm.expect(rows.length).to.eql(20); });",
+              "pm.test(\"Scores are numeric and sorted highest first\", () => rows.forEach((r,i) => { pm.expect(r.score).to.be.a(\"number\").within(0,1); if(i) pm.expect(r.score).to.be.at.most(rows[i-1].score); }));",
+              "pm.test(\"Source context retained without raw vectors\", () => rows.forEach(r => { pm.expect(r.id).to.be.a(\"string\"); pm.expect(r.messages.length).to.be.above(0); pm.expect(r).not.to.have.property(\"embedding\"); pm.expect(r.channel).to.be.a(\"string\"); }));",
+              "pm.test(\"Relevant conversation appears in the first five\", () => pm.expect(rows.slice(0,5).some(r=>[\"csm-03\",\"csm-07\"].includes(r.id))).to.eql(true));",
+              "pm.test(\"No duplicate conversations\", () => pm.expect(new Set(rows.map(r=>r.id)).size).to.eql(rows.length));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Operations: corrected invoice",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{baseUrl}}/api/search?q=Was%20the%20extra%20charge%20on%20Birch%20Retail%20refunded%20or%20removed%20before%20payment%3F",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "search"
+          ],
+          "query": [
+            {
+              "key": "q",
+              "value": "Was the extra charge on Birch Retail refunded or removed before payment?"
+            }
+          ]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"HTTP 200\", () => pm.response.to.have.status(200));",
+              "const rows = pm.response.json();",
+              "pm.test(\"JSON array with exactly 20 results\", () => { pm.expect(rows).to.be.an(\"array\"); pm.expect(rows.length).to.eql(20); });",
+              "pm.test(\"Scores are numeric and sorted highest first\", () => rows.forEach((r,i) => { pm.expect(r.score).to.be.a(\"number\").within(0,1); if(i) pm.expect(r.score).to.be.at.most(rows[i-1].score); }));",
+              "pm.test(\"Source context retained without raw vectors\", () => rows.forEach(r => { pm.expect(r.id).to.be.a(\"string\"); pm.expect(r.messages.length).to.be.above(0); pm.expect(r).not.to.have.property(\"embedding\"); pm.expect(r.channel).to.be.a(\"string\"); }));",
+              "pm.test(\"Relevant conversation appears in the first five\", () => pm.expect(rows.slice(0,5).some(r=>[\"ops-04\"].includes(r.id))).to.eql(true));",
+              "pm.test(\"No duplicate conversations\", () => pm.expect(new Set(rows.map(r=>r.id)).size).to.eql(rows.length));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Cross-team: stale documents",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{baseUrl}}/api/search?q=What%20caused%20Harbor%20Health%20to%20see%20old%20policies%20and%20how%20was%20the%20delayed%20sync%20fixed%3F",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "search"
+          ],
+          "query": [
+            {
+              "key": "q",
+              "value": "What caused Harbor Health to see old policies and how was the delayed sync fixed?"
+            }
+          ]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"HTTP 200\", () => pm.response.to.have.status(200));",
+              "const rows = pm.response.json();",
+              "pm.test(\"JSON array with exactly 20 results\", () => { pm.expect(rows).to.be.an(\"array\"); pm.expect(rows.length).to.eql(20); });",
+              "pm.test(\"Scores are numeric and sorted highest first\", () => rows.forEach((r,i) => { pm.expect(r.score).to.be.a(\"number\").within(0,1); if(i) pm.expect(r.score).to.be.at.most(rows[i-1].score); }));",
+              "pm.test(\"Source context retained without raw vectors\", () => rows.forEach(r => { pm.expect(r.id).to.be.a(\"string\"); pm.expect(r.messages.length).to.be.above(0); pm.expect(r).not.to.have.property(\"embedding\"); pm.expect(r.channel).to.be.a(\"string\"); }));",
+              "pm.test(\"Relevant conversation appears in the first five\", () => pm.expect(rows.slice(0,5).some(r=>[\"eng-01\",\"eng-02\",\"support-01\",\"support-02\"].includes(r.id))).to.eql(true));",
+              "pm.test(\"No duplicate conversations\", () => pm.expect(new Set(rows.map(r=>r.id)).size).to.eql(rows.length));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Semantic paraphrase: no permanent deletion",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{baseUrl}}/api/search?q=Can%20an%20admin%20get%20a%20fresh%20export%20download%20after%20yesterday's%20URL%20stopped%20working%3F",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "search"
+          ],
+          "query": [
+            {
+              "key": "q",
+              "value": "Can an admin get a fresh export download after yesterday's URL stopped working?"
+            }
+          ]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"HTTP 200\", () => pm.response.to.have.status(200));",
+              "const rows = pm.response.json();",
+              "pm.test(\"JSON array with exactly 20 results\", () => { pm.expect(rows).to.be.an(\"array\"); pm.expect(rows.length).to.eql(20); });",
+              "pm.test(\"Scores are numeric and sorted highest first\", () => rows.forEach((r,i) => { pm.expect(r.score).to.be.a(\"number\").within(0,1); if(i) pm.expect(r.score).to.be.at.most(rows[i-1].score); }));",
+              "pm.test(\"Source context retained without raw vectors\", () => rows.forEach(r => { pm.expect(r.id).to.be.a(\"string\"); pm.expect(r.messages.length).to.be.above(0); pm.expect(r).not.to.have.property(\"embedding\"); pm.expect(r.channel).to.be.a(\"string\"); }));",
+              "pm.test(\"Relevant conversation appears in the first five\", () => pm.expect(rows.slice(0,5).some(r=>[\"support-08\"].includes(r.id))).to.eql(true));",
+              "pm.test(\"No duplicate conversations\", () => pm.expect(new Set(rows.map(r=>r.id)).size).to.eql(rows.length));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Missing query",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/search"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Invalid input returns HTTP 400\", () => pm.response.to.have.status(400));",
+              "pm.test(\"Actionable JSON error\", () => pm.expect(pm.response.json().error).to.include(\"q query parameter\"));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Blank query",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/search?q=%20%20"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Invalid input returns HTTP 400\", () => pm.response.to.have.status(400));",
+              "pm.test(\"Actionable JSON error\", () => pm.expect(pm.response.json().error).to.include(\"q query parameter\"));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Repeated query",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/search?q=invoice&q=login"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Invalid input returns HTTP 400\", () => pm.response.to.have.status(400));",
+              "pm.test(\"Actionable JSON error\", () => pm.expect(pm.response.json().error).to.include(\"q query parameter\"));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Query too long",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/search?q=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Invalid input returns HTTP 400\", () => pm.response.to.have.status(400));",
+              "pm.test(\"Actionable JSON error\", () => pm.expect(pm.response.json().error).to.include(\"q query parameter\"));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Unknown endpoint returns JSON",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/not-a-route"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"HTTP 404\", () => pm.response.to.have.status(404));",
+              "pm.test(\"JSON error\", () => pm.expect(pm.response.json().error).to.eql(\"Endpoint not found.\"));"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

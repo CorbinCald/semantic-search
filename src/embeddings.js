@@ -1,66 +1,42 @@
-import { setTimeout as sleep } from 'node:timers/promises';
-import { DIMENSIONS, MODEL, MODEL_RESPONSE_IDS } from './config.js';
+import { DIMENSIONS, QUERY_INSTRUCTION } from './config.js';
 
 export class EmbeddingError extends Error {}
 
 export function validateVector(vector) {
-  if (!Array.isArray(vector) || vector.length !== DIMENSIONS || !vector.every(Number.isFinite)) {
-    throw new EmbeddingError(`Embedding must contain ${DIMENSIONS} finite numbers.`);
+  if (!Array.isArray(vector) || vector.length !== DIMENSIONS ||
+      vector.some(v => typeof v !== 'number' || !Number.isFinite(v)) ||
+      !vector.some(v => v !== 0)) {
+    throw new EmbeddingError(`Expected ${DIMENSIONS} finite, nonzero embedding dimensions`);
   }
-  const norm = Math.hypot(...vector);
-  if (norm === 0 || !Number.isFinite(norm)) throw new EmbeddingError('Embedding has an invalid norm.');
-  // Normalization is consistent even when providers return different magnitudes.
-  return vector.map(value => value / norm);
+  return vector;
 }
 
-export function createEmbedder({ apiKey, fetchImpl = fetch, sleepImpl = sleep }) {
-  if (!apiKey) throw new Error('Set OPENROUTER_API_KEY before importing documents or starting the API.');
-  return async function embed(texts, { query = false, signal } = {}) {
-    if (!Array.isArray(texts) || !texts.length || !texts.every(t => typeof t === 'string' && t.trim())) {
-      throw new EmbeddingError('Embedding input must be a non-empty array of non-empty strings.');
-    }
-    // NVIDIA's OpenAI-compatible interface expects explicit retrieval prefixes.
-    const input = texts.map(text => `${query ? 'query' : 'passage'}: ${text}`);
-    for (let attempt = 0; attempt < 3; attempt++) {
-      const requestSignal = signal
-        ? AbortSignal.any([signal, AbortSignal.timeout(45000)])
-        : AbortSignal.timeout(45000);
-      let response;
-      try {
-        response = await fetchImpl('https://openrouter.ai/api/v1/embeddings', {
-          method: 'POST',
-          headers: { Authorization: `Bearer ${apiKey}`, 'Content-Type': 'application/json', 'X-Title': 'RelayAI Semantic Search' },
-          body: JSON.stringify({ model: MODEL, input, encoding_format: 'float' }),
-          signal: requestSignal,
-        });
-      } catch (error) {
-        if (signal?.aborted) throw error;
-        throw new EmbeddingError('The embedding service could not be reached.');
-      }
-      if (!response.ok) {
-        // Never forward provider bodies: they may contain private request data.
-        await response.body?.cancel();
-        if ([429, 502, 503, 504].includes(response.status) && attempt < 2) {
-          const retryAfter = Number(response.headers.get('retry-after'));
-          await sleepImpl(Math.min(5000, retryAfter > 0 ? retryAfter * 1000 : 500 * 2 ** attempt), undefined, { signal });
-          continue;
-        }
-        throw new EmbeddingError(`The embedding service returned HTTP ${response.status}.`);
-      }
-      let body;
-      try { body = await response.json(); }
-      catch { throw new EmbeddingError('The embedding service returned invalid JSON.'); }
-      if (!MODEL_RESPONSE_IDS.includes(body.model) || !Array.isArray(body.data) || body.data.length !== input.length) {
-        throw new EmbeddingError('The embedding service returned an unexpected model or result count.');
-      }
-      const ordered = new Array(input.length);
-      for (const result of body.data) {
-        if (!Number.isInteger(result.index) || result.index < 0 || result.index >= input.length || ordered[result.index]) {
-          throw new EmbeddingError('The embedding service returned invalid or duplicate input indices.');
-        }
-        ordered[result.index] = validateVector(result.embedding);
-      }
-      return ordered;
+// Both document ingestion and live search call this same client with the same model.
+export function createEmbedder(settings, fetchImpl = fetch) {
+  if (!settings.apiKey) throw new Error('Set OPENROUTER_API_KEY in your environment or .env file.');
+  return async function embed(text, { query = false } = {}) {
+    const input = query ? `Instruct: ${QUERY_INSTRUCTION}\nQuery: ${text}` : text;
+    try {
+      const response = await fetchImpl(`${settings.baseUrl}/embeddings`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          ...(settings.apiKey ? { Authorization: `Bearer ${settings.apiKey}` } : {}),
+        },
+        body: JSON.stringify({ model: settings.model, input, dimensions: DIMENSIONS, encoding_format: 'float',
+          provider: { only: ['nebius'], allow_fallbacks: false } }),
+        signal: AbortSignal.timeout(settings.timeout),
+      });
+      if (!response.ok) throw new EmbeddingError(`Embedding service returned HTTP ${response.status}`);
+      const body = await response.json();
+      // OpenRouter uses a lowercase slug; the provider returns the same HF name
+      // with capitals (Qwen/Qwen3-Embedding-8B).
+      if (body.model?.toLowerCase() !== settings.model) throw new EmbeddingError('Embedding service returned a different model');
+      if (body.data?.length !== 1 || body.data[0].index !== 0) throw new EmbeddingError('Unexpected embedding response');
+      return validateVector(body.data[0].embedding);
+    } catch (error) {
+      if (error instanceof EmbeddingError) throw error;
+      throw new EmbeddingError('Embedding service is unavailable', { cause: error });
     }
   };
 }

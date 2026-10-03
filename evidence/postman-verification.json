@@ -1,0 +1,587 @@
+{
+  "checkedAt": "2026-10-03T01:21:48.127Z",
+  "model": "qwen/qwen3-embedding-8b",
+  "requests": {
+    "total": 13,
+    "pending": 0,
+    "failed": 0
+  },
+  "assertions": {
+    "total": 55,
+    "pending": 0,
+    "failed": 0
+  },
+  "failures": [],
+  "results": [
+    {
+      "name": "Database readiness and exact model",
+      "status": 200,
+      "milliseconds": 32,
+      "body": {
+        "ready": true,
+        "documents": 50,
+        "embeddedDocuments": 50,
+        "model": "qwen/qwen3-embedding-8b",
+        "dimensions": 4096,
+        "index": {
+          "name": "slack_cosine_4096",
+          "status": "READY",
+          "queryable": true,
+          "similarity": "cosine"
+        }
+      },
+      "assertions": [
+        {
+          "name": "HTTP 200",
+          "passed": true
+        },
+        {
+          "name": "All 50 conversations embedded with configured model",
+          "passed": true
+        },
+        {
+          "name": "Cosine index is ready",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "name": "Engineering: rotate secrets safely",
+      "status": 200,
+      "milliseconds": 1446,
+      "resultCount": 20,
+      "topFive": [
+        {
+          "id": "eng-09",
+          "title": "Rotating API credentials without downtime",
+          "department": "Engineering",
+          "score": 0.8836253881454468
+        },
+        {
+          "id": "support-03",
+          "title": "SAML login loop at Cedar Labs",
+          "department": "Support",
+          "score": 0.7508037090301514
+        },
+        {
+          "id": "ops-09",
+          "title": "October on-call rota",
+          "department": "Operations",
+          "score": 0.7501629590988159
+        },
+        {
+          "id": "eng-02",
+          "title": "Harbor connector canary",
+          "department": "Engineering",
+          "score": 0.7372421026229858
+        },
+        {
+          "id": "csm-08",
+          "title": "Customer requests full workspace deletion",
+          "department": "CSM",
+          "score": 0.7264304161071777
+        }
+      ],
+      "assertions": [
+        {
+          "name": "HTTP 200",
+          "passed": true
+        },
+        {
+          "name": "JSON array with exactly 20 results",
+          "passed": true
+        },
+        {
+          "name": "Scores are numeric and sorted highest first",
+          "passed": true
+        },
+        {
+          "name": "Source context retained without raw vectors",
+          "passed": true
+        },
+        {
+          "name": "Relevant conversation appears in the first five",
+          "passed": true
+        },
+        {
+          "name": "No duplicate conversations",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "name": "Sales: a deal blocked by data location",
+      "status": 200,
+      "milliseconds": 664,
+      "resultCount": 20,
+      "topFive": [
+        {
+          "id": "eng-07",
+          "title": "EU storage region boundaries",
+          "department": "Engineering",
+          "score": 0.805091381072998
+        },
+        {
+          "id": "sales-07",
+          "title": "Residency requirement changes the Summit forecast",
+          "department": "Sales",
+          "score": 0.761967658996582
+        },
+        {
+          "id": "ops-02",
+          "title": "SOC 2 packet for Summit",
+          "department": "Operations",
+          "score": 0.7348081469535828
+        },
+        {
+          "id": "sales-01",
+          "title": "Summit Legal security review",
+          "department": "Sales",
+          "score": 0.7183090448379517
+        },
+        {
+          "id": "csm-09",
+          "title": "LumenGrid kickoff preparation",
+          "department": "CSM",
+          "score": 0.7058379650115967
+        }
+      ],
+      "assertions": [
+        {
+          "name": "HTTP 200",
+          "passed": true
+        },
+        {
+          "name": "JSON array with exactly 20 results",
+          "passed": true
+        },
+        {
+          "name": "Scores are numeric and sorted highest first",
+          "passed": true
+        },
+        {
+          "name": "Source context retained without raw vectors",
+          "passed": true
+        },
+        {
+          "name": "Relevant conversation appears in the first five",
+          "passed": true
+        },
+        {
+          "name": "No duplicate conversations",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "name": "Support: uploaded images have no searchable words",
+      "status": 200,
+      "milliseconds": 1440,
+      "resultCount": 20,
+      "topFive": [
+        {
+          "id": "support-07",
+          "title": "Scanned invoices uploaded but cannot be found",
+          "department": "Support",
+          "score": 0.8596304655075073
+        },
+        {
+          "id": "ops-01",
+          "title": "September vendor invoice cutoff",
+          "department": "Operations",
+          "score": 0.7747498750686646
+        },
+        {
+          "id": "eng-08",
+          "title": "Scanned PDFs are missing from results",
+          "department": "Engineering",
+          "score": 0.7672783136367798
+        },
+        {
+          "id": "support-01",
+          "title": "SUP-108: newly uploaded policies not showing",
+          "department": "Support",
+          "score": 0.7387489080429077
+        },
+        {
+          "id": "ops-03",
+          "title": "Investigating duplicated overage invoices",
+          "department": "Operations",
+          "score": 0.7274885177612305
+        }
+      ],
+      "assertions": [
+        {
+          "name": "HTTP 200",
+          "passed": true
+        },
+        {
+          "name": "JSON array with exactly 20 results",
+          "passed": true
+        },
+        {
+          "name": "Scores are numeric and sorted highest first",
+          "passed": true
+        },
+        {
+          "name": "Source context retained without raw vectors",
+          "passed": true
+        },
+        {
+          "name": "Relevant conversation appears in the first five",
+          "passed": true
+        },
+        {
+          "name": "No duplicate conversations",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "name": "CSM: adoption falls after sponsor moves",
+      "status": 200,
+      "milliseconds": 509,
+      "resultCount": 20,
+      "topFive": [
+        {
+          "id": "csm-03",
+          "title": "Morrow renewal risk is ownership",
+          "department": "CSM",
+          "score": 0.7935283184051514
+        },
+        {
+          "id": "csm-07",
+          "title": "Morrow account recovery plan",
+          "department": "CSM",
+          "score": 0.7578136920928955
+        },
+        {
+          "id": "csm-04",
+          "title": "Birch account health during billing correction",
+          "department": "CSM",
+          "score": 0.7501525282859802
+        },
+        {
+          "id": "csm-08",
+          "title": "Customer requests full workspace deletion",
+          "department": "CSM",
+          "score": 0.7289608120918274
+        },
+        {
+          "id": "eng-03",
+          "title": "Removed Slack members can still see cached citations",
+          "department": "Engineering",
+          "score": 0.7152766585350037
+        }
+      ],
+      "assertions": [
+        {
+          "name": "HTTP 200",
+          "passed": true
+        },
+        {
+          "name": "JSON array with exactly 20 results",
+          "passed": true
+        },
+        {
+          "name": "Scores are numeric and sorted highest first",
+          "passed": true
+        },
+        {
+          "name": "Source context retained without raw vectors",
+          "passed": true
+        },
+        {
+          "name": "Relevant conversation appears in the first five",
+          "passed": true
+        },
+        {
+          "name": "No duplicate conversations",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "name": "Operations: corrected invoice",
+      "status": 200,
+      "milliseconds": 414,
+      "resultCount": 20,
+      "topFive": [
+        {
+          "id": "ops-04",
+          "title": "Birch invoice correction complete",
+          "department": "Operations",
+          "score": 0.8311765193939209
+        },
+        {
+          "id": "csm-04",
+          "title": "Birch account health during billing correction",
+          "department": "CSM",
+          "score": 0.7960910797119141
+        },
+        {
+          "id": "support-05",
+          "title": "Two charges for the same usage period",
+          "department": "Support",
+          "score": 0.7947551012039185
+        },
+        {
+          "id": "ops-03",
+          "title": "Investigating duplicated overage invoices",
+          "department": "Operations",
+          "score": 0.7398713231086731
+        },
+        {
+          "id": "eng-05",
+          "title": "Webhook retries creating duplicate usage events",
+          "department": "Engineering",
+          "score": 0.7120791077613831
+        }
+      ],
+      "assertions": [
+        {
+          "name": "HTTP 200",
+          "passed": true
+        },
+        {
+          "name": "JSON array with exactly 20 results",
+          "passed": true
+        },
+        {
+          "name": "Scores are numeric and sorted highest first",
+          "passed": true
+        },
+        {
+          "name": "Source context retained without raw vectors",
+          "passed": true
+        },
+        {
+          "name": "Relevant conversation appears in the first five",
+          "passed": true
+        },
+        {
+          "name": "No duplicate conversations",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "name": "Cross-team: stale documents",
+      "status": 200,
+      "milliseconds": 4327,
+      "resultCount": 20,
+      "topFive": [
+        {
+          "id": "support-01",
+          "title": "SUP-108: newly uploaded policies not showing",
+          "department": "Support",
+          "score": 0.8420906066894531
+        },
+        {
+          "id": "support-02",
+          "title": "SUP-108 resolved and customer follow-up",
+          "department": "Support",
+          "score": 0.8329434394836426
+        },
+        {
+          "id": "eng-02",
+          "title": "Harbor connector canary",
+          "department": "Engineering",
+          "score": 0.8012771606445312
+        },
+        {
+          "id": "csm-05",
+          "title": "Harbor training follow-through",
+          "department": "CSM",
+          "score": 0.7922490835189819
+        },
+        {
+          "id": "csm-01",
+          "title": "Harbor onboarding readiness",
+          "department": "CSM",
+          "score": 0.7877227067947388
+        }
+      ],
+      "assertions": [
+        {
+          "name": "HTTP 200",
+          "passed": true
+        },
+        {
+          "name": "JSON array with exactly 20 results",
+          "passed": true
+        },
+        {
+          "name": "Scores are numeric and sorted highest first",
+          "passed": true
+        },
+        {
+          "name": "Source context retained without raw vectors",
+          "passed": true
+        },
+        {
+          "name": "Relevant conversation appears in the first five",
+          "passed": true
+        },
+        {
+          "name": "No duplicate conversations",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "name": "Semantic paraphrase: no permanent deletion",
+      "status": 200,
+      "milliseconds": 406,
+      "resultCount": 20,
+      "topFive": [
+        {
+          "id": "support-08",
+          "title": "Export download expired",
+          "department": "Support",
+          "score": 0.8877781629562378
+        },
+        {
+          "id": "eng-02",
+          "title": "Harbor connector canary",
+          "department": "Engineering",
+          "score": 0.7675381898880005
+        },
+        {
+          "id": "support-01",
+          "title": "SUP-108: newly uploaded policies not showing",
+          "department": "Support",
+          "score": 0.7643628716468811
+        },
+        {
+          "id": "support-02",
+          "title": "SUP-108 resolved and customer follow-up",
+          "department": "Support",
+          "score": 0.7611922025680542
+        },
+        {
+          "id": "support-03",
+          "title": "SAML login loop at Cedar Labs",
+          "department": "Support",
+          "score": 0.7418823838233948
+        }
+      ],
+      "assertions": [
+        {
+          "name": "HTTP 200",
+          "passed": true
+        },
+        {
+          "name": "JSON array with exactly 20 results",
+          "passed": true
+        },
+        {
+          "name": "Scores are numeric and sorted highest first",
+          "passed": true
+        },
+        {
+          "name": "Source context retained without raw vectors",
+          "passed": true
+        },
+        {
+          "name": "Relevant conversation appears in the first five",
+          "passed": true
+        },
+        {
+          "name": "No duplicate conversations",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "name": "Missing query",
+      "status": 400,
+      "milliseconds": 2,
+      "body": {
+        "error": "Provide one nonempty q query parameter (maximum 1500 characters)."
+      },
+      "assertions": [
+        {
+          "name": "Invalid input returns HTTP 400",
+          "passed": true
+        },
+        {
+          "name": "Actionable JSON error",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "name": "Blank query",
+      "status": 400,
+      "milliseconds": 2,
+      "body": {
+        "error": "Provide one nonempty q query parameter (maximum 1500 characters)."
+      },
+      "assertions": [
+        {
+          "name": "Invalid input returns HTTP 400",
+          "passed": true
+        },
+        {
+          "name": "Actionable JSON error",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "name": "Repeated query",
+      "status": 400,
+      "milliseconds": 1,
+      "body": {
+        "error": "Provide one nonempty q query parameter (maximum 1500 characters)."
+      },
+      "assertions": [
+        {
+          "name": "Invalid input returns HTTP 400",
+          "passed": true
+        },
+        {
+          "name": "Actionable JSON error",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "name": "Query too long",
+      "status": 400,
+      "milliseconds": 1,
+      "body": {
+        "error": "Provide one nonempty q query parameter (maximum 1500 characters)."
+      },
+      "assertions": [
+        {
+          "name": "Invalid input returns HTTP 400",
+          "passed": true
+        },
+        {
+          "name": "Actionable JSON error",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "name": "Unknown endpoint returns JSON",
+      "status": 404,
+      "milliseconds": 2,
+      "body": {
+        "error": "Endpoint not found."
+      },
+      "assertions": [
+        {
+          "name": "HTTP 404",
+          "passed": true
+        },
+        {
+          "name": "JSON error",
+          "passed": true
+        }
+      ]
+    }
+  ]
+}

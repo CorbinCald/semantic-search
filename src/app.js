@@ -1,33 +1,29 @@
 import express from 'express';
 import { EmbeddingError } from './embeddings.js';
-import { parseSearch } from './search.js';
 
-export function createApp({ search, health }) {
+export function createApp({ embed, search, health, logger = console }) {
   const app = express();
   app.disable('x-powered-by');
   app.set('query parser', 'simple');
-  app.get('/api/health', async (_req, res) => {
-    try {
-      const report = await health();
-      res.status(report.ready ? 200 : 503).json(report);
-    } catch { res.status(503).json({ ready: false, error: 'MongoDB is unavailable.' }); }
+  app.get('/health', async (_req, res) => {
+    const state = await health();
+    res.status(state.ready ? 200 : 503).json(state);
   });
   app.get('/api/search', async (req, res) => {
-    const parsed = parseSearch(req.query);
-    if (parsed.error) return res.status(400).json({ error: parsed.error });
-    const controller = new AbortController();
-    const cancel = () => { if (!res.writableEnded) controller.abort(); };
-    res.on('close', cancel);
-    try {
-      const results = await search({ ...parsed, signal: controller.signal });
-      if (!controller.signal.aborted) res.json(results);
-    } catch (error) {
-      if (controller.signal.aborted) return;
-      const status = error instanceof EmbeddingError ? 502 : 503;
-      const message = status === 502 ? error.message : 'Semantic search is unavailable. Check MongoDB and the vector index.';
-      res.status(status).json({ error: message });
-    } finally { res.off('close', cancel); }
+    const q = req.query.q;
+    if (typeof q !== 'string' || !q.trim() || q.trim().length > 1500) {
+      return res.status(400).json({ error: 'Provide one nonempty q query parameter (maximum 1500 characters).' });
+    }
+    const vector = await embed(q.trim(), { query: true });
+    const results = await search(vector);
+    // Keep identity and relevance visible before the longer source conversation.
+    res.json(results.map(({ id, score, ...source }) => ({ id, score, ...source })));
   });
   app.use((_req, res) => res.status(404).json({ error: 'Endpoint not found.' }));
+  app.use((error, _req, res, _next) => {
+    // Do not echo upstream bodies, credentials, or user queries to the client/logs.
+    logger.error(error instanceof EmbeddingError ? 'Embedding dependency failed' : 'Database/request dependency failed');
+    res.status(503).json({ error: error instanceof EmbeddingError ? 'Embedding service unavailable.' : 'Search service unavailable.' });
+  });
   return app;
 }

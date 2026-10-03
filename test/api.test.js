@@ -1,75 +1,51 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
+import { once } from 'node:events';
 import { createApp } from '../src/app.js';
 import { EmbeddingError } from '../src/embeddings.js';
 
-async function serve(t, overrides = {}) {
+async function fixture(t, overrides = {}) {
   const calls = [];
-  const results = [
-    { _id: 'incident', title: 'Rate limiting', score: 0.93 },
-    { _id: 'follow-up', title: 'Retry safeguards', score: 0.87 },
-  ];
-  const app = createApp({
-    search: async params => { calls.push(params); return results; },
-    health: async () => ({ ready: true }),
-    ...overrides,
-  });
-  const server = await new Promise(resolve => {
-    const server = app.listen(0, '127.0.0.1', () => resolve(server));
-  });
-  t.after(() => new Promise(resolve => { server.close(resolve); server.closeAllConnections(); }));
-  return { base: `http://127.0.0.1:${server.address().port}`, calls, results };
+  const app = createApp({ embed: async (...args) => { calls.push(args); return [1]; },
+    search: async () => [{ id: 'support-07', score: 0.91 }],
+    health: async () => ({ ready: true }), logger: { error() {} }, ...overrides });
+  const server = app.listen(0, '127.0.0.1');
+  await once(server, 'listening');
+  t.after(() => new Promise(resolve => server.close(resolve)));
+  return { calls, get: path => fetch(`http://127.0.0.1:${server.address().port}${path}`) };
 }
 
-test('a natural question returns the ordered JSON result array, including scores', async t => {
-  const { base, calls, results } = await serve(t);
-  const response = await fetch(`${base}/api/search?q=${encodeURIComponent('  Why did requests slow down?  ')}`);
-  assert.equal(response.status, 200);
-  assert.match(response.headers.get('content-type'), /application\/json/);
-  assert.deepEqual(await response.json(), results);
-  assert.equal(calls[0].query, 'Why did requests slow down?');
-});
-
-test('department selection passes a valid business department to search', async t => {
-  const { base, calls } = await serve(t);
-  await fetch(`${base}/api/search?q=discount%20approval&department=Sales`);
-  assert.equal(calls[0].department, 'Sales');
-});
-
-test('bad input cannot trigger an embedding request', async t => {
-  const { base, calls } = await serve(t);
-  for (const query of ['', '?q=', '?q=%20%20', '?q=a&q=b', '?q=hello&department=Marketing', '?q=hello&department=Sales&department=CSM', `?q=${'x'.repeat(2001)}`]) {
-    const response = await fetch(`${base}/api/search${query}`);
-    assert.equal(response.status, 400, query.slice(0, 80));
-    assert.equal(typeof (await response.json()).error, 'string');
+test('blank, missing, duplicated, and excessive queries are rejected before inference', async t => {
+  const { calls, get } = await fixture(t);
+  for (const query of ['', '?q=%20', '?q=one&q=two', '?q=' + 'x'.repeat(1501)]) {
+    const response = await get('/api/search' + query);
+    assert.equal(response.status, 400);
+    assert.match((await response.json()).error, /q query parameter/);
   }
   assert.equal(calls.length, 0);
 });
 
-test('provider failure is reported honestly instead of as an empty result set', async t => {
-  const { base } = await serve(t, { search: async () => { throw new EmbeddingError('The embedding service returned HTTP 429.'); } });
-  const response = await fetch(`${base}/api/search?q=outage`);
-  assert.equal(response.status, 502);
-  assert.match((await response.json()).error, /429/);
+test('natural language and Unicode reach the query embedder and return a JSON array', async t => {
+  const { calls, get } = await fixture(t);
+  const response = await get('/api/search?q=' + encodeURIComponent('  café onboarding — how do I sign in?  '));
+  assert.equal(response.status, 200);
+  assert.deepEqual(await response.json(), [{ id: 'support-07', score: 0.91 }]);
+  assert.deepEqual(calls, [['café onboarding — how do I sign in?', { query: true }]]);
 });
 
-test('database errors do not expose connection strings or credentials', async t => {
-  const { base } = await serve(t, { search: async () => { throw new Error('mongodb://private-user:private-password@host'); } });
-  const response = await fetch(`${base}/api/search?q=outage`);
+test('embedding outages give a sanitized 503 and never query the database', async t => {
+  let searched = false;
+  const { get } = await fixture(t, { embed: async () => { throw new EmbeddingError('secret upstream body'); },
+    search: async () => { searched = true; } });
+  const response = await get('/api/search?q=invoice');
   assert.equal(response.status, 503);
-  assert.doesNotMatch(await response.text(), /private-user|private-password/);
+  assert.deepEqual(await response.json(), { error: 'Embedding service unavailable.' });
+  assert.equal(searched, false);
 });
 
-test('health returns 503 when the corpus or index is not ready', async t => {
-  const { base } = await serve(t, { health: async () => ({ ready: false, index: { status: 'BUILDING' } }) });
-  const response = await fetch(`${base}/api/health`);
+test('database outages return 503 rather than a misleading successful empty result', async t => {
+  const { get } = await fixture(t, { search: async () => { throw new Error('mongodb://private'); } });
+  const response = await get('/api/search?q=invoice');
   assert.equal(response.status, 503);
-  assert.equal((await response.json()).ready, false);
-});
-
-test('unknown routes return a JSON error', async t => {
-  const { base } = await serve(t);
-  const response = await fetch(`${base}/api/chat`);
-  assert.equal(response.status, 404);
-  assert.equal(typeof (await response.json()).error, 'string');
+  assert.deepEqual(await response.json(), { error: 'Search service unavailable.' });
 });

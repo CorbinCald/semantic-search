@@ -1,10 +1,9 @@
 node_modules/
 .env
-.env.*
-!.env.example
 .venv/
-coverage/
-recordings/
-docs/validation/newman-full.json
+__pycache__/
 *.log
+*.mp4
+*.webm
+evidence/postman-run.json
 .DS_Store

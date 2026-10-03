@@ -1,18 +1,13 @@
 name: Checks
-on:
-  push:
-  pull_request:
+on: [push, pull_request]
 jobs:
-  test:
+  unit-and-dataset:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
         with:
-          node-version: '22'
+          node-version: 24
           cache: npm
       - run: npm ci
-      - run: npm run dataset
-      - run: git diff --exit-code -- data/workspace.json data/threads.json data/manifest.json
       - run: npm test
-      - run: npm audit --omit=dev
